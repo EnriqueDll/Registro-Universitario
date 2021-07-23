@@ -601,7 +601,7 @@ progress {
 .container-lg,
 .container-md,
 .container-sm {
-  width: 100%;
+  width: 150%;
   padding-right: var(--bs-gutter-x, 0.75rem);
   padding-left: var(--bs-gutter-x, 0.75rem);
   margin-right: auto;
@@ -892,7 +892,7 @@ progress {
 }
 .col-auto {
   flex: 0 0 auto;
-  width: auto;
+  width: 100;
 }
 
 .col-1 {
@@ -10865,17 +10865,17 @@ textarea.form-control-lg {
 }
 
 header.masthead {
-  position: relative;
-  background-color: #343a40;
-  background: url("../assets/img/bg-masthead.jpg") no-repeat center center;
-  background-size: cover;
+  position: sticky;
+  background: url("../assets/img/Universidad_Halcones.png") no-repeat center center ; 
+  background-color: #add7f0;
+  background-size: contain;
   padding-top: 8rem;
   padding-bottom: 8rem;
 }
 header.masthead:before {
   content: "";
   position: absolute;
-  background-color: #1c375e;
+  background-color: #6583ad;
   height: 100%;
   width: 100%;
   top: 0;
