@@ -5,7 +5,7 @@ Repositorio del proyecto realizado en el curso IS-501 Bases de Datos I - UNAH
 
 ## Tecnologías utilizadas: 
   ```
-  - Spring Boot
+  -Spring Boot
   - Maven
   - MySQL
   - Bootstrap
