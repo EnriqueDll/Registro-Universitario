@@ -27,15 +27,6 @@ CREATE TABLE maestria (
 	CONSTRAINT FK_FACULTAD  	FOREIGN KEY (idFacultad) REFERENCES facultad (idFacultad)
 ) ; 
 
-
-#Tabla que guarda la informacion del centro
- CREATE TABLE centro ( 
-	idCentro   					NVARCHAR(5),
-	nombre       				NVARCHAR(30) NOT NULL, 
-	ciudad 						NVARCHAR(30),
-	CONSTRAINT PK_ID_CENTRO 	PRIMARY KEY (idCentro)
- ) ; 
- 
  
 #Tabla que guarda la informacion de las carreras
 #Tiene relacion con Facultad
@@ -134,9 +125,7 @@ CREATE TABLE laboratorio (
 	aulaLab		    			INT,
     aulasDisponibles			INT NOT NULL,
     aulasLabDisponibles 		INT NOT NULL,
-	centro           			NVARCHAR (5),
 	CONSTRAINT PK_ID_EDIFICIO	PRIMARY KEY (idEdificio), 
-    CONSTRAINT FK_ID_CENTRO 	FOREIGN KEY (centro) REFERENCES centro(idCentro)
  ) ; 
  
  
@@ -192,4 +181,9 @@ CREATE TABLE imparte (
    CONSTRAINT FK_NUM_DOCENTE  	FOREIGN KEY (numDocente) REFERENCES docente(numCuentaDocente),
    CONSTRAINT FK_SECCION 		FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
  ) ;
+
+--Inserts seccion
+--20ZZ0002 - ES101 - 0802 - 8:00 - Lunes a Jueves
+
+--Numero de aula (unique)
 
