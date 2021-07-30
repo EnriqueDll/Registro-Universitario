@@ -10868,9 +10868,9 @@ header.masthead {
   position: sticky;
 
   background: url("../assets/img/Universidad_Halcones.png") no-repeat center center ; 
-  background-color: #22dfa6;
+  background-color: #daadc29d;
   background-size: cover;
-  padding-top: 8rem;
+  padding-top: 5rem;
   padding-bottom: 8rem;
 }
 header.masthead:before {
@@ -10888,8 +10888,8 @@ header.masthead h1, header.masthead .h1 {
 }
 @media (min-width: 768px) {
   header.masthead {
-    padding-top: 12rem;
-    padding-bottom: 12rem;
+    padding-top: 4rem;
+    padding-bottom: 8rem;
   }
   header.masthead h1, header.masthead .h1 {
     font-size: 3rem;
