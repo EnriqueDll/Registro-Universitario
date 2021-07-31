@@ -182,6 +182,7 @@ CREATE TABLE imparte (
    CONSTRAINT FK_SECCION 		FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
  ) ;
 
+#Prueba
 --Inserts seccion
 --20ZZ0002 - ES101 - 0802 - 8:00 - Lunes a Jueves
 
