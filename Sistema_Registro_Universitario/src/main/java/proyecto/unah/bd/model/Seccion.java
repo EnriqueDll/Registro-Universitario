@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table (name="seccion")
+
 public class Seccion {
 	@Id
 	private String idSeccion;
@@ -83,7 +84,5 @@ public class Seccion {
 	public void setNumEstudiantes(int numEstudiantes) {
 		this.numEstudiantes = numEstudiantes;
 	}
-	
-	
 	
 }
