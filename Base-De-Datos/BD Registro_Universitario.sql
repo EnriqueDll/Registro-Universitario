@@ -186,6 +186,7 @@ INSERT INTO CARRERA VALUES('100','Medicina General','La Carrera de Medicina tien
 INSERT INTO CARRERA VALUES('200','Terapia Funcional','Forma profesionales capacitados para la atención de la persona con discapacidad mediante una preparación científica, técnica, humanista','52',default,'2 años y medio','001');
 INSERT INTO CARRERA VALUES('300','Microbiologia','Organizar, dirigir y desarrollar la formación ética, integral y holística de profesionales de la Microbiología, la investigación y la vinculación','62',default,'4 años','001');
 
+
 INSERT INTO CARRERA VALUES('400','Ingenieria en Sistemas','La ingeniería de sistemas es un campo interdisciplinario de la ingeniería que permite estudiar y comprender la realidad','56',default,'5 años','002');
 INSERT INTO CARRERA VALUES('500','Ingenieria Mecanica','Esta disciplina estudia y perfecciona específicamente los principios de la termodinámica, trasferencia de calor, mecánica,vibraciones, mecánica clásica, entre otros campos.','62',default,'5 años','002');
 INSERT INTO CARRERA VALUES('600','Ingenieria Civil','La ingeniería civil es la disciplina de la ingeniería que emplea conocimientos de cálculo, mecánica, hidráulica y física para encargarse del diseño, construcción ','60',default,'5 años','002');
@@ -226,6 +227,19 @@ INSERT INTO ESTUDIANTE VALUES('201821000','0801-2000-21759','Eskarleth Lizeth Ma
 INSERT INTO ESTUDIANTE VALUES('201821001','1807-2000-00585','Thiago Isai Merlo','2000-12-06','M','9852-9883','Yoro','400','thiago6@','thiago');
 INSERT INTO ESTUDIANTE VALUES('201521001','0801-1998-23685','Aaron Isaac Raudales Valle','1998-11-14','M','3452-9883','San Pedro Sula','600','aaronraduales@','raudales13');
 INSERT INTO ESTUDIANTE VALUES('202021001','0801-2001-53685','Jesua Raudales Miralda','2001-03-22','M','9352-9883','Tegucigalpa','500','jesua_raduales@','abril10');
+##Inserts de Galo
+INSERT INTO ESTUDIANTE VALUES('201810023','0801-2001-05603','Alex Daniel Galo Soto','2001-03-03','M','9850-8147','Tegucigalpa','300','alexgalo@','griffith124') ; 
+INSERT INTO ESTUDIANTE VALUES('201850035','0801-2000-06661','Esthefani Michell Alvarez Ordoñez','2000-07-04','F', '9250-4714' ,'Comayagua','700','esthefalv@','samantha123');
+INSERT INTO ESTUDIANTE VALUES('201300013','0801-1999-02361','Axel Galo Soto','1999-05-01','M','9750-2563','San Pedro Sula','500','axelger@','copetin500');
+INSERT INTO ESTUDIANTE VALUES('201305602','0505-2003-05432','Fernando Enrique Garcia','1998-02-29','M','9230-5433','Tegucigalpa','600','ferenrq@','cocomax123');
+INSERT INTO ESTUDIANTE VALUES('201210525','0801-1998-08256','Oscar Ariel Galo Soto','1996-05-23', 'M','9098-5263','Ocotepeque','400','oscargsoto@','incorrecta!23');
+INSERT INTO ESTUDIANTE VALUES('201415032','0801-2008-05868','Lorena Maria Soto Andino','2003-07-15','F','9630-3027','Yoro','300','lorenasoto@','jesu12304');
+INSERT INTO ESTUDIANTE VALUES('201023537','0405-1999-02348','Santos Benigno Galo Gonzales','1999-05-22','M','9990-5433','San Pedro Sula','700','santosbenigno@','cumplimientos05660');
+INSERT INTO ESTUDIANTE VALUES('201312063','0801-2000-03999','Lorena Francisca Mejia Funez','2003-02-26','F','9580-3222','Tegucigalpa','500','lomejifun@','franciaparis!43');
+INSERT INTO ESTUDIANTE VALUES('202012345','0801-2000-02305','Alessandro Bustillo Flores','2004-09-24','M','9200-0432','Yoro','600','alessbusti@','adriana2462!.');
+INSERT INTO ESTUDIANTE VALUES('201921050','0801-2004-03205','Gustavo Andres Barahona','1999-05-25','F','3352-9093','Tegucigalpa','400','calix25@','232425');
+INSERT INTO ESTUDIANTE VALUES('201501203','0601-1967-03405','Samuel Alexander Lopez Herculano','2002-08-29','M','9850-8147','Gracias a Dios','500','slhercu@','232425');
+
 
 SELECT* FROM ESTUDIANTE;
 
@@ -235,6 +249,21 @@ INSERT INTO MATRICULA VALUES('01',now(),'1','2021','201721000');
 INSERT INTO MATRICULA VALUES('02',now(),'1','2021','202021001');
 INSERT INTO MATRICULA VALUES('03',now(),'1','2021','201521001');
 
+
+#Inserts de Galo
+INSERT INTO MATRICULA VALUES('03',now(),'1','2021','201810023');
+INSERT INTO MATRICULA VALUES('04',now(),'1','2021','201850035');
+INSERT INTO MATRICULA VALUES('05',now(),'1','2021','201300013');
+INSERT INTO MATRICULA VALUES('06',now(),'1','2021','201305602');
+INSERT INTO MATRICULA VALUES('07',now(),'1','2021','201210525');
+INSERT INTO MATRICULA VALUES('08',now(),'1','2021','201415032');
+INSERT INTO MATRICULA VALUES('09',now(),'1','2021','201023537');
+INSERT INTO MATRICULA VALUES('010',now(),'1','2021','201312063');
+INSERT INTO MATRICULA VALUES('012',now(),'1','2021','202012345');
+INSERT INTO MATRICULA VALUES('013',now(),'1','2021','201921050');
+INSERT INTO MATRICULA VALUES('013',now(),'1','2021','201501203');
+
+
 SELECT* FROM MATRICULA;
 
 ##INSERT CLASES
@@ -242,6 +271,23 @@ INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos','','01','2120');
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','','01','2120');
 INSERT INTO CLASE VALUES('IS-411','Electronica','','01','2120');
 INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','','01','2120');
+
+#Inserts de Galo
+INSERT INTO CLASES VALUES('MM-110','Matematica I', '','01','2120') ;
+INSERT INTO CLASES VALUES('SC-101','Sociologia', '','01','2120') ;
+INSERT INTO CLASES VALUES('MM-111','Geometria y Trigonometria', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-501','Base de Datos I', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-511','Redes de Datos', '','01','2120') ;
+INSERT INTO CLASES VALUES('HH-101','Historia de Honduras', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-410','Programacion Orientada a Objetos', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-412','Sistemas Operativos II', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-601','Base de Datos II', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-603','Arquitectura de Computadoras', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-513','Lenguajes de Programación', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-611','Redes de Datos II', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-711','Diseño Digital', '','01','2120') ;
+INSERT INTO CLASES VALUES('IS-602','Sistema de Información', '','01','2120') ;
+
 
 SELECT* FROM CLASE;
 
