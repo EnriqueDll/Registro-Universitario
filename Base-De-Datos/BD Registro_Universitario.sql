@@ -294,4 +294,5 @@ SELECT* FROM CLASE;
 
 SELECT E.nombreEstudiante,E.numCuentaEstu, C.nombreCarrera FROM ESTUDIANTE E INNER JOIN CARRERA C ON E.carrera=C.idCarrera ;
 
+#
 
