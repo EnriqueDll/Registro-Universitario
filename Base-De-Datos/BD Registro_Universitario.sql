@@ -2,7 +2,7 @@ CREATE DATABASE REGISTRO_UNIVERSITARIO;
 USE REGISTRO_UNIVERSITARIO;
 
 #Tabla que guarda la informacion de las facultades
-CREATE TABLE FACULTAD(
+CREATE TABLE facultad (
 	idFacultad 					NVARCHAR(5),
     nombreFacultad 				NVARCHAR(40) NOT NULL,
     numCarreras 				INT, 
@@ -11,14 +11,14 @@ CREATE TABLE FACULTAD(
 
 #Tabla que guarda la informacion de la maestria
 #Tiene relacion con facultad
-CREATE TABLE MAESTRIA ( 
+CREATE TABLE maestria ( 
 	idMaestria          		NVARCHAR(5),
-	nombreMaestria              NVARCHAR(30) NOT NULL,    
+	nombreMaestria              NVARCHAR(300) NOT NULL,    
 	orientacion        			NVARCHAR(30) NOT NULL,
 	grado                       NVARCHAR(20) NOT NULL DEFAULT 'Postgrado',
 	duracion         			NVARCHAR(20),
 	cantidadClases      		INT, 
-	descripcionMaestria 		NVARCHAR(100),
+	descripcionMaestria 		NVARCHAR(800),
 	idFacultad             		NVARCHAR(5) NOT NULL,
 	CONSTRAINT PK_MAESTRIA 		PRIMARY KEY (idMaestria),
 	CONSTRAINT FK_FACULTAD  	FOREIGN KEY (idFacultad) REFERENCES facultad (idFacultad)
@@ -31,7 +31,7 @@ Alter table maestria modify descripcionMaestria nvarchar(800) Not null;
 CREATE TABLE carrera (
 	idCarrera 					NVARCHAR(5),
     nombreCarrera 				NVARCHAR(40) NOT NULL,
-    descripcionCarrera 			NVARCHAR(80) NOT NULL,
+    descripcionCarrera 			NVARCHAR(800) NOT NULL,
     numAsignaturas 				INT,
     grado                       NVARCHAR(20) NOT NULL DEFAULT 'Pregrado',
     duracionCarrera 			NVARCHAR(15),
@@ -162,7 +162,7 @@ CREATE TABLE se_imparten (
 	CONSTRAINT PK_SE_IMPARTEN 	PRIMARY KEY (idEdificio, idSeccion),
     CONSTRAINT fk_ID_EDIFICIO  	FOREIGN KEY (idEdificio) REFERENCES edificio(idEdificio),
     CONSTRAINT fk_IDSECCION 	FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
-);
+);		
 
 #Tabla que relacion la seccion con el docente que la imparte
 CREATE TABLE imparte ( 	
@@ -294,4 +294,5 @@ SELECT* FROM CLASE;
 
 SELECT E.nombreEstudiante,E.numCuentaEstu, C.nombreCarrera FROM ESTUDIANTE E INNER JOIN CARRERA C ON E.carrera=C.idCarrera ;
 
+#
 

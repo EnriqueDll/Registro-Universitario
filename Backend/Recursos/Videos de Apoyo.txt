@@ -54,3 +54,8 @@ Esta herramienta no es necesario instalarla solo descargar el archivo comprimido
 	3. https://www.youtube.com/watch?v=Ww_EVQE2gDw
 	4. https://www.youtube.com/watch?v=CedX8GWaDUc
 
+**Conectar el backend con el frontend**
+
+1. https://www.youtube.com/watch?v=DEGNdusF5yM
+2. https://www.youtube.com/watch?v=ItMReLIxCPQ
+
