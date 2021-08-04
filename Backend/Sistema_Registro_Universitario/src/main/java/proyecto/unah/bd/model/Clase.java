@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -44,7 +43,7 @@ public class Clase {
 	*/
 	
 	//Relacion con Laboratorio
-	@OneToOne(mappedBy = "clase", fetch = FetchType.EAGER)
+	@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
 	public Laboratorio laboratorio;
 	
 	//Relacion con Departamento

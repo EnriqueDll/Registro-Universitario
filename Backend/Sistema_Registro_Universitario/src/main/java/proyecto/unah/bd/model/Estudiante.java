@@ -1,14 +1,17 @@
 package proyecto.unah.bd.model;
 
 import java.time.LocalDate;
-import java.util.List;
+//import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
 @Table(name = "estudiante")
@@ -24,14 +27,20 @@ public class Estudiante {
 	public char sexo;
 	private String telefono;
 	private String ciudadOrigen; //Cambiar a public de hacer falta
-	public String carrera;
 	public String correoElectronico;
 	private String contrasenia;
 	
-	@OneToOne(mappedBy = "estudiante", fetch = FetchType.EAGER)
+	//Relacion con Matricula
+	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
 	public Matricula matricula;
 	
 	//O podria ser Private List<Matricula> matricula;
+	
+	//Relacion Con Carrera
+	@ManyToOne
+	@JoinColumn(name = "idCarrera")
+	@JsonBackReference
+	public Carrera carrera;
 	
 	//Constructor Vacio
 	public Estudiante () {
@@ -40,7 +49,7 @@ public class Estudiante {
 	
 	//Constructor
 	public Estudiante(String numCuentaEstu, String dni, String nombreEstudiante, LocalDate fechaNac, char sexo,
-			String telefono, String ciudadOrigen, String carrera, String correoElectronico, String contrasenia) { //List<Matricula> matricula o Matricula matricula
+			String telefono, String ciudadOrigen, String correoElectronico, String contrasenia, Carrera carrera) { //List<Matricula> matricula o Matricula matricula
 		super();
 		this.numCuentaEstu = numCuentaEstu;
 		this.dni = dni;
@@ -49,9 +58,9 @@ public class Estudiante {
 		this.sexo = sexo;
 		this.telefono = telefono;
 		this.ciudadOrigen = ciudadOrigen;
-		this.carrera = carrera;
 		this.correoElectronico = correoElectronico;
 		this.contrasenia = contrasenia;
+		this.carrera = carrera;
 		//this.matricula = matricula; por si se llega a ocupar
 	}
 	
@@ -111,14 +120,6 @@ public class Estudiante {
 
 	public void setCiudadOrigen(String ciudadOrigen) {
 		this.ciudadOrigen = ciudadOrigen;
-	}
-
-	public String getCarrera() {
-		return carrera;
-	}
-
-	public void setCarrera(String carrera) {
-		this.carrera = carrera;
 	}
 
 	public String getCorreoElectronico() {

@@ -1,6 +1,6 @@
 package proyecto.unah.bd.model;
 
-import java.util.List;
+//import java.util.List;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
@@ -8,7 +8,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -32,6 +31,12 @@ public class Carrera {
 	@JoinColumn(name="idFacultad")
 	@JsonBackReference
 	public Facultad facultad;
+	
+	//Relacion con estudiante
+	@OneToMany(mappedBy = "carrera", fetch = FetchType.EAGER)
+	public Estudiante estudiante;
+	
+	//O es tipo lista;
 	
 	/*
 	 * la relacion es asi 

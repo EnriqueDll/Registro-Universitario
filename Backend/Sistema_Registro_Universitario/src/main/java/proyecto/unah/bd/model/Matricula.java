@@ -9,7 +9,6 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
-import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -28,10 +27,12 @@ public class Matricula {
 	public String anio;
 	
 	//Relacion con Estudiante
-	@OneToOne(fetch = FetchType.EAGER) //quizas haga falta el mappedBy = "estudiante", podria ser Lazy en lugar de eager
+	@ManyToOne
 	@JoinColumn(name = "numCuentaEstu")
 	@JsonBackReference
 	public Estudiante estudiante;
+	
+	//@OneToOne(fetch = FetchType.EAGER) //quizas haga falta el mappedBy = "estudiante", podria ser Lazy en lugar de eager
 	
 	//Relacion con Clase
 	@OneToMany(mappedBy = "matricula", fetch = FetchType.EAGER)
