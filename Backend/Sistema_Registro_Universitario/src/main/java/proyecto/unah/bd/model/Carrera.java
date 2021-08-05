@@ -32,15 +32,15 @@ public class Carrera {
 	@ManyToOne
 	@JoinColumn(name="idFacultad")
 	@JsonBackReference
-	public Facultad facultad;
+	private Facultad facultad;
 	
 	//Relacion con estudiante
 	@OneToMany(mappedBy = "carrera", fetch = FetchType.EAGER)
-	public Estudiante estudiante;
+	private List<Estudiante> estudiante;
 	
-	//Relacion con carrera
+	//Relacion con Departamento
 	@OneToMany(mappedBy="carrera",fetch=FetchType.EAGER)
-	public List<Departamento> departamento;
+	private List<Departamento> departamento;
 	
 	//Constructor vacio
 	public Carrera() {

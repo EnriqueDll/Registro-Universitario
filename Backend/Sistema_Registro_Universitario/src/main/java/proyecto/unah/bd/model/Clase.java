@@ -34,17 +34,9 @@ public class Clase {
 	@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
 	public List<Seccion> seccion;
 	
-	/*
-	 * Asi puede ser la relacion con Laboratorio tambien
-		@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
-		public List<Laboratorio> laboratorio;
-		
-		Diferencia entre uno a uno y uno a muchos?
-	*/
-	
 	//Relacion con Laboratorio
 	@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
-	public Laboratorio laboratorio;
+	public List<Laboratorio> laboratorio;
 	
 	//Relacion con Departamento
 	@ManyToOne

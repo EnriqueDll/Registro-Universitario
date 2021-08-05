@@ -17,13 +17,16 @@ public class IdImparte implements Serializable{
 	 */
 	
 	private static final long serialVersionUID = 1L;
-	private String numDocente;
+	private String numCuentaDocente;
 	private String idSeccion;
 	
+	//Constructor vacio
 	public IdImparte () {}
-	public IdImparte(String numDocente, String idSeccion) {
+	
+	//Constructor
+	public IdImparte(String numCuentaDocente, String idSeccion) {
 		super();
-		this.numDocente = numDocente;
+		this.numCuentaDocente = numCuentaDocente;
 		this.idSeccion = idSeccion;
 	}
 	
@@ -31,7 +34,7 @@ public class IdImparte implements Serializable{
 	public boolean equals(Object obj) {
 		if (obj instanceof IdImparte) {
 			IdImparte tmpid = (IdImparte)obj;
-			if(this.numDocente == tmpid.getNumDocente()
+			if(this.numCuentaDocente == tmpid.getNumCuentaDocente()
 				&& this.idSeccion == tmpid.getIdSeccion()){
 				return true;
 			}else
@@ -47,11 +50,11 @@ public class IdImparte implements Serializable{
 	*/
 	
 	//Gets & Sets
-	public String getNumDocente() {
-		return numDocente;
+	public String getNumCuentaDocente() {
+		return numCuentaDocente;
 	}
-	public void setNumDocente(String numDocente) {
-		this.numDocente = numDocente;
+	public void setNumCuentaDocente(String numCuentaDocente) {
+		this.numCuentaDocente = numCuentaDocente;
 	}
 	public String getIdSeccion() {
 		return idSeccion;

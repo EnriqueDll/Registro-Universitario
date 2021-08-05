@@ -29,7 +29,7 @@ public class Imparte implements Serializable{
 	
 	//Atributos
 	@Id
-	private String numeroDocente;
+	private String numCuentaDocente;
 	@Id
 	private String idSeccion;
 	
@@ -39,7 +39,7 @@ public class Imparte implements Serializable{
 	@JsonBackReference
 	private Docente docente;
 	
-	@ManyToMany
+	@ManyToOne//puede tirar error con ManyToMany
 	@JoinColumn(name = "idSeccion", referencedColumnName = "idSeccion", insertable = false, updatable = false)
 	@JsonBackReference
 	private Seccion seccion;
@@ -50,25 +50,28 @@ public class Imparte implements Serializable{
 	}
 	
 	//Constructor
-	public Imparte(String numeroDocente, String idSeccion, Docente docente, Seccion seccion) {
+	public Imparte(String numCuentaDocente, String idSeccion, Docente docente, Seccion seccion) {
 		super();
-		this.numeroDocente = numeroDocente;
+		this.numCuentaDocente = numCuentaDocente;
 		this.idSeccion = idSeccion;
 		this.docente = docente;
 		this.seccion = seccion;
 	}
-
+	
 	//Gets $ Sets
-	public String getNumeroDocente() {
-		return numeroDocente;
-	}
-
-	public void setNumeroDocente(String numeroDocente) {
-		this.numeroDocente = numeroDocente;
-	}
-
+	
+	
+	
 	public String getIdSeccion() {
 		return idSeccion;
+	}
+
+	public String getNumCuentaDocente() {
+		return numCuentaDocente;
+	}
+
+	public void setNumCuentaDocente(String numCuentaDocente) {
+		this.numCuentaDocente = numCuentaDocente;
 	}
 
 	public void setIdSeccion(String idSeccion) {

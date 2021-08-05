@@ -172,6 +172,7 @@ CREATE TABLE imparte (
    CONSTRAINT FK_NUM_DOCENTE  	FOREIGN KEY (numDocente) REFERENCES docente(numCuentaDocente),
    CONSTRAINT FK_SECCION 		FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
  ) ;
+ 
 ## inserts de facultades
 INSERT INTO FACULTAD VALUES('001','Medicina',3);
 INSERT INTO FACULTAD VALUES('002','Ingenieria',3);
@@ -218,7 +219,7 @@ INSERT INTO DEPARTAMENTO VALUES('2123','Departamento de Ciencias Economicas','30
 INSERT INTO DEPARTAMENTO VALUES('2124','Departamento de Medicina General','100');
 INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Matematicas','900');
 
-## ---------------------- A PARTIR DE AQUI HAY QUE HACER MAS INSERT------------------------
+## ---------------------- A PARTIR DE AQUI HAY QUE HACER MAS INSERT---------	---------------
 
 ##insert estudiantes
 ##fecha tiene el formato YYYY-MM-DD

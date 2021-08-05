@@ -19,7 +19,7 @@ public class Docente {
 	
 	//Atributos
 	@Id
-	private String numeroCuentaDocente;
+	private String numCuentaDocente;
 	private String  dni;
 	private String nombre;
 	private LocalDate fechaNac; //pasar a date
@@ -39,10 +39,10 @@ public class Docente {
 	public Docente() {}
 
 	//Constructor 
-	public Docente(String numeroCuentaDocente, String dni, String nombre, LocalDate fechaNac, String sexo,
+	public Docente(String numCuentaDocente, String dni, String nombre, LocalDate fechaNac, String sexo,
 			String telefono, String ciudadOrigen, String correo_Electronico, String contrasenia, Departamento departamento) {
 		super();
-		this.numeroCuentaDocente = numeroCuentaDocente;
+		this.numCuentaDocente = numCuentaDocente;
 		this.dni = dni;
 		this.nombre = nombre;
 		this.fechaNac = fechaNac;
@@ -55,16 +55,18 @@ public class Docente {
 	}
 
 	//Gets & Sets
-	public String getNumeroDocente() {
-		return numeroCuentaDocente;
-	}
-
-	public void setNumeroDocente(String numeroDocente) {
-		this.numeroCuentaDocente = numeroDocente;
-	}
+	
 
 	public String getDni() {
 		return dni;
+	}
+
+	public String getNumCuentaDocente() {
+		return numCuentaDocente;
+	}
+
+	public void setNumCuentaDocente(String numCuentaDocente) {
+		this.numCuentaDocente = numCuentaDocente;
 	}
 
 	public void setDni(String dni) {
