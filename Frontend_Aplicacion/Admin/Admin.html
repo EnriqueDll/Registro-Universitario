@@ -165,6 +165,19 @@
                     </div>
 
                     <br>
+                    <!-- Portfolio Item 9-->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal9">
+                            <div class="portfolio-caption">
+                                <div class="portfolio-item-caption-content "><strong>Listado de Edificios</strong> </div>
+                            </div>
+                            <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                                <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-plus fa-3x"></i></div>
+                            </div>
+                            <img class="img-fluid" src="assets/img/portfolio/aula.jpg" alt="..." />
+                        </div>
+                    </div>
+                    <br>
                 </div>
             </div>
         </section>
@@ -225,7 +238,7 @@
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- Portfolio Modal - Title-->
                                     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Listdo de Estudiantes</h2>
                                     <!-- Icon Divider-->
@@ -243,10 +256,13 @@
                                             <thead class="thead-dark">
                                               <tr>
                                                 <th scope="col"># Cuenta</th>
-                                                <th scope="col">DNI</th>
-                                                <th scope="col">Nombre</th>
-                                                <th scope="col">Carrera</th>
-                                                <th scope="col">Correo</th>
+                                                    <th scope="col">DNI</th>
+                                                    <th scope="col">Nombre Completo</th>
+                                                    <th scope="col">Fecha Nacimiento</th>
+                                                    <th scope="col">Sexo</th>
+                                                    <th scope="col">Telefono</th>
+                                                    <th scope="col">Ciudad</th>
+                                                    <th scope="col">Correo</th>
                                               </tr>
                                             </thead>
                                             <tbody>
@@ -296,7 +312,7 @@
                     <div class="modal-body text-center pb-5">
                         <div class="container">
                             <div class="row justify-content-center">
-                                <div class="col-lg-8">
+                                <div class="col-lg-10">
                                     <!-- Portfolio Modal - Title-->
                                     <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Listado de Docentes</h2>
                                     <!-- Icon Divider-->
@@ -315,28 +331,48 @@
                                                   <tr>
                                                     <th scope="col"># Cuenta</th>
                                                     <th scope="col">DNI</th>
-                                                    <th scope="col">Nombre</th>
+                                                    <th scope="col">Nombre Completo</th>
+                                                    <th scope="col">Fecha Nacimiento</th>
+                                                    <th scope="col">Sexo</th>
+                                                    <th scope="col">Telefono</th>
+                                                    <th scope="col">Ciudad</th>
+                                                    <th scope="col">Departamento</th>
                                                     <th scope="col">Correo</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
                                                   <tr>
                                                     <td>20171000581</td>
-                                                    <td>0801-1999-13759</td>
+                                                    <td>0801199913759</td>
                                                     <td>Andrea Michelle Calix</td>
+                                                    <td>25-may0-1999</td>
+                                                    <td>F</td>
+                                                    <td>333443</td>
+                                                    <td>Tegucigalpa</td>
+                                                    <td>sistemas</td>
                                                     <td>amcalixg@</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>2</td>
-                                                    <td>Jacob</td>
-                                                    <td>Thornton</td>
-                                                    <td>Jacob</td>
+                                                    <td>20171000581</td>
+                                                    <td>0801199913759</td>
+                                                    <td>Andrea Michelle Calix</td>
+                                                    <td>25-may0-1999</td>
+                                                    <td>F</td>
+                                                    <td>333443</td>
+                                                    <td>Tegucigalpa</td>
+                                                    <td>sistemas</td>
+                                                    <td>amcalixg@</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>3</td>
-                                                    <td>Larry</td>
-                                                    <td>the Bird</td>
-                                                    <td>Jacob</td>
+                                                    <td>20171000581</td>
+                                                    <td>0801199913759</td>
+                                                    <td>Andrea Michelle Calix</td>
+                                                    <td>25-may0-1999</td>
+                                                    <td>F</td>
+                                                    <td>333443</td>
+                                                    <td>Tegucigalpa</td>
+                                                    <td>sistemas</td>
+                                                    <td>amcalixg@</td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -354,6 +390,7 @@
             </div>
         </div>
         <!-- Portfolio Modal 3-->
+        <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "FACULTADES"-->
         <div class="portfolio-modal modal fade" id="portfolioModal3" tabindex="-1" aria-labelledby="portfolioModal3" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -426,6 +463,7 @@
             </div>
         </div>
         <!-- Portfolio Modal 4-->
+        <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "CLASES"-->
         <div class="portfolio-modal modal fade" id="portfolioModal4" tabindex="-1" aria-labelledby="portfolioModal4" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -452,7 +490,9 @@
                                                   <tr>
                                                     <th scope="col">Codigo</th>
                                                     <th scope="col">Nombre</th>
-                                               
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col">Matricula</th>
+                                                    <th scope="col">Departamento</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
@@ -487,6 +527,7 @@
             </div>
         </div>
         <!-- Portfolio Modal 5-->
+        <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "MATRICULA"-->
         <div class="portfolio-modal modal fade" id="portfolioModal5" tabindex="-1" aria-labelledby="portfolioModal5" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -511,9 +552,11 @@
                                             <table class="table table-bordered">
                                                 <thead class="thead-dark">
                                                   <tr>
-                                                    <th scope="col">Codigo</th>
-                                                    <th scope="col">Nombre</th>
-                                               
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Fecha/Hora</th>
+                                                    <th scope="col">Periodo</th>
+                                                    <th scope="col">Año</th>
+                                                    <th scope="col">Estudiante</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
@@ -548,6 +591,7 @@
             </div>
         </div>
         <!-- Portfolio Modal 6-->
+        <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "MAESTRIAS"-->
         <div class="portfolio-modal modal fade" id="portfolioModal6" tabindex="-1" aria-labelledby="portfolioModal6" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -572,26 +616,46 @@
                                             <table class="table table-bordered">
                                                 <thead class="thead-dark">
                                                   <tr>
-                                                    <th scope="col">Codigo</th>
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Nombre</th>
-                                               
+                                                    <th scope="col">Orientacion</th>
+                                                    <th scope="col">Grado</th>
+                                                    <th scope="col">Duracion</th>
+                                                    <th scope="col">Cant.Clases</th>
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col">Facultad</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
                                                   <tr>
-                                                    <td>IS-512</td>
-                                                    <td>Sistemas Operativos II</td>
-                                                   
+                                                    <td>IS512</td>
+                                                    <td>Sistemas Operativos</td>
+                                                    <td>salud</td>
+                                                    <td>Postgrado</td>
+                                                    <td>1 año</td>
+                                                    <td>34</td>
+                                                    <td>No disponible</td>
+                                                    <td>Medicina</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-720</td>
-                                                    <td>Contabilidad</td>
-                                                
+                                                    <td>IS512</td>
+                                                    <td>Sistemas Operativos</td>
+                                                    <td>salud</td>
+                                                    <td>Postgrado</td>
+                                                    <td>1 año</td>
+                                                    <td>34</td>
+                                                    <td>No disponible</td>
+                                                    <td>Medicina</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-411</td>
-                                                    <td>Electronica</td>
-                                             
+                                                    <td>IS512</td>
+                                                    <td>Sistemas Operativos</td>
+                                                    <td>salud</td>
+                                                    <td>Postgrado</td>
+                                                    <td>1 año</td>
+                                                    <td>34</td>
+                                                    <td>No disponible</td>
+                                                    <td>Medicina</td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -609,6 +673,7 @@
             </div>
         </div>
          <!-- Portfolio Modal 7-->
+         <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "CARRERAS"-->
          <div class="portfolio-modal modal fade" id="portfolioModal7" tabindex="-1" aria-labelledby="portfolioModal7" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
@@ -633,26 +698,42 @@
                                             <table class="table table-bordered">
                                                 <thead class="thead-dark">
                                                   <tr>
-                                                    <th scope="col">Codigo</th>
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Nombre</th>
-                                               
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col"># Clases</th>
+                                                    <th scope="col"> Grado  </th>
+                                                    <th scope="col">Duracion</th>
+                                                    <th scope="col">Facultad</th>
                                                   </tr>
                                                 </thead>
                                                 <tbody>
                                                   <tr>
                                                     <td>IS-512</td>
                                                     <td>Sistemas Operativos II</td>
-                                                   
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>Pregrado</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-720</td>
-                                                    <td>Contabilidad</td>
-                                                
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-411</td>
-                                                    <td>Electronica</td>
-                                             
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
+                                                    <td>Sistemas Operativos II</td>
+                                                    <td>IS-512</td>
                                                   </tr>
                                                 </tbody>
                                               </table>
@@ -670,7 +751,8 @@
             </div>
         </div>
          <!-- Portfolio Modal 8-->
-         <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" aria-labelledby="portfolioModal8" aria-hidden="true">
+         <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "LABORATORIOS"-->
+        <div class="portfolio-modal modal fade" id="portfolioModal8" tabindex="-1" aria-labelledby="portfolioModal8" aria-hidden="true">
             <div class="modal-dialog modal-xl">
                 <div class="modal-content">
                     <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -694,30 +776,102 @@
                                             <table class="table table-bordered">
                                                 <thead class="thead-dark">
                                                   <tr>
-                                                    <th scope="col">Codigo</th>
+                                                    <th scope="col">ID</th>
                                                     <th scope="col">Nombre</th>
+                                                    <th scope="col">Descripcion</th>
+                                                    <th scope="col">Clase</th>
                                                
                                                   </tr>
                                                 </thead>
                                                 <tbody>
                                                   <tr>
                                                     <td>IS-512</td>
-                                                    <td>Sistemas Operativos II</td>
-                                                   
+                                                    <td>Fisica General 1</td>
+                                                    <td>pertenece a la clase FS-100</td>
+                                                    <td>FS-100</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-720</td>
-                                                    <td>Contabilidad</td>
-                                                
+                                                    <td>IS-512</td>
+                                                    <td>Fisica General 1</td>
+                                                    <td>pertenece a la clase FS-100</td>
+                                                    <td>FS-100</td>
                                                   </tr>
                                                   <tr>
-                                                    <td>IS-411</td>
-                                                    <td>Electronica</td>
-                                             
+                                                    <td>IS-512</td>
+                                                    <td>Fisica General 1</td>
+                                                    <td>pertenece a la clase FS-100</td>
+                                                    <td>FS-100</td>
                                                   </tr>
                                                 </tbody>
                                               </table>
                                             </div> 
+                                    </p>
+                                    <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
+                                        <i class="fas fa-times fa-fw"></i>
+                                        Cerrar Ventana
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+         <!-- Portfolio Modal 9-->
+        <!--AQUI SE DEBE CONECTAR LA TABLA DE LA BASE "EDIFICIOS"-->
+        <div class="portfolio-modal modal fade" id="portfolioModal9" tabindex="-1" aria-labelledby="portfolioModal9" aria-hidden="true">
+            <div class="modal-dialog modal-xl">
+                <div class="modal-content">
+                    <div class="modal-header border-0"><button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button></div>
+                    <div class="modal-body text-center pb-5">
+                        <div class="container">
+                            <div class="row justify-content-center">
+                                <div class="col-lg-8">
+                                    <!-- Portfolio Modal - Title-->
+                                    <h2 class="portfolio-modal-title text-secondary text-uppercase mb-0">Listado de Edificios</h2>
+                                    <!-- Icon Divider-->
+                                    <div class="divider-custom">
+                                        <div class="divider-custom-line"></div>
+                                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                                        <div class="divider-custom-line"></div>
+                                    </div>
+                                    <!-- Portfolio Modal - Image-->
+                                    <img class="img-fluid rounded mb-5" src="assets/img/portfolio/aula.jpg" alt="..." />
+                                    <!-- Portfolio Modal - Text-->
+                                    <p class="mb-4">
+                                        <div class="table-responsive-lg">
+                                            
+                                            <table class="table table-bordered">
+                                                <thead class="thead-dark">
+                                                  <tr>
+                                                    <th scope="col">ID</th>
+                                                    <th scope="col">Aula</th>
+                                                    <th scope="col">Aula Laboratorio</th>
+                                                    <th scope="col">Estado</th>
+                                                  </tr>
+                                                </thead>
+                                                <tbody>
+                                                  <tr>
+                                                    <td>B2</td>
+                                                    <td>302</td>
+                                                    <td>200</td>
+                                                    <td>Disponible</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>B2</td>
+                                                    <td>302</td>
+                                                    <td>200</td>
+                                                    <td>Disponible</td>
+                                                  </tr>
+                                                  <tr>
+                                                    <td>B2</td>
+                                                    <td>302</td>
+                                                    <td>200</td>
+                                                    <td>Disponible</td>
+                                                  </tr>
+                                                </tbody>
+                                              </table>
+                                        </div> 
                                     </p>
                                     <button class="btn btn-primary" href="#!" data-bs-dismiss="modal">
                                         <i class="fas fa-times fa-fw"></i>

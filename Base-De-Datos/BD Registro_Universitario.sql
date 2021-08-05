@@ -143,10 +143,10 @@ CREATE TABLE docente (
 #Tabla que guarda la informacion de la seccion
 #Tiene relacion con clase o laboratorio
 CREATE TABLE seccion (
-	idSeccion 					NVARCHAR(5),
+	idSeccion 					NVARCHAR(5), --0001
     clase 						NVARCHAR(6),
     laboratorio 				NVARCHAR(6),
-	numSeccion 					INT NOT NULL, 
+	numSeccion 					INT NOT NULL, --2000
     horaSeccion 				NVARCHAR(6) NOT NULL,
     diaSeccion 					NVARCHAR(15) NOT NULL,
     numEstudiantes 				INT NOT NULL,
