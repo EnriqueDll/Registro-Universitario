@@ -21,11 +21,11 @@ public class Facultad {
 	
 	//Relacion con carrera
 	@OneToMany(mappedBy="facultad",fetch=FetchType.EAGER)
-	public List<Carrera> carrera;
+	private List<Carrera> carrera;
 	
 	//Maestria
 	@OneToMany(mappedBy="facultad",fetch=FetchType.EAGER)
-	public List<Maestria> maestria;
+	private List<Maestria> maestria;
 	
 	//Constructor Vacio
 	public Facultad() {

@@ -27,7 +27,7 @@ public class Maestria {
 	@ManyToOne
 	@JoinColumn(name="idFacultad")
 	@JsonBackReference
-	public Facultad  facultad;
+	private Facultad  facultad;
 	
 	//Constructor vacio
 	public Maestria() {

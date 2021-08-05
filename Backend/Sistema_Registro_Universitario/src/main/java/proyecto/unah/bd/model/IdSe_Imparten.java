@@ -32,9 +32,9 @@ public class IdSe_Imparten implements Serializable{
 	
 	@Override
 	public boolean equals(Object obj) {
-		if (obj instanceof IdImparte) {
-			IdImparte tmpid = (IdImparte)obj;
-			if(this.idEdificio == tmpid.getNumDocente()
+		if (obj instanceof IdSe_Imparten) {
+			IdSe_Imparten tmpid = (IdSe_Imparten)obj;
+			if(this.idEdificio == tmpid.getIdEdificio()
 				&& this.idSeccion == tmpid.getIdSeccion()){
 				return true;
 			}else
@@ -60,10 +60,5 @@ public class IdSe_Imparten implements Serializable{
 	}
 	public void setIdSeccion(String idSeccion) {
 		this.idSeccion = idSeccion;
-	}
-	public static long getSerialversionuid() {
-		return serialVersionUID;
-	}
-
-	
+	}	
 }

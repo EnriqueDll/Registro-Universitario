@@ -19,9 +19,13 @@ import proyecto.unah.bd.model.Docente;
 import proyecto.unah.bd.model.Edificio;
 import proyecto.unah.bd.model.Estudiante;
 import proyecto.unah.bd.model.Facultad;
+import proyecto.unah.bd.model.IdImparte;
+import proyecto.unah.bd.model.IdSe_Imparten;
+import proyecto.unah.bd.model.Imparte;
 import proyecto.unah.bd.model.Laboratorio;
 import proyecto.unah.bd.model.Maestria;
 import proyecto.unah.bd.model.Matricula;
+import proyecto.unah.bd.model.Se_Imparten;
 import proyecto.unah.bd.model.Seccion;
 import proyecto.unah.bd.service.ServiceCarrera;
 import proyecto.unah.bd.service.ServiceClase;
@@ -30,9 +34,11 @@ import proyecto.unah.bd.service.ServiceDocente;
 import proyecto.unah.bd.service.ServiceEdificio;
 import proyecto.unah.bd.service.ServiceEstudiante;
 import proyecto.unah.bd.service.ServiceFacultad;
+import proyecto.unah.bd.service.ServiceImparte;
 import proyecto.unah.bd.service.ServiceLaboratorio;
 import proyecto.unah.bd.service.ServiceMaestria;
 import proyecto.unah.bd.service.ServiceMatricula;
+import proyecto.unah.bd.service.ServiceSe_Imparten;
 import proyecto.unah.bd.service.ServiceSeccion;
 
 
@@ -79,6 +85,12 @@ public class Controlador {
 	
 	@Autowired
 	ServiceDepartamento servicedepartamento;
+	
+	@Autowired
+	ServiceImparte serviceimparte;
+	
+	@Autowired
+	ServiceSe_Imparten serviceSe_imparten;
 	
 	
 	//-------------------------------Pagina Inicial-------------------------------
@@ -408,5 +420,68 @@ public class Controlador {
 		public List<Docente> listadoDocente() {
 			return this.servicedocente.obtenerTodosDocentes();
 		}
+		
+		//====================================================================
+		// Departamento
+		//====================================================================
+		
+		@RequestMapping (value = "/departamento/creaDepartamento", method = RequestMethod.POST)
+		public Departamento crearDepartamento(@RequestParam(name = "Id") String idDepto,
+								
+								@RequestParam (name = "NombreDepto") String nombreDepto,
+								@RequestParam (name = "Carrera") String carrera) {
+					
+			//Buscar la Carrera
+			Optional <Carrera> carrera4 = this.servicecarrera.buscarCarrera(carrera);
+			
+			Departamento departamento4 = new Departamento (idDepto, nombreDepto, carrera4.get());
+			this.servicedepartamento.crearDepartamento(departamento4);
+			
+			//return "RegistroDepartamento";
+			return departamento4;
+		}
+		
+		@RequestMapping (value = "/departamento/listaDepartamento", method = RequestMethod.POST)
+		public List<Departamento> listadoDepartamento(){
+			return this.servicedepartamento.obtenerDepartamento();
+		}
+		
+		@RequestMapping(value ="/departamento/buscarDepartamento",method=RequestMethod.GET)
+		public Optional<Departamento> buscarDepartamento(@RequestParam(name = "id") String idDepto) {
+			return this.servicedepartamento.buscarDepartamento(idDepto);
+		}
+		
+		
+		//====================================================================
+		// Se Imparte
+		//====================================================================
+		
+		@RequestMapping(value = "/imparte/buscarImparte", method = RequestMethod.GET)
+		public Optional<Imparte> buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
+				                     @RequestParam(name = "idSeccion") String idSeccion) {
+		
+		IdImparte idImparte = new IdImparte (numeroDocente, idSeccion);	
+		return this.serviceimparte.buscarImparte(idImparte);
+		
+		}
+		@RequestMapping(value = "/imparte/listarImparte", method = RequestMethod.GET)
+		public List<Imparte> listarImparte(){
+			return this.serviceimparte.obtenerTodasImparte();
+		}
+		
+		
+		@RequestMapping(value = "/se_imparten/buscar_se_imparten", method = RequestMethod.GET)
+		public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") String idEdificio,
+				                     @RequestParam(name = "idSeccion") String idSeccion) {
+				
+		IdSe_Imparten idse_Imparte = new IdSe_Imparten (idEdificio, idSeccion);	
+		return this.serviceSe_imparten.buscarSe_Imparte(idse_Imparte);
+		
+		}
+		@RequestMapping(value = "/se_imparten/listar_se_imparten", method = RequestMethod.GET)
+		public List<Se_Imparten> listarSe_Imparte(){
+			return this.serviceSe_imparten.obtenerTodasSe_Imparte();
+		}
+		
 }
 		

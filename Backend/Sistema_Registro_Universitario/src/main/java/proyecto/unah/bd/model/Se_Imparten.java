@@ -7,6 +7,7 @@ import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -27,18 +28,20 @@ public class Se_Imparten implements Serializable{
 	
 	//Atributos
 	@Id
-	private int idEdificio;
+	private String idEdificio;
 	@Id
-	private int idSeccion;
+	private String idSeccion;
+	@Id
+	private String numCuentaDocente;
 	
 	//Relacion con Edificio
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "idEdificio", referencedColumnName = "idEdificio", insertable = false, updatable = false)
 	@JsonBackReference
 	private Edificio edificio;
 	
 	//Relacion con Seccion
-	@ManyToMany
+	@ManyToOne
 	@JoinColumn(name = "idSeccion", referencedColumnName = "idSeccion", 
 	insertable = false, updatable = false)
 	@JsonBackReference
@@ -50,7 +53,7 @@ public class Se_Imparten implements Serializable{
 	}
 	
 	//Constructor
-	public Se_Imparten(int idEdificio, int idSeccion, Edificio edificio, Seccion seccion) {
+	public Se_Imparten(String idEdificio, String idSeccion, Edificio edificio, Seccion seccion) {
 		super();
 		this.idEdificio = idEdificio;
 		this.idSeccion = idSeccion;
@@ -59,19 +62,19 @@ public class Se_Imparten implements Serializable{
 	}
 
 	//Gets & Sets
-	public int getIdEdificio() {
+	public String getIdEdificio() {
 		return idEdificio;
 	}
 
-	public void setIdEdificio(int idEdificio) {
+	public void setIdEdificio(String idEdificio) {
 		this.idEdificio = idEdificio;
 	}
 
-	public int getIdSeccion() {
+	public String getIdSeccion() {
 		return idSeccion;
 	}
 
-	public void setIdSeccion(int idSeccion) {
+	public void setIdSeccion(String idSeccion) {
 		this.idSeccion = idSeccion;
 	}
 }

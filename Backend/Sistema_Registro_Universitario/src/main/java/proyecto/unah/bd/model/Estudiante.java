@@ -1,6 +1,7 @@
 package proyecto.unah.bd.model;
 
 import java.time.LocalDate;
+import java.util.List;
 //import java.util.List;
 import java.util.Optional;
 
@@ -33,7 +34,7 @@ public class Estudiante {
 	
 	//Relacion con Matricula
 	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
-	public Matricula matricula;
+	public List<Matricula> matricula;
 	
 	//O podria ser Private List<Matricula> matricula;
 	
