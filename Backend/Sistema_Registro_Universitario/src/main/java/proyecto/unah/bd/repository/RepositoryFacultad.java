@@ -8,6 +8,6 @@ import proyecto.unah.bd.model.Facultad;
 
 public interface RepositoryFacultad extends JpaRepository <Facultad, String>{
 	
-	public Optional <Facultad> findById(String Id);
+	public Optional<Facultad> findById(String Id);
 
 }

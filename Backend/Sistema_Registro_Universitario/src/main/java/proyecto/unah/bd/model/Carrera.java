@@ -1,5 +1,7 @@
 package proyecto.unah.bd.model;
 
+import java.util.List;
+
 //import java.util.List;
 
 import javax.persistence.Entity;
@@ -36,21 +38,9 @@ public class Carrera {
 	@OneToMany(mappedBy = "carrera", fetch = FetchType.EAGER)
 	public Estudiante estudiante;
 	
-	//O es tipo lista;
-	
-	/*
-	 * la relacion es asi 
-	//Relacion con Departamento
-	@OneToOne(mappedBy = "carrera", fetch = FetchType.EAGER)
-	public Departamento departamento;
-	*/
-	
-	/*
-	 * o la relacion es asi
 	//Relacion con carrera
-		@OneToMany(mappedBy="carrera",fetch=FetchType.EAGER)
-		public List<Departamento> departamento;
-	*/
+	@OneToMany(mappedBy="carrera",fetch=FetchType.EAGER)
+	public List<Departamento> departamento;
 	
 	//Constructor vacio
 	public Carrera() {

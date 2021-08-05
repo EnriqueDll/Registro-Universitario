@@ -1,5 +1,7 @@
 package proyecto.unah.bd.model;
 
+import java.time.LocalDate;
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -7,6 +9,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+
+//simport jdk.vm.ci.meta.Local;
 
 @Entity
 @Table(name = "docente")
@@ -18,27 +22,25 @@ public class Docente {
 	private String numeroCuentaDocente;
 	private String  dni;
 	private String nombre;
-	private String fechaNac;
+	private LocalDate fechaNac; //pasar a date
 	private String sexo;
 	private String telefono;
 	private String ciudadOrigen;
 	private String Correo_Electronico;
 	private String contrasenia;
 	
-	/*
 	//Relacion con Departamento
 	@ManyToOne
 	@JoinColumn(name = "idDepto")
 	@JsonBackReference
 	private Departamento departamento;
 	
-	*/
 	//Constructor vacio
 	public Docente() {}
 
 	//Constructor 
-	public Docente(String numeroCuentaDocente, String dni, String nombre, String fechaNac, String sexo,
-			String telefono, String ciudadOrigen, String correo_Electronico, String contrasenia) {
+	public Docente(String numeroCuentaDocente, String dni, String nombre, LocalDate fechaNac, String sexo,
+			String telefono, String ciudadOrigen, String correo_Electronico, String contrasenia, Departamento departamento) {
 		super();
 		this.numeroCuentaDocente = numeroCuentaDocente;
 		this.dni = dni;
@@ -49,7 +51,7 @@ public class Docente {
 		this.ciudadOrigen = ciudadOrigen;
 		this.Correo_Electronico = correo_Electronico;
 		this.contrasenia = contrasenia;
-		//this.departamento = departamento;
+		this.departamento = departamento;
 	}
 
 	//Gets & Sets
@@ -77,11 +79,11 @@ public class Docente {
 		this.nombre = nombre;
 	}
 
-	public String getFechaNac() {
+	public LocalDate getFechaNac() {
 		return fechaNac;
 	}
 
-	public void setFechaNac(String fechaNac) {
+	public void setFechaNac(LocalDate fechaNac) {
 		this.fechaNac = fechaNac;
 	}
 

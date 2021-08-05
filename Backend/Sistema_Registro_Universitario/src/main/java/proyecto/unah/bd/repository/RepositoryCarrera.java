@@ -8,6 +8,6 @@ import proyecto.unah.bd.model.Carrera;
 
 public interface RepositoryCarrera extends JpaRepository <Carrera, String>{
 	
-	public Optional<Carrera> findById(String Id);
+	public Optional<Carrera> findById(Carrera carrera);
 
 }

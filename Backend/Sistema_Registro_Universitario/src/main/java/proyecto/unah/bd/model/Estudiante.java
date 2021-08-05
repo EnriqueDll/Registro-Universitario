@@ -2,6 +2,7 @@ package proyecto.unah.bd.model;
 
 import java.time.LocalDate;
 //import java.util.List;
+import java.util.Optional;
 
 import javax.persistence.Entity;
 import javax.persistence.FetchType;

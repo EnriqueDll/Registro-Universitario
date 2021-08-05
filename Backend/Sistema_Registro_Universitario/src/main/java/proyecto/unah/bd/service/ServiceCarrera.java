@@ -24,8 +24,8 @@ public class ServiceCarrera {
 		return this.repositoryCarrera.findAll();
 	}
 	
-	public Optional<Carrera> buscarCarrera(String id) {
-		return this.repositoryCarrera.findById(id);
+	public Optional<Carrera> buscarCarrera(String idCarrera) {
+		return this.repositoryCarrera.findById(idCarrera);
 	}
 	
 

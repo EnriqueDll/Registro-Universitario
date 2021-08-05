@@ -47,12 +47,10 @@ public class Clase {
 	public Laboratorio laboratorio;
 	
 	//Relacion con Departamento
-	/*
 	@ManyToOne
 	@JoinColumn(name = "idDepto")
 	@JsonBackReference
 	public Departamento departamento;
-	*/
 	
 	//Constructor Vacio
 	public Clase() {
@@ -61,13 +59,13 @@ public class Clase {
 	
 	
 	//Constructor
-	public Clase(String idClase, String nombreClase, String descripcionClase, Matricula matricula) { //Falta Departamento departamento
+	public Clase(String idClase, String nombreClase, String descripcionClase, Matricula matricula, Departamento departamento) { //Falta Departamento departamento
 		super();
 		this.idClase = idClase;
 		this.nombreClase = nombreClase;
 		this.descripcionClase = descripcionClase;
 		this.matricula = matricula;
-		//this.departamento = departamento;
+		this.departamento = departamento;
 	}
 
 
