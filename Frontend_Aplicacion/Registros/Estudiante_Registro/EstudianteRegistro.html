@@ -14,6 +14,29 @@
         <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic,700italic" rel="stylesheet" type="text/css" />
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
+
+        <script>
+            function soloNumeros(e) { //ESTA ES UNA FUNCION PARA QUE SOLO PERMITA NUMEROS EN EL # DE IDENTIDAD
+                key=e.keyCode || e.which ; 
+                teclado=String.fromCharCode(key)  ;
+                numero= "0123456789"
+                especiales="8-37-48-46" ;
+                tecla_especial = false ; 
+
+                for(var i in especiales) {
+                    if(key==especiales[i]) {
+                        tecla_especial = true ;
+
+                    }
+
+                }
+                if(numero.indexOf(teclado)==-1 && !tecla_especial) {
+                    return false ; 
+                }
+
+
+            }
+        </script>
     </head>
     <body>
         <!-- Navigation-->
@@ -52,14 +75,14 @@
 
                                     <div class="col">
                                         <label for="numeroIdentidad">Numero de Identidad</label>
-                                        <input class="form-control form-control-lg" id="numeroIdentidad" placeholder="0801-2001-05603" />
-                                        <div class="invalid-feedback text-white">Email Address is required.</div>
-                                        <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
+                                        <input class="form-control form-control-lg" id="numeroIdentidad" placeholder="0801200105603" onkeypress=" return soloNumeros(event)" >
+                                        <div class="invalid-feedback text-white" data-sb-feedback="emailAddress:required">Email Address is required.</div>
+                                        <div class="invalid-feedback text-white">El numero de ID ingresado no es valido</div>
                                     </div>
 
                                     <div class="col">
                                         <label for="numeroTelefono">Numero de Telefono</label>
-                                        <input class="form-control form-control-lg" id="numeroTelefono" placeholder="99909990" />
+                                        <input class="form-control form-control-lg" id="numeroTelefono" placeholder="99909990" onkeypress=" return soloNumeros(event)" />
                                         <div class="invalid-feedback text-white">Email Address is required.</div>
                                         <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                         
@@ -81,7 +104,7 @@
                                             
                                         <div class="col">
                                             <label for="correoElectronico">Confirme Correo Electronico</label>
-                                            <input class="form-control form-control-lg" id="correoElectronico" placeholder="alexgalo246@gmail.com" />
+                                            <input class="form-control form-control-lg" id="correoElectronico" placeholder="alexgalo246@gmail.com"  />
                                             <div class="invalid-feedback text-white">Email Address is required.</div>
                                             <div class="invalid-feedback text-white">Email Address Email is not valid.</div>
                                             
