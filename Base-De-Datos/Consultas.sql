@@ -11,3 +11,4 @@ SELECT* FROM DOCENTE;
 SELECT* FROM laboratorio;
 
 SELECT E.nombreEstudiante,E.numCuentaEstu, C.nombreCarrera FROM ESTUDIANTE E INNER JOIN CARRERA C ON E.carrera=C.idCarrera ;
+SELECT D.nombreDocente, D1.nombreDepto FROM DOCENTE D INNER JOIN DEPARTAMENTO D1 ON D.depto=D1.idDepto ORDER BY D.nombreDocente ASC;

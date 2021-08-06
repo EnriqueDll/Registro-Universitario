@@ -38,23 +38,20 @@ INSERT INTO MAESTRIA VALUES('016','Maestria en Salud Publica','Salud',default,'5
 INSERT INTO DEPARTAMENTO VALUES('2120','Departamento de Ing.Sistemas','400'); #ing sistemas
 INSERT INTO DEPARTAMENTO VALUES('2121','Departamento de Ing.Civil','600'); # ing civil
 INSERT INTO DEPARTAMENTO VALUES('2122','Departamento de Ing.Mecanica','500'); # ing mecanica
-
 INSERT INTO DEPARTAMENTO VALUES('2123','Departamento de Matematicas','900');#matematicas
 INSERT INTO DEPARTAMENTO VALUES('2124','Departamento de Fisica','010'); #fisica
-
 INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Contaduria Publica','700'); #carreras de contaduria
 INSERT INTO DEPARTAMENTO VALUES('2126','Departamento de Admin de Empresas','800'); #carreras de admin empresas
-
 INSERT INTO DEPARTAMENTO VALUES('2127','Departamento de Medicina General','100'); #carreras de medicina
 INSERT INTO DEPARTAMENTO VALUES('2128','Departamento de Terapia','200'); # terapia
 INSERT INTO DEPARTAMENTO VALUES('2129','Departamento de Microbiologia','300'); #microbiologia
-
 INSERT INTO DEPARTAMENTO VALUES('2130','Departamento de Derecho','011');#derecho
 
 ## ---------------------- A PARTIR DE AQUI HAY QUE HACER MAS INSERT------------------------
 #fecha tiene el formato YYYY-MM-DD
 # insetar dni Y TELEFONO sin guiones
 # numero de cuenta es un dni invertido
+# para cada estudiante que inserten deben insertar una matricula para ese estudiante 
 
 ## ---------------------------- insert estudiantes -----------------------------------------------
 INSERT INTO ESTUDIANTE VALUES('9573199911080','0801199913759','Andrea Michelle Calix Gonzalez','1999-05-25','F','33529093','Tegucigalpa','400','calix25@','232425');
@@ -139,9 +136,21 @@ INSERT INTO MATRICULA VALUES('032',now(),'3','2019','0005010021080') ;
 
 ##----------------------- INSERT CLASES -------------------------------------------
 # cuando hagan insert el nombre de la clase no debe ser tan largo
-
-#Inserts de Galo 
 # hay que agregarle descripcion a la clase
+# ir cambiando los id de matricula
+
+#2120 sistemas////COMPLETO
+#2121 civil ////COMPLETO
+#2122 mecanica
+#2123 matematicas
+#2124 fisica
+#2125 contaduria
+#2126 admin empresas
+#2127 medicina
+#2128 terapia
+#2129 microbiologia
+#2130 derecho
+
 #sistemas
 INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos I','Introduccion a los Sistemas Operativos','01','2120');
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','Inicios de Contabilidad','01','2120');
@@ -151,48 +160,49 @@ INSERT INTO CLASE VALUES('MM-110','Matematica I', 'Introduccion al algebra','01'
 INSERT INTO CLASE VALUES('SC-101','Sociologia', 'Conocimiento General','01','2120') ;
 INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', 'Introduccion a gemotria plana','01','2120') ;
 INSERT INTO CLASE VALUES('IS-501','Base de Datos I', 'Introduccion a bases de datos','01','2120') ;
-INSERT INTO CLASE VALUES('IS-511','Redes de Datos', '','01','2120') ;
+INSERT INTO CLASE VALUES('IS-511','Redes de Datos', 'Conceptos Generales sobre Redes','01','2120') ;
 INSERT INTO CLASE VALUES('HH-101','Historia de Honduras', 'Conocimiento General','01','2120') ;
 INSERT INTO CLASE VALUES('IS-410','Programacion_Orientada_Objetos', 'Fundamentos de POO','01','2120') ;
 INSERT INTO CLASE VALUES('IS-412','Sistemas Operativos II', 'Seguimiento de SO 1','01','2120') ;
 INSERT INTO CLASE VALUES('IS-601','Base de Datos II', 'Seguimiento de bases de datos 1','01','2120') ;
-INSERT INTO CLASE VALUES('IS-603','Arquitectura de Computadoras', '','01','2120') ;
+INSERT INTO CLASE VALUES('IS-603','Arquitectura de Computadoras', 'Introduccion General','01','2120') ;
 INSERT INTO CLASE VALUES('IS-513','Lenguajes de Programación', 'Introduccion a diversos lenguajes de programacion','01','2120') ;
-INSERT INTO CLASE VALUES('IS-611','Redes de Datos II', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-711','Diseño Digital', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120')  ; 
-
-#clases candy
+INSERT INTO CLASE VALUES('IS-611','Redes de Datos II', 'Continuacion de Redes I','01','2120') ;
+INSERT INTO CLASE VALUES('IS-711','Diseño Digital', 'Conceptos principales de diseño','01','2120') ;
+INSERT INTO CLASE VALUES('IS-602','Sistema de Información', 'Introduccion general','01','2120')  ; 
 #civil
-INSERT INTO CLASE VALUES('IC-100','Introduccion a la Ing.Civil','','014','2121');
-INSERT INTO CLASE VALUES('IC-302','Probabilidad Y Estadistica','','015','2121');
-INSERT INTO CLASE VALUES('IC-361','Estadistica','','016','2121');
-INSERT INTO CLASE VALUES('IC-200','Programacion I','','017','2121');
-INSERT INTO CLASE VALUES('IC-350','Topografia I','','018','2121');
-INSERT INTO CLASE VALUES('IC-303','Analisis Numerico','','019','2121');
-INSERT INTO CLASE VALUES('IC-463','Resistencia de materiales I','','020','2121');
-INSERT INTO CLASE VALUES('IC-362','Dinamica','','021','2121');
-INSERT INTO CLASE VALUES('IC-471','Mecanica de Fluidos','','022','2121');
-INSERT INTO CLASE VALUES('IC-451','Fluidos II','','023','2121');
-INSERT INTO CLASE VALUES('IC-581','geologia','','024','2120');
-INSERT INTO CLASE VALUES('IC-564','Resistencia Materiales II','','025','2121');
-INSERT INTO CLASE VALUES('IC-573','Hidrologia I','','026','2121');
-INSERT INTO CLASE VALUES('IC-572','Hidraulica Aplicada','','027','2121');
-INSERT INTO CLASE VALUES('IC-691','Administracion General','','028','2121');
+INSERT INTO CLASE VALUES('IC-100','Introduccion a la Ing.Civil','Introduccion general','014','2121');
+INSERT INTO CLASE VALUES('IC-302','Probabilidad Y Estadistica','Conceptos de probabilidades','015','2121');
+INSERT INTO CLASE VALUES('IC-361','Estadistica','Orientacion a estadistica','016','2121');
+INSERT INTO CLASE VALUES('IC-200','Programacion I','Conceptos generales de programacion','017','2121');
+INSERT INTO CLASE VALUES('IC-350','Topografia I','Introduccion general','018','2121');
+INSERT INTO CLASE VALUES('IC-303','Analisis Numerico','Area cientifico-matematica','019','2121');
+INSERT INTO CLASE VALUES('IC-463','Resistencia de materiales I','Analisis de materiales','020','2121');
+INSERT INTO CLASE VALUES('IC-362','Dinamica','Area cientifica','021','2121');
+INSERT INTO CLASE VALUES('IC-471','Mecanica de Fluidos','Area Cientifica','022','2121');
+INSERT INTO CLASE VALUES('IC-451','Fluidos II','Continuacion de IC-471','023','2121');
+INSERT INTO CLASE VALUES('IC-581','geologia','Introduccion general','024','2120');
+INSERT INTO CLASE VALUES('IC-564','Resistencia Materiales II','Continuacion de Resistencias 1','025','2121');
+INSERT INTO CLASE VALUES('IC-573','Hidrologia I','Introduccion','026','2121');
+INSERT INTO CLASE VALUES('IC-572','Hidraulica Aplicada','Introduccion','027','2121');
+INSERT INTO CLASE VALUES('IC-691','Administracion General','Conocimiento en area economica','028','2121');
+
+#insert medicina
+INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','028','2127');
 
 ## --------------------------------------- insert docentes ------------------------------------
-# varios docente deben estar en un departamento 
-#2120 sistemas
-#2121 civil
-#2122 mecanica
+# 10 DOCENTES POR DEPARTAMENTO
+#2120 sistemas////COMPLETO
+#2121 civil 
+#2122 mecanica ////COMPLETO
 #2123 matematicas
 #2124 fisica
 #2125 contaduria
 #2126 admin empresas
 #2127 medicina
 #2128 terapia
-# 2129 microbiologia
-# 2130 derecho
+#2129 microbiologia
+#2130 derecho
 
 # Docentes que pertenecen a ing sistemas
 INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez Mondragon','1978-09-10','F','96536387','Tegucigalpa','2120','rosa@','1978');
@@ -200,13 +210,35 @@ INSERT INTO DOCENTE VALUES('7643217911080','0801197123467','Anibal Javier Izagui
 INSERT INTO DOCENTE VALUES('9573178917081','1807198713759','Yosselin Avila Rosales','1987-01-26','F','98763212','Olancho','2120','yosselin@rosales','rosales');
 INSERT INTO DOCENTE VALUES('4568799911080','0801199978654','Karla Isabel Salinas','1999-10-05','F','88763212','Copan','2120','karla@','isabel');
 INSERT INTO DOCENTE VALUES('7654129917081','1807199214567','Lesbia Brizeth Mendoza Juarez','1992-10-05','F','22260166','Yoro','2120','lesbia@','lesbia');
-#faltan 5
+INSERT INTO DOCENTE VALUES('3450087911080','0801197800543','Enrique Jose Gomez','1978-08-21','M','San Pedro Sula','22230765','2120','enrique@','1224');
+INSERT INTO DOCENTE VALUES('5431239911080','0801199321345','Darwin Saul Pineda','1993-09-23','M','Tegucigalpa','2234873','2120','saul@','saul');
+INSERT INTO DOCENTE VALUES('8790238917081','1807198320978','Laura Mariel Lopez Aguirre','1983-12-25','F','Tegucigalpa','22260165','2120','laura@','laura');
+INSERT INTO DOCENTE VALUES('7659067911080','0801197609567','Hermes Daniel Castro','1976-04-21','M','Tegucigalpa','98975567','2120','daniel@','dani');
+INSERT INTO DOCENTE VALUES('3478967911080','0801197698743','Erika Mariela Quezada','1976-05-30','F','San Pedro Sula','98765543','2120','erika@','erika');
 
 # Docentes que pertencen a ing civil
 INSERT INTO DOCENTE VALUES('3204098911080','0801198904023','Josue Manuel Canales Herrera','1989-06-10','M','98970436','Olancho','2121','boateng@','Zapato123')  ; 
 
+#Docentes de ing mecanica
+INSERT INTO DOCENTE VALUES('9573119911080','0801199113759','Jessica Carolina Carranza','1991-09-28','F','88765543','Tegucigalpa','2122','jessica@','2324');
+INSERT INTO DOCENTE VALUES('9573188911080','0801198813759','Fabricio Alejandro Galindo Gonzalez','1988-11-28','M','85765543','Tegucigalpa','2122','galindo@','4524');
+INSERT INTO DOCENTE VALUES('5134207911080','0801197024315','Patricia Isabel Corrales','1970-02-23','F','96725343','San Pedro Sula','2122','pati@','pati23');
+INSERT INTO DOCENTE VALUES('7894086911080','0801196804987','Fredy Gerardo Espinoza','1968-09-21','M','87654321','Ceiba','2122','fedy@','f0921');
+INSERT INTO DOCENTE VALUES('5694086917081','1807196804965','Dina Gabriela Rodriguez Calix','1968-09-21','F','98654321','Tela','2122','gaby@','gaby21');
+INSERT INTO DOCENTE VALUES('5697856917081','1807196587965','Gerardo David Varela Barrientos','1965-05-07','M','87224321','Tegucigalpa','2122','davidgerardo@','david07');
+INSERT INTO DOCENTE VALUES('8934207911080','0801197024398','Gustavo Andres Baquedano','1970-01-07','M','87424522','Tela','2122','tavoandres@','andres');
+INSERT INTO DOCENTE VALUES('8934239911080','0801199324398','Guillermo Antonio Salgado','1993-08-07','M','99124521','Ceiba','2122','guille@','antonio08');
+INSERT INTO DOCENTE VALUES('4313239911080','0801199323134','Lucia Elizabeth Cruz','1993-06-20','F','22239876','Trujillo','2122','luci@','junio21');
+INSERT INTO DOCENTE VALUES('9323209911080','0801199023239','Maria Jose Espinoza Varela','1990-12-20','F','96542133','Tegucigalpa','2122','majo@','mercurio21');
+
+
 #insert laboratorios
-INSERT INTO LABORATORIO VALUES('6000','NO APLICA','','IC-691');
+# no necesariamente todas las clases deben tener laboratorio
+
+#lab de ing civil
+INSERT INTO LABORATORIO VALUES('6000','Topografia 1','introduccion a topografia','IC-350');
+INSERT INTO LABORATORIO VALUES('6001','Hidrologia 1','Conocimiento general de hidrologia','IC-573');
+INSERT INTO LABORATORIO VALUES('6002','Hidraulica Aplicada','Conceptos generales de hidraulica','IC-572');
 
 
 
