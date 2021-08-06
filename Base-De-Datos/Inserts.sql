@@ -134,7 +134,8 @@ INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos','','01','2120');
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','','01','2120');
 INSERT INTO CLASE VALUES('IS-411','Electronica','','01','2120');
 INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','','01','2120');
-#Inserts de Galo
+
+#Inserts de Galo 
 INSERT INTO CLASE VALUES('MM-110','Matematica I', '','01','2120') ;
 INSERT INTO CLASE VALUES('SC-101','Sociologia', '','01','2120') ;
 INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', '','01','2120') ;
@@ -148,7 +149,8 @@ INSERT INTO CLASE VALUES('IS-603','Arquitectura de Computadoras', '','01','2120'
 INSERT INTO CLASE VALUES('IS-513','Lenguajes de Programación', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-611','Redes de Datos II', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-711','Diseño Digital', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120') ;
+INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120')  ; 
+;
 #clases candy
 INSERT INTO CLASE VALUES('IC-100','Introduccion a la Ing.Civil','','014','2121');
 INSERT INTO CLASE VALUES('IC-302','Probabilidad Y Estadistica','','015','2121');
