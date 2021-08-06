@@ -35,12 +35,21 @@ INSERT INTO MAESTRIA VALUES('015','Especialidad en Cirugia General','Salud',defa
 INSERT INTO MAESTRIA VALUES('016','Maestria en Salud Publica','Salud',default,'5 años','68','La Maestría en Salud Pública ofrece una preparación integral con herramientas y competencias que permitan a los profesionales enfrentar los problemas de salud pública','001');
 
 ## -----------------------  insert departamento  --------------------------
-INSERT INTO DEPARTAMENTO VALUES('2120','Departamento de Ing.Sistemas','400');
-INSERT INTO DEPARTAMENTO VALUES('2121','Departamento de Ing.Civil','600');
-INSERT INTO DEPARTAMENTO VALUES('2122','Departamento de Ing.Mecanica','500');
-INSERT INTO DEPARTAMENTO VALUES('2123','Departamento de Ciencias Economicas','300');
-INSERT INTO DEPARTAMENTO VALUES('2124','Departamento de Medicina General','100');
-INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Matematicas','900');
+INSERT INTO DEPARTAMENTO VALUES('2120','Departamento de Ing.Sistemas','400'); #ing sistemas
+INSERT INTO DEPARTAMENTO VALUES('2121','Departamento de Ing.Civil','600'); # ing civil
+INSERT INTO DEPARTAMENTO VALUES('2122','Departamento de Ing.Mecanica','500'); # ing mecanica
+
+INSERT INTO DEPARTAMENTO VALUES('2123','Departamento de Matematicas','900');#matematicas
+INSERT INTO DEPARTAMENTO VALUES('2124','Departamento de Fisica','010'); #fisica
+
+INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Contaduria Publica','700'); #carreras de contaduria
+INSERT INTO DEPARTAMENTO VALUES('2126','Departamento de Admin de Empresas','800'); #carreras de admin empresas
+
+INSERT INTO DEPARTAMENTO VALUES('2127','Departamento de Medicina General','100'); #carreras de medicina
+INSERT INTO DEPARTAMENTO VALUES('2128','Departamento de Terapia','200'); # terapia
+INSERT INTO DEPARTAMENTO VALUES('2129','Departamento de Microbiologia','300'); #microbiologia
+
+INSERT INTO DEPARTAMENTO VALUES('2130','Departamento de Derecho','011');#derecho
 
 ## ---------------------- A PARTIR DE AQUI HAY QUE HACER MAS INSERT------------------------
 #fecha tiene el formato YYYY-MM-DD
@@ -48,10 +57,10 @@ INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Matematicas','900');
 # numero de cuenta es un dni invertido
 
 ## ---------------------------- insert estudiantes -----------------------------------------------
-INSERT INTO ESTUDIANTE VALUES('9573199911080','0801199913759','Andrea Michelle Calix Gonzalez','1999-05-25','F','3352-9093','Tegucigalpa','400','calix25@','232425');
-INSERT INTO ESTUDIANTE VALUES('9571200021080','0801200021759','Eskarleth Lizeth Maradiaga Corrales','2000-10-09','F','9852-9093','Tegucigalpa','010','maradiagaeskar25@','eskar07');
-INSERT INTO ESTUDIANTE VALUES('5850000027081','1807200000585','Thiago Isai Merlo','2000-12-06','M','9852-9883','Yoro','400','thiago6@','thiago');
-INSERT INTO ESTUDIANTE VALUES('5863289911080','0801199823685','Aaron Isaac Raudales Valle','1998-11-14','M','3452-9883','San Pedro Sula','600','aaronraduales@','raudales13');
+INSERT INTO ESTUDIANTE VALUES('9573199911080','0801199913759','Andrea Michelle Calix Gonzalez','1999-05-25','F','33529093','Tegucigalpa','400','calix25@','232425');
+INSERT INTO ESTUDIANTE VALUES('9571200021080','0801200021759','Eskarleth Lizeth Maradiaga Corrales','2000-10-09','F','98529093','Tegucigalpa','010','maradiagaeskar25@','eskar07');
+INSERT INTO ESTUDIANTE VALUES('5850000027081','1807200000585','Thiago Isai Merlo','2000-12-06','M','98529883','Yoro','400','thiago6@','thiago');
+INSERT INTO ESTUDIANTE VALUES('5863289911080','0801199823685','Aaron Isaac Raudales Valle','1998-11-14','M','34529883','San Pedro Sula','600','aaronraduales@','raudales13');
 INSERT INTO ESTUDIANTE VALUES('5863510021080','0801200153685','Jesua Raudales Miralda','2001-03-22','M','9352-9883','Tegucigalpa','500','jesua_raduales@','abril10');
 ##Inserts de Galo
 INSERT INTO ESTUDIANTE VALUES('3065010021080','0801200105603','Alex Daniel Galo Soto','2001-03-03','M','98508147','Tegucigalpa','300','alexgalo@','griffith124') ; 
@@ -68,21 +77,21 @@ INSERT INTO ESTUDIANTE VALUES('5043076911060','0601196703405','Samuel Alexander 
 INSERT INTO ESTUDIANTE VALUES('0005010021080','0801200105000','Lionel Andres Messi','2001-05-26','M','96435134','Tegucigalpa','300','liomessi@','246messicr7') ; 
 
 #insert candy
-INSERT INTO ESTUDIANTE VALUES('6573139913080','0803199313756','Cristian Joel Avila Flores','1993-08-05','M','3352-9093','Tegucigalpa','600','avila08@','547849');
-INSERT INTO ESTUDIANTE VALUES('7571289911080','0801199821757','Kathia Esperanza Espinoza Torres','1998-04-28','F','9832-9023','San Pedro Sula','600','esperanza28@','espi28');
-INSERT INTO ESTUDIANTE VALUES('4653200021080','0801200023564','Sulma Abigail Espinoza Canaca','2000-12-24','F','9858-2130','Copan','600','sulmaacanaca23@','ojitos23');
-INSERT INTO ESTUDIANTE VALUES('1874489913080','0803199844781','Allan Eduardo Alvarez Suarez','1998-11-24','M','9654-4122','San Pedro Sula','600','aealvarez14@','suarez15');
-INSERT INTO ESTUDIANTE VALUES('7653210021080','0801200123567','Dailin Alexandra Ramirez Espinoza','1998-03-01','F','9245-4788','Tegucigalpa','600','alexandra_ramirez@','zoe25');
-INSERT INTO ESTUDIANTE VALUES('3273100023080','0803200013723','Edilson Genaro Figueroa Ramirez','2000-08-04','M','3356-4596','Colon','600','figueroaedilson19@','124573');
-INSERT INTO ESTUDIANTE VALUES('7531329913080','0803199231357','Mailin Maely Casco Aguilar','1992-04-30','F','9833-2546','Cortes','600','chelicasco04@','casco04');
-INSERT INTO ESTUDIANTE VALUES('4211269911080','0801199621124','Mabis Patricia Martinez Luque','1996-11-03','F','9858-4681','Copan','600','patimartinez03@','pati03');
-INSERT INTO ESTUDIANTE VALUES('1452420021080','0801200242541','Carlos Isai Gonzales Martinez','2002-08-26','M','9654-1236','San Pedro Sula','600','cahygonzales08@','carlitos08');
-INSERT INTO ESTUDIANTE VALUES('7875249911080','0801199425787','Karen Gissela Gonzales Avila','1994-03-14','F','3369-4589','Tegucigalpa','600','gisselaavila03@','gatita03');
-INSERT INTO ESTUDIANTE VALUES('745323991080','080199323547','Eli Manfredi Suarez Ortega','1993-08-04','M','3333-5477','Santa Barbara','600','manfredoaoartega19@','458412');
-INSERT INTO ESTUDIANTE VALUES('7143229911080','0801199223417','Caren Noreli Madred Navarro','1992-04-30','F','9623-5874','tegucigalpa','600','norelisuarez04@','pitufina04');
-INSERT INTO ESTUDIANTE VALUES('7891289911080','0801199821987','Seilin Daniela Diaz Nolasco ','1998-11-03','F','3235-4781','Copan','600','nolascodiaz03@','145872');
-INSERT INTO ESTUDIANTE VALUES('1453230021080','0801200323541','Harry Daneri Andino Torres','2003-08-26','M','9874-5236','San Pedro Sula','600','daneritorresandino26@','andino26');
-INSERT INTO ESTUDIANTE VALUES('7879869911080','0801199689787','Sara Yosselin Alvarez Torres','1996-03-14','F','3369-4560','La Ceiba','600','saratorres14@','gatita14');
+INSERT INTO ESTUDIANTE VALUES('6573139913080','0803199313756','Cristian Joel Avila Flores','1993-08-05','M','33529093','Tegucigalpa','600','avila08@','547849');
+INSERT INTO ESTUDIANTE VALUES('7571289911080','0801199821757','Kathia Esperanza Espinoza Torres','1998-04-28','F','98329023','San Pedro Sula','600','esperanza28@','espi28');
+INSERT INTO ESTUDIANTE VALUES('4653200021080','0801200023564','Sulma Abigail Espinoza Canaca','2000-12-24','F','98582130','Copan','600','sulmaacanaca23@','ojitos23');
+INSERT INTO ESTUDIANTE VALUES('1874489913080','0803199844781','Allan Eduardo Alvarez Suarez','1998-11-24','M','96544122','San Pedro Sula','600','aealvarez14@','suarez15');
+INSERT INTO ESTUDIANTE VALUES('7653210021080','0801200123567','Dailin Alexandra Ramirez Espinoza','1998-03-01','F','92454788','Tegucigalpa','600','alexandra_ramirez@','zoe25');
+INSERT INTO ESTUDIANTE VALUES('3273100023080','0803200013723','Edilson Genaro Figueroa Ramirez','2000-08-04','M','33564596','Colon','600','figueroaedilson19@','124573');
+INSERT INTO ESTUDIANTE VALUES('7531329913080','0803199231357','Mailin Maely Casco Aguilar','1992-04-30','F','98332546','Cortes','600','chelicasco04@','casco04');
+INSERT INTO ESTUDIANTE VALUES('4211269911080','0801199621124','Mabis Patricia Martinez Luque','1996-11-03','F','98584681','Copan','600','patimartinez03@','pati03');
+INSERT INTO ESTUDIANTE VALUES('1452420021080','0801200242541','Carlos Isai Gonzales Martinez','2002-08-26','M','96541236','San Pedro Sula','600','cahygonzales08@','carlitos08');
+INSERT INTO ESTUDIANTE VALUES('7875249911080','0801199425787','Karen Gissela Gonzales Avila','1994-03-14','F','33694589','Tegucigalpa','600','gisselaavila03@','gatita03');
+INSERT INTO ESTUDIANTE VALUES('745323991080','080199323547','Eli Manfredi Suarez Ortega','1993-08-04','M','33335477','Santa Barbara','600','manfredoaoartega19@','458412');
+INSERT INTO ESTUDIANTE VALUES('7143229911080','0801199223417','Caren Noreli Madred Navarro','1992-04-30','F','96235874','tegucigalpa','600','norelisuarez04@','pitufina04');
+INSERT INTO ESTUDIANTE VALUES('7891289911080','0801199821987','Seilin Daniela Diaz Nolasco ','1998-11-03','F','32354781','Copan','600','nolascodiaz03@','145872');
+INSERT INTO ESTUDIANTE VALUES('1453230021080','0801200323541','Harry Daneri Andino Torres','2003-08-26','M','98745236','San Pedro Sula','600','daneritorresandino26@','andino26');
+INSERT INTO ESTUDIANTE VALUES('7879869911080','0801199689787','Sara Yosselin Alvarez Torres','1996-03-14','F','33694560','La Ceiba','600','saratorres14@','gatita14');
 
 
 ## -------------------------------- insert matricula -----------------------------------------
@@ -130,6 +139,7 @@ INSERT INTO MATRICULA VALUES('032',now(),'3','2019','0005010021080') ;
 
 ##----------------------- INSERT CLASES -------------------------------------------
 # cuando hagan insert el nombre de la clase no debe ser tan largo
+<<<<<<< HEAD
 INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos','','01','2120');
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','','01','2120');
 INSERT INTO CLASE VALUES('IS-411','Electronica','','01','2120');
@@ -140,13 +150,26 @@ INSERT INTO CLASE VALUES('MM-110','Matematica I', '','01','2120') ;
 INSERT INTO CLASE VALUES('SC-101','Sociologia', '','01','2120') ;
 INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-501','Base de Datos I', '','01','2120') ;
+=======
+# hay que agregarle descripcion a la clase
+INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos I','Introduccion a los Sistemas Operativos','01','2120');
+INSERT INTO CLASE VALUES('IS-720','Contabilidad','Inicios de Contabilidad','01','2120');
+INSERT INTO CLASE VALUES('IS-411','Electronica','Comprension de circuitos','01','2120');
+INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','Analisis de instalaciones electricas','01','2120');
+#Inserts de Galo
+#sistemas
+INSERT INTO CLASE VALUES('MM-110','Matematica I', 'Introduccion al algebra','01','2120') ;
+INSERT INTO CLASE VALUES('SC-101','Sociologia', 'Conocimiento General','01','2120') ;
+INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', 'Introduccion a gemotria plana','01','2120') ;
+INSERT INTO CLASE VALUES('IS-501','Base de Datos I', 'Introduccion a bases de datos','01','2120') ;
+>>>>>>> 6722ffa9c89119ef466666ecee89458bddd9da3f
 INSERT INTO CLASE VALUES('IS-511','Redes de Datos', '','01','2120') ;
-INSERT INTO CLASE VALUES('HH-101','Historia de Honduras', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-410','Programacion_Orientada_Objetos', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-412','Sistemas Operativos II', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-601','Base de Datos II', '','01','2120') ;
+INSERT INTO CLASE VALUES('HH-101','Historia de Honduras', 'Conocimiento General','01','2120') ;
+INSERT INTO CLASE VALUES('IS-410','Programacion_Orientada_Objetos', 'Fundamentos de POO','01','2120') ;
+INSERT INTO CLASE VALUES('IS-412','Sistemas Operativos II', 'Seguimiento de SO 1','01','2120') ;
+INSERT INTO CLASE VALUES('IS-601','Base de Datos II', 'Seguimiento de bases de datos 1','01','2120') ;
 INSERT INTO CLASE VALUES('IS-603','Arquitectura de Computadoras', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-513','Lenguajes de Programación', '','01','2120') ;
+INSERT INTO CLASE VALUES('IS-513','Lenguajes de Programación', 'Introduccion a diversos lenguajes de programacion','01','2120') ;
 INSERT INTO CLASE VALUES('IS-611','Redes de Datos II', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-711','Diseño Digital', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120')  ; 
@@ -170,11 +193,31 @@ INSERT INTO CLASE VALUES('IC-691','Administracion General','','028','2121');
 
 ## --------------------------------------- insert docentes ------------------------------------
 # varios docente deben estar en un departamento 
-# Docentes que pertenecen a sistemas
+#2120 sistemas
+#2121 civil
+#2122 mecanica
+#2123 matematicas
+#2124 fisica
+#2125 contaduria
+#2126 admin empresas
+#2127 medicina
+#2128 terapia
+# 2129 microbiologia
+# 2130 derecho
+
+# Docentes que pertenecen a ing sistemas
 INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez Mondragon','1978-09-10','F','96536387','Tegucigalpa','2120','rosa@','1978');
 INSERT INTO DOCENTE VALUES('7643217911080','0801197123467','Anibal Javier Izaguirre','1971-01-10','M','89536387','Tegucigalpa','2120','javier@','1971');
 INSERT INTO DOCENTE VALUES('9573178917081','1807198713759','Yosselin Avila Rosales','1987-01-26','F','98763212','Olancho','2120','yosselin@rosales','rosales');
 INSERT INTO DOCENTE VALUES('4568799911080','0801199978654','Karla Isabel Salinas','1999-10-05','F','88763212','Copan','2120','karla@','isabel');
+INSERT INTO DOCENTE VALUES('7654129917081','1807199214567','Lesbia Brizeth Mendoza Juarez','1992-10-05','22260166','Yoro','2120','lesbia@','lesbia');
+#faltan 5
 
-# Docentes que pertencen a 
+# Docentes que pertencen a ing civil
 INSERT INTO DOCENTE VALUES('3204098911080','0801198904023','Josue Manuel Canales Herrera','1989-06-10','M','98970436','Olancho','2121','boateng@','Zapato123')  ; 
+
+
+
+
+
+
