@@ -139,30 +139,18 @@ INSERT INTO MATRICULA VALUES('032',now(),'3','2019','0005010021080') ;
 
 ##----------------------- INSERT CLASES -------------------------------------------
 # cuando hagan insert el nombre de la clase no debe ser tan largo
-<<<<<<< HEAD
-INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos','','01','2120');
-INSERT INTO CLASE VALUES('IS-720','Contabilidad','','01','2120');
-INSERT INTO CLASE VALUES('IS-411','Electronica','','01','2120');
-INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','','01','2120');
 
 #Inserts de Galo 
-INSERT INTO CLASE VALUES('MM-110','Matematica I', '','01','2120') ;
-INSERT INTO CLASE VALUES('SC-101','Sociologia', '','01','2120') ;
-INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', '','01','2120') ;
-INSERT INTO CLASE VALUES('IS-501','Base de Datos I', '','01','2120') ;
-=======
 # hay que agregarle descripcion a la clase
+#sistemas
 INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos I','Introduccion a los Sistemas Operativos','01','2120');
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','Inicios de Contabilidad','01','2120');
 INSERT INTO CLASE VALUES('IS-411','Electronica','Comprension de circuitos','01','2120');
 INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','Analisis de instalaciones electricas','01','2120');
-#Inserts de Galo
-#sistemas
 INSERT INTO CLASE VALUES('MM-110','Matematica I', 'Introduccion al algebra','01','2120') ;
 INSERT INTO CLASE VALUES('SC-101','Sociologia', 'Conocimiento General','01','2120') ;
 INSERT INTO CLASE VALUES('MM-111','Geometria y Trigonometria', 'Introduccion a gemotria plana','01','2120') ;
 INSERT INTO CLASE VALUES('IS-501','Base de Datos I', 'Introduccion a bases de datos','01','2120') ;
->>>>>>> 6722ffa9c89119ef466666ecee89458bddd9da3f
 INSERT INTO CLASE VALUES('IS-511','Redes de Datos', '','01','2120') ;
 INSERT INTO CLASE VALUES('HH-101','Historia de Honduras', 'Conocimiento General','01','2120') ;
 INSERT INTO CLASE VALUES('IS-410','Programacion_Orientada_Objetos', 'Fundamentos de POO','01','2120') ;
@@ -175,6 +163,7 @@ INSERT INTO CLASE VALUES('IS-711','Diseño Digital', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120')  ; 
 ;
 #clases candy
+#civil
 INSERT INTO CLASE VALUES('IC-100','Introduccion a la Ing.Civil','','014','2121');
 INSERT INTO CLASE VALUES('IC-302','Probabilidad Y Estadistica','','015','2121');
 INSERT INTO CLASE VALUES('IC-361','Estadistica','','016','2121');
