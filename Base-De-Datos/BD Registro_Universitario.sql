@@ -103,7 +103,7 @@ CREATE TABLE clase (
 #Tiene relacion con Clase
 CREATE TABLE laboratorio (
 	idLab 						NVARCHAR(6),
-    nombreLab 					NVARCHAR(30) NOT NULL,
+    nombreLab 					NVARCHAR(30) NOT NULL, 
     descripcion 				NVARCHAR(100),
     clase 						NVARCHAR(6),
     CONSTRAINT PK_ID_LAB		PRIMARY KEY (idLab),
@@ -112,14 +112,13 @@ CREATE TABLE laboratorio (
 
 
 #Tabla que guarda la informacion de los edificios
-#Tiene relacion con Centro
  CREATE TABLE edificio (
 	idEdificio       			NVARCHAR(5),
 	aula			 			INT UNIQUE, 
 	aulaLab		    			INT UNIQUE, 
     estado                      VARCHAR (20) CHECK(estado IN ('Disponible','Ocupada')),
 	CONSTRAINT PK_ID_EDIFICIO	PRIMARY KEY (idEdificio)
-    ) ; 
+    ); 
  
  
 #Tabla que guarda la informacion de docentes

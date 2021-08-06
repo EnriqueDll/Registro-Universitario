@@ -161,7 +161,7 @@ INSERT INTO CLASE VALUES('IS-513','Lenguajes de Programación', 'Introduccion a 
 INSERT INTO CLASE VALUES('IS-611','Redes de Datos II', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-711','Diseño Digital', '','01','2120') ;
 INSERT INTO CLASE VALUES('IS-602','Sistema de Información', '','01','2120')  ; 
-;
+
 #clases candy
 #civil
 INSERT INTO CLASE VALUES('IC-100','Introduccion a la Ing.Civil','','014','2121');
@@ -199,12 +199,14 @@ INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez
 INSERT INTO DOCENTE VALUES('7643217911080','0801197123467','Anibal Javier Izaguirre','1971-01-10','M','89536387','Tegucigalpa','2120','javier@','1971');
 INSERT INTO DOCENTE VALUES('9573178917081','1807198713759','Yosselin Avila Rosales','1987-01-26','F','98763212','Olancho','2120','yosselin@rosales','rosales');
 INSERT INTO DOCENTE VALUES('4568799911080','0801199978654','Karla Isabel Salinas','1999-10-05','F','88763212','Copan','2120','karla@','isabel');
-INSERT INTO DOCENTE VALUES('7654129917081','1807199214567','Lesbia Brizeth Mendoza Juarez','1992-10-05','22260166','Yoro','2120','lesbia@','lesbia');
+INSERT INTO DOCENTE VALUES('7654129917081','1807199214567','Lesbia Brizeth Mendoza Juarez','1992-10-05','F','22260166','Yoro','2120','lesbia@','lesbia');
 #faltan 5
 
 # Docentes que pertencen a ing civil
 INSERT INTO DOCENTE VALUES('3204098911080','0801198904023','Josue Manuel Canales Herrera','1989-06-10','M','98970436','Olancho','2121','boateng@','Zapato123')  ; 
 
+#insert laboratorios
+INSERT INTO LABORATORIO VALUES('6000','NO APLICA','','IC-691');
 
 
 
