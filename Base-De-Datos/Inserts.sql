@@ -44,7 +44,7 @@ INSERT INTO DEPARTAMENTO VALUES('2125','Departamento de Matematicas','900');
 
 ## ---------------------- A PARTIR DE AQUI HAY QUE HACER MAS INSERT------------------------
 #fecha tiene el formato YYYY-MM-DD
-# insetar dni sin guiones
+# insetar dni Y TELEFONO sin guiones
 # numero de cuenta es un dni invertido
 
 ## ---------------------------- insert estudiantes -----------------------------------------------
@@ -54,17 +54,19 @@ INSERT INTO ESTUDIANTE VALUES('5850000027081','1807200000585','Thiago Isai Merlo
 INSERT INTO ESTUDIANTE VALUES('5863289911080','0801199823685','Aaron Isaac Raudales Valle','1998-11-14','M','3452-9883','San Pedro Sula','600','aaronraduales@','raudales13');
 INSERT INTO ESTUDIANTE VALUES('5863510021080','0801200153685','Jesua Raudales Miralda','2001-03-22','M','9352-9883','Tegucigalpa','500','jesua_raduales@','abril10');
 ##Inserts de Galo
-INSERT INTO ESTUDIANTE VALUES('3065010021080','0801200105603','Alex Daniel Galo Soto','2001-03-03','M','9850-8147','Tegucigalpa','300','alexgalo@','griffith124') ; 
-INSERT INTO ESTUDIANTE VALUES('1666000021080','0801200006661','Esthefani Michell Alvarez Ordoñez','2000-07-04','F', '9250-4714' ,'Comayagua','700','esthefalv@','samantha123');
-INSERT INTO ESTUDIANTE VALUES('1632099911080','0801199902361','Axel Galo Soto','1999-05-01','M','9750-2563','San Pedro Sula','500','axelger@','copetin500');
-INSERT INTO ESTUDIANTE VALUES('2345030025050','0505200305432','Fernando Enrique Garcia','1996-05-23','M','9230-5433','Tegucigalpa','600','ferenrq@','cocomax123');
-INSERT INTO ESTUDIANTE VALUES('6528089911080','0801199808256','Oscar Ariel Galo Soto','1996-05-23', 'M','9098-5263','Ocotepeque','400','oscargsoto@','incorrecta!23');
-INSERT INTO ESTUDIANTE VALUES('8685080021080','0801200805868','Lorena Maria Soto Andino','2003-07-15','F','9630-3027','Yoro','300','lorenasoto@','jesu12304');
-INSERT INTO ESTUDIANTE VALUES('8432099915040','0405199902348','Santos Benigno Galo Gonzales','1999-05-22','M','9990-5433','San Pedro Sula','700','santosbenigno@','cumplimientos05660');
-INSERT INTO ESTUDIANTE VALUES('9993000021080','0801200003999','Lorena Francisca Mejia Funez','2003-02-26','F','9580-3222','Tegucigalpa','500','lomejifun@','franciaparis!43');
-INSERT INTO ESTUDIANTE VALUES('5032000021080','0801200002305','Alessandro Bustillo Flores','2004-09-24','M','9200-0432','Yoro','600','alessbusti@','adriana2462!.');
-INSERT INTO ESTUDIANTE VALUES('5023040021080','0801200403205','Gustavo Andres Barahona','1999-05-25','F','3352-9093','Tegucigalpa','400','calix25@','232425');
-INSERT INTO ESTUDIANTE VALUES('5043076911060','0601196703405','Samuel Alexander Lopez Herculano','2002-08-29','M','9850-8147','Gracias a Dios','500','slhercu@','232425');
+INSERT INTO ESTUDIANTE VALUES('3065010021080','0801200105603','Alex Daniel Galo Soto','2001-03-03','M','98508147','Tegucigalpa','300','alexgalo@','griffith124') ; 
+INSERT INTO ESTUDIANTE VALUES('1666000021080','0801200006661','Esthefani Michell Alvarez Ordoñez','2000-07-04','F', '92504714' ,'Comayagua','700','esthefalv@','samantha123');
+INSERT INTO ESTUDIANTE VALUES('1632099911080','0801199902361','Axel Galo Soto','1999-05-01','M','97502563','San Pedro Sula','500','axelger@','copetin500');
+INSERT INTO ESTUDIANTE VALUES('2345030025050','0505200305432','Fernando Enrique Garcia','1996-05-23','M','92305433','Tegucigalpa','600','ferenrq@','cocomax123');
+INSERT INTO ESTUDIANTE VALUES('6528089911080','0801199808256','Oscar Ariel Galo Soto','1996-05-23', 'M','90985263','Ocotepeque','400','oscargsoto@','incorrecta!23');
+INSERT INTO ESTUDIANTE VALUES('8685080021080','0801200805868','Lorena Maria Soto Andino','2003-07-15','F','96303027','Yoro','300','lorenasoto@','jesu12304');
+INSERT INTO ESTUDIANTE VALUES('8432099915040','0405199902348','Santos Benigno Galo Gonzales','1999-05-22','M','99905433','San Pedro Sula','700','santosbenigno@','cumplimientos05660');
+INSERT INTO ESTUDIANTE VALUES('9993000021080','0801200003999','Lorena Francisca Mejia Funez','2003-02-26','F','95803222','Tegucigalpa','500','lomejifun@','franciaparis!43');
+INSERT INTO ESTUDIANTE VALUES('5032000021080','0801200002305','Alessandro Bustillo Flores','2004-09-24','M','92000432','Yoro','600','alessbusti@','adriana2462!.');
+INSERT INTO ESTUDIANTE VALUES('5023040021080','0801200403205','Gustavo Andres Barahona','1999-05-25','F','33529093','Tegucigalpa','400','calix25@','232425');
+INSERT INTO ESTUDIANTE VALUES('5043076911060','0601196703405','Samuel Alexander Lopez Herculano','2002-08-29','M','98508147','Gracias a Dios','500','slhercu@','232425');
+INSERT INTO ESTUDIANTE VALUES('0005010021080','0801200105000','Lionel Andres Messi','2001-05-26','M','96435134','Tegucigalpa','300','liomessi@','246messicr7') ; 
+
 #insert candy
 INSERT INTO ESTUDIANTE VALUES('6573139913080','0803199313756','Cristian Joel Avila Flores','1993-08-05','M','3352-9093','Tegucigalpa','600','avila08@','547849');
 INSERT INTO ESTUDIANTE VALUES('7571289911080','0801199821757','Kathia Esperanza Espinoza Torres','1998-04-28','F','9832-9023','San Pedro Sula','600','esperanza28@','espi28');
@@ -92,17 +94,18 @@ INSERT INTO MATRICULA VALUES('03',now(),'1','2021','5850000027081');
 INSERT INTO MATRICULA VALUES('04',now(),'3','2017','5863289911080');
 INSERT INTO MATRICULA VALUES('05',now(),'1','2020','5863510021080');
 #Inserts de Galo
-INSERT INTO MATRICULA VALUES('06',now(),'1','2021','3065010021080');
-INSERT INTO MATRICULA VALUES('07',now(),'1','2021','1666000021080');
-INSERT INTO MATRICULA VALUES('08',now(),'1','2021','1632099911080');
-INSERT INTO MATRICULA VALUES('09',now(),'1','2021','2345030025050');
+INSERT INTO MATRICULA VALUES('06',now(),'1','2018','3065010021080');
+INSERT INTO MATRICULA VALUES('07',now(),'1','2019','1666000021080');
+INSERT INTO MATRICULA VALUES('08',now(),'2','2020','1632099911080');
+INSERT INTO MATRICULA VALUES('09',now(),'3','2021','2345030025050');
 INSERT INTO MATRICULA VALUES('010',now(),'1','2021','6528089911080');
-INSERT INTO MATRICULA VALUES('011',now(),'1','2021','8685080021080');
-INSERT INTO MATRICULA VALUES('012',now(),'1','2021','8432099915040');
-INSERT INTO MATRICULA VALUES('013',now(),'1','2021','9993000021080');
-INSERT INTO MATRICULA VALUES('014',now(),'1','2021','5032000021080');
-INSERT INTO MATRICULA VALUES('015',now(),'1','2021','5023040021080');
-INSERT INTO MATRICULA VALUES('016',now(),'1','2021','5043076911060');
+INSERT INTO MATRICULA VALUES('011',now(),'2','2021','8685080021080');
+INSERT INTO MATRICULA VALUES('012',now(),'2','2015','8432099915040');
+INSERT INTO MATRICULA VALUES('013',now(),'2','2018','9993000021080');
+INSERT INTO MATRICULA VALUES('014',now(),'2','2019','5032000021080');
+INSERT INTO MATRICULA VALUES('015',now(),'2','2020','5023040021080');
+INSERT INTO MATRICULA VALUES('016',now(),'1','2017','5043076911060');
+
 #candy
 INSERT INTO MATRICULA VALUES('017',now(),'2','2021','6573139913080');
 INSERT INTO MATRICULA VALUES('018',now(),'2','2021','7571289911080');
@@ -119,6 +122,9 @@ INSERT INTO MATRICULA VALUES('028',now(),'2','2021','7143229911080');
 INSERT INTO MATRICULA VALUES('029',now(),'2','2021','7891289911080');
 INSERT INTO MATRICULA VALUES('030',now(),'2','2021','1453230021080');
 INSERT INTO MATRICULA VALUES('031',now(),'2','2021','7879869911080');
+
+#INSERT GALO 
+INSERT INTO MATRICULA VALUES('032',now(),'3','2019','0005010021080') ;
 
 
 
@@ -163,10 +169,10 @@ INSERT INTO CLASE VALUES('IC-691','Administracion General','','028','2121');
 ## --------------------------------------- insert docentes ------------------------------------
 # varios docente deben estar en un departamento 
 # Docentes que pertenecen a sistemas
-INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez Mondragon','1978-09-10','F','9653-6387','Tegucigalpa','2120','rosa@','1978');
-INSERT INTO DOCENTE VALUES('7643217911080','0801197123467','Anibal Javier Izaguirre','1971-01-10','M','8953-6387','Tegucigalpa','2120','javier@','1971');
-INSERT INTO DOCENTE VALUES('9573178917081','1807198713759','Yosselin Avila Rosales','1987-01-26','F','9876-3212','Olancho','2120','yosselin@rosales','rosales');
-INSERT INTO DOCENTE VALUES('4568799911080','0801199978654','Karla Isabel Salinas','1999-10-05','F','8876-3212','Copan','2120','karla@','isabel');
+INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez Mondragon','1978-09-10','F','96536387','Tegucigalpa','2120','rosa@','1978');
+INSERT INTO DOCENTE VALUES('7643217911080','0801197123467','Anibal Javier Izaguirre','1971-01-10','M','89536387','Tegucigalpa','2120','javier@','1971');
+INSERT INTO DOCENTE VALUES('9573178917081','1807198713759','Yosselin Avila Rosales','1987-01-26','F','98763212','Olancho','2120','yosselin@rosales','rosales');
+INSERT INTO DOCENTE VALUES('4568799911080','0801199978654','Karla Isabel Salinas','1999-10-05','F','88763212','Copan','2120','karla@','isabel');
 
 # Docentes que pertencen a 
-
+INSERT INTO DOCENTE VALUES('3204098911080','0801198904023','Josue Manuel Canales Herrera','1989-06-10','M','98970436','Olancho','2121','boateng@','Zapato123')  ; 
