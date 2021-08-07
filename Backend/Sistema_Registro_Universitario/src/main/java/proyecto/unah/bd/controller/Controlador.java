@@ -1,46 +1,38 @@
 package proyecto.unah.bd.controller;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.format.annotation.DateTimeFormat.ISO;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+
+import com.fasterxml.jackson.datatype.jsr310.deser.key.ZonedDateTimeKeyDeserializer;
+
 import proyecto.unah.bd.model.Carrera;
 import proyecto.unah.bd.model.Clase;
 import proyecto.unah.bd.model.Departamento;
-import proyecto.unah.bd.model.Docente;
-import proyecto.unah.bd.model.Edificio;
 import proyecto.unah.bd.model.Estudiante;
 import proyecto.unah.bd.model.Facultad;
-import proyecto.unah.bd.model.IdImparte;
-import proyecto.unah.bd.model.IdSe_Imparten;
-import proyecto.unah.bd.model.Imparte;
-import proyecto.unah.bd.model.Laboratorio;
 import proyecto.unah.bd.model.Maestria;
 import proyecto.unah.bd.model.Matricula;
-import proyecto.unah.bd.model.Se_Imparten;
-import proyecto.unah.bd.model.Seccion;
 import proyecto.unah.bd.service.ServiceCarrera;
 import proyecto.unah.bd.service.ServiceClase;
 import proyecto.unah.bd.service.ServiceDepartamento;
-import proyecto.unah.bd.service.ServiceDocente;
-import proyecto.unah.bd.service.ServiceEdificio;
 import proyecto.unah.bd.service.ServiceEstudiante;
 import proyecto.unah.bd.service.ServiceFacultad;
-import proyecto.unah.bd.service.ServiceImparte;
-import proyecto.unah.bd.service.ServiceLaboratorio;
 import proyecto.unah.bd.service.ServiceMaestria;
 import proyecto.unah.bd.service.ServiceMatricula;
-import proyecto.unah.bd.service.ServiceSe_Imparten;
-import proyecto.unah.bd.service.ServiceSeccion;
-
 
 /**
  * 
@@ -54,16 +46,27 @@ import proyecto.unah.bd.service.ServiceSeccion;
 public class Controlador {
 	
 	@Autowired
+	ServiceFacultad servicefacultad;
+	
+	@Autowired
+	ServiceCarrera servicecarrera;
+	
+	@Autowired
+	ServiceMaestria servicemaestria;
+	
+	@Autowired
 	ServiceEstudiante serviceestudiante;
 	
 	@Autowired
 	ServiceMatricula servicematricula;
 	
 	@Autowired
-	ServiceClase serviceclase;
+	ServiceDepartamento servicedepartamento;
 	
 	@Autowired
-	ServiceCarrera servicecarrera;
+	ServiceClase serviceclase;
+	
+	/*
 	
 	@Autowired
 	ServiceSeccion serviceseccion;
@@ -75,234 +78,256 @@ public class Controlador {
 	ServiceEdificio serviceedificio;
 	
 	@Autowired
-	ServiceFacultad servicefacultad;
-	
-	@Autowired
 	ServiceMaestria servicemaestria;
 	
 	@Autowired
 	ServiceDocente servicedocente;
 	
 	@Autowired
-	ServiceDepartamento servicedepartamento;
-	
-	@Autowired
 	ServiceImparte serviceimparte;
 	
 	@Autowired
 	ServiceSe_Imparten serviceSe_imparten;
+	*/
 	
 	
 	//-------------------------------Pagina Inicial-------------------------------
-	
+
 	//====================================================================
-	// Estudiante
+	// FACULTAD
 	//====================================================================
-	
-	@GetMapping ("/estudiante/crearEstudiante")
-	public String registrarEstudiante() {
-		return "RegistroEstudiante";
-	}
-	
-	@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.POST)
-	public Estudiante crearEstudiante(@RequestParam(name = "Dni") String dni,
-								  @RequestParam(name = "Nombre") String nombreEstudiante,
-								  @RequestParam(name = "FechaNacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNac,
-								  @RequestParam (name = "Sexo") char sexo,
-								  @RequestParam (name = "Telefono") String telefono,
-								  @RequestParam (name = "CiudadOrigen") String ciudadOrigen,
-								  @RequestParam (name = "CorreoElectronico") String correoElectronico,
-								  @RequestParam (name = "Constraseña") String contrasenia,
-								  @RequestParam (name = "Carrera") String carrera) {
-		
-		//Le damos vuelta al Dni para que ese sea su numero de cuenta
-		String numCuenta = "";
-		for (int i = dni.length()-1; i >= 0; i--)
-			  numCuenta = numCuenta + dni.charAt(i);
-		
-		//Buscar la carrera
-		Optional <Carrera> carrera3 = this.servicecarrera.buscarCarrera(carrera);
-		
-		Estudiante estudiante1 = new Estudiante(numCuenta, dni, nombreEstudiante, fechaNac, sexo, telefono, ciudadOrigen, correoElectronico, contrasenia, carrera3.get());
-		this.serviceestudiante.crearEstudiante(estudiante1);
-		
-		//return "RegistroEstudiante";
-		return estudiante1;
-	}
-	
-	@RequestMapping (value = "/estudiante/listaEstudiante", method = RequestMethod.POST)
-	public List<Estudiante> listadoEstudiante(){
-		return this.serviceestudiante.obtenerEstudiante();
-	}
-	
-	@RequestMapping(value ="/estudiante/buscarEstudiante",method=RequestMethod.GET)
-	public Optional<Estudiante> buscarEstudiante(@RequestParam(name = "id") String numCuenta) {
-		return this.serviceestudiante.buscarEstudiante(numCuenta);
-	}
-	
-	//====================================================================
-	// MATRICULA
-	//====================================================================
-	@GetMapping ("/matricula/crearMatricula")
-	public String registrarMatricula() {
-		return "RegistroMatricula";
-	}
-	
-	@RequestMapping (value = "/matricula/crearMatricula", method = RequestMethod.POST)
-	public Matricula crearMatricula(@RequestParam(name = "Id") String idMatricula,
-								  @RequestParam(name = "FechaMatricula") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaMatri,
-								  @RequestParam (name = "Periodo") String periodo,
-								  @RequestParam (name = "Año") String anio,
-								  @RequestParam (name = "Estudiante") String numCuenta) {
-			
-		//Buscar el Estudiante
-		Optional <Estudiante> estudiante2 = this.serviceestudiante.buscarEstudiante(numCuenta);
-		
-		Matricula matricula1 = new Matricula(idMatricula, fechaMatri, periodo, anio, estudiante2.get());
-		this.servicematricula.crearMatricula(matricula1);
-		
-		//return "RegistroEstudiante";
-		return matricula1;
-	}
-	
-	@RequestMapping (value = "/matricula/listaMatricula", method = RequestMethod.POST)
-	public List<Matricula> listadoMatricula(){
-		return this.servicematricula.obtenerMatricula();
-	}
-	
-	@RequestMapping(value ="/matricula/buscarMatricula",method=RequestMethod.GET)
-	public Optional<Matricula> buscarMatricula(@RequestParam(name = "id") String idMatricula) {
-		return this.servicematricula.buscarMatricula(idMatricula);
-	}
-	
-	
-	//====================================================================
-	// CLASE
-	//====================================================================
-	
-	@GetMapping ("/clase/crearClase")
-	public String registrarClase() {
-		return "RegistroClase";
-	}
-	
-	@RequestMapping (value = "/clase/crearClase", method = RequestMethod.POST)
-	public Clase crearClase(@RequestParam(name = "Id") String idClase,
-							
-							@RequestParam (name = "NombreClase") String nombreClase,
-							@RequestParam (name = "Descripcion") String descripcion,
-							@RequestParam (name = "Matricula") String idMatricula,
-							@RequestParam (name ="Departamento")String departamento1) {
-			
-		//Buscar la matricula
-		Optional <Matricula> matricula1 = this.servicematricula.buscarMatricula(idMatricula);
-		Optional <Departamento> departamento = this.servicedepartamento.buscarDepartamento(departamento1);
-		
-		Clase clase1 = new Clase(idClase, nombreClase, descripcion, matricula1.get(), departamento.get());
-		this.serviceclase.crearClase(clase1);
-		
-		//return "RegistroEstudiante";
-		return clase1;
-	}
-	
-	@RequestMapping (value = "/clase/listaClase", method = RequestMethod.POST)
-	public List<Clase> listadoClase(){
-		return this.serviceclase.obtenerClase();
-	}
-	
-	@RequestMapping(value ="/clase/buscarClase",method=RequestMethod.GET)
-	public Optional<Clase> buscarClase(@RequestParam(name = "id") String idClase) {
-		return this.serviceclase.buscarClase(idClase);
-	}
-	
-	//====================================================================
-	// CARRERA
-	//====================================================================
-	
-		
-			@RequestMapping(value ="/carrera/crearCarrera",method=RequestMethod.GET)
-			public Carrera crearCarrera(@RequestParam(name = "id") String idCarrera,
-				                          @RequestParam(name = "nombre") String nombreCarrera,
-				                          @RequestParam(name = "desripcion") String descripcionCarrera,
-				                          @RequestParam(name = "numero de asignaturas") int numAsignaturas,
-				                          @RequestParam(name = "gardo") String grado,
-				                          @RequestParam(name = "duracion") String duracionCarrera,
-				                          @RequestParam(name = "facultad") String facultadCarrera){
-				
-			Optional<Facultad> facultad1 = this.servicefacultad.buscarFacultad(facultadCarrera);
-			
-			Carrera carrera = new Carrera( idCarrera, nombreCarrera,descripcionCarrera,numAsignaturas,grado,duracionCarrera, facultad1.get());
-			this.servicecarrera.crearCarrera(carrera);
-			return carrera;    
-				
-			}
-			
-			@RequestMapping(value ="/carrera/listaCarrera",method=RequestMethod.GET)
-			public List<Carrera>listadoCarrera() {	
-				return this.servicecarrera.obtenerCarrera();
-			}
-			
-			@RequestMapping(value ="/carrera/buscarCarrera",method=RequestMethod.GET)
-			public Optional<Carrera> buscarCarrera(@RequestParam(name = "id") String idCarrera) {
-				return this.servicecarrera.buscarCarrera( idCarrera);
-			}
-			
-			//====================================================================
-			// FACULTAD
-	       //====================================================================
-	
-		
+
+
 			@RequestMapping(value ="/facultad/crearFacultad",method=RequestMethod.GET)
-			public Facultad crearFacultad(@RequestParam(name = "id") String idFacultad,
+			public Facultad crearFacultad(@RequestParam(name = "id") int idFacultad,
 				                          @RequestParam(name = "nombre") String nombreFacultad,
-				                          @RequestParam(name = "numero de carreras") int numCarreras){
+				                          @RequestParam(name = "numCarreras") int numCarreras){
+				
 				Facultad facultad = new Facultad( idFacultad, nombreFacultad,numCarreras);
 				this.servicefacultad.crearFacultad(facultad);
 				return facultad;
 				
 				}
 			
-			@RequestMapping(value ="/facultad/listaFacultad",method=RequestMethod.GET)
-			public List<Facultad>listadoFacultad() {	
+			@RequestMapping(value = "/facultad/listaFacultad" , method=RequestMethod.GET)
+			public List<Facultad> listadoFacultad() {	
 				return this.servicefacultad.obtenerFacultades();
 			}
 			
 			@RequestMapping(value ="/facultad/buscarFacultad",method=RequestMethod.GET)
-			public Optional<Facultad> buscarFacultad(@RequestParam(name = "id") String idFacultad) {
+			public Facultad buscarFacultad(@RequestParam(name = "id") int idFacultad) {
 				return this.servicefacultad.buscarFacultad( idFacultad);
 			}
 			
+			//====================================================================
+			// CARRERA
+			//====================================================================
 			
-			//====================================================================
-			// MAESTRIA
-			//====================================================================
-	
+				
+					@RequestMapping(value ="/carrera/crearCarrera",method=RequestMethod.GET)
+					public Carrera crearCarrera(@RequestParam(name = "id") int idCarrera,
+						                          @RequestParam(name = "nombre") String nombreCarrera,
+						                          @RequestParam(name = "descripcion") String descripcionCarrera,
+						                          @RequestParam(name = "numAsignaturas") int numAsignaturas,
+						                          @RequestParam(name = "grado") String grado,
+						                          @RequestParam(name = "duracionCarrera") String duracionCarrera,
+						                          @RequestParam(name = "facultad") int facultadCarrera){
+						
+					Facultad facultad1 = this.servicefacultad.buscarFacultad(facultadCarrera);
+					
+					Carrera carrera = new Carrera( idCarrera, nombreCarrera,descripcionCarrera,numAsignaturas,grado,duracionCarrera, facultad1);
+					this.servicecarrera.crearCarrera(carrera);
+					return carrera;    
+						
+					}
+					
+					@RequestMapping(value ="/carrera/listaCarrera",method=RequestMethod.GET)
+					public List<Carrera>listadoCarrera() {	
+						return this.servicecarrera.obtenerCarrera();
+					}
+					
+					@RequestMapping(value ="/carrera/buscarCarrera",method=RequestMethod.GET)
+					public Carrera buscarCarrera(@RequestParam(name = "id") int idCarrera) {
+						return this.servicecarrera.buscarCarrera( idCarrera);
+					}
+					
+					//====================================================================
+					// MAESTRIA
+					//====================================================================
+			
+				
+					@RequestMapping(value ="/maestria/crearMaestria",method=RequestMethod.GET)
+					public Maestria crearMaestria(@RequestParam(name = "id") int idMaestria,
+						                          @RequestParam(name = "nombre") String nombreMaestria,
+						                          @RequestParam(name = "orientacion") String orientacion,
+						                          @RequestParam(name = "grado") String grado,
+						                          @RequestParam(name = "duracion") String duracion,
+						                          @RequestParam(name = "cantidadClases") int cantidadClases,
+					                              @RequestParam(name = "descripcion") String descripcionMaestria,
+					                              @RequestParam(name = "facultad") int idFacultad) {
+						
+						Facultad facultad2 = this.servicefacultad.buscarFacultad(idFacultad);
+						Maestria maestria= new Maestria( idMaestria, nombreMaestria,orientacion,grado,duracion,cantidadClases,descripcionMaestria, facultad2);
+						
+						this.servicemaestria.crearMaestria(maestria);
+						return maestria;
+						
+						}
+					
+					@RequestMapping(value ="/maestria/listaMaestria",method=RequestMethod.GET)
+					public List<Maestria>listadoMaestria() {	
+						return this.servicemaestria.obtenerMaestrias();
+					}
+					
+					@RequestMapping(value ="/maestria/buscarMaestria",method=RequestMethod.GET)
+					public Maestria buscarMestria(@RequestParam(name = "id") int idMaestria) {
+						return this.servicemaestria.buscarMaestria( idMaestria);
+					}
+					
+		//====================================================================
+		// Estudiante
+		//====================================================================
 		
-			@RequestMapping(value ="/maestria/crearMaestria",method=RequestMethod.GET)
-			public Maestria crearMaestria(@RequestParam(name = "id") String idMaestria,
-				                          @RequestParam(name = "nombre") String nombreMaestria,
-				                          @RequestParam(name = "orientacion") String orientacion,
-				                          @RequestParam(name = "grado") String grado,
-				                          @RequestParam(name = "duracion") String duracion,
-				                          @RequestParam(name = "cantidad de clases") int cantidadClases,
-			                              @RequestParam(name = "descripcion") String descripcionMaestria,
-			                              @RequestParam(name = "facultad") String idFacultad) {
-				
-				Optional<Facultad> facultad2 = this.servicefacultad.buscarFacultad(idFacultad);
-				Maestria maestria= new Maestria( idMaestria, nombreMaestria,orientacion,grado,duracion,cantidadClases,descripcionMaestria, facultad2.get());
-				this.servicemaestria.crearMaestria(maestria);
-				return maestria;
-				
-				}
-			
-			@RequestMapping(value ="/maestria/listaMaestria",method=RequestMethod.GET)
-			public List<Maestria>listadoMaestria() {	
-				return this.servicemaestria.obtenerMaestrias();
-			}
-			
-			@RequestMapping(value ="/maestria/buscarMaestria",method=RequestMethod.GET)
-			public Optional<Maestria> buscarMestria(@RequestParam(name = "id") String idMaestria) {
-				return this.servicemaestria.buscarMaestria( idMaestria);
-			}
+				@RequestMapping (value = "/estudiante/crearEstudiante", method = RequestMethod.GET)
+				public Estudiante crearEstudiante(@RequestParam(name = "dni") String dni,
+												  @RequestParam(name = "nombre") String nombreEstudiante,
+												  @RequestParam(name = "fechanacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNac,
+												  @RequestParam (name = "sexo") char sexo,
+												  @RequestParam (name = "telefono") String telefono,
+												  @RequestParam (name = "ciudadOrigen") String ciudadOrigen,
+												  @RequestParam (name = "correoElectronico") String correoElectronico,
+												  @RequestParam (name = "contrasenia") String contrasenia,
+												  @RequestParam (name = "carrera") int idCarrera) {
+						
+						//Le damos vuelta al Dni para que ese sea su numero de cuenta
+						String numCuentaEstu = "";
+						for (int i = dni.length()-1; i >= 0; i--)
+							  numCuentaEstu = numCuentaEstu + dni.charAt(i);
+						
+						//Buscar la carrera
+						Carrera carreraE = this.servicecarrera.buscarCarrera(idCarrera);
+						
+						Estudiante estudiante1 = new Estudiante(numCuentaEstu, dni, nombreEstudiante, fechaNac, sexo, telefono, ciudadOrigen, correoElectronico, contrasenia, carreraE);
+						
+						this.serviceestudiante.crearEstudiante(estudiante1);
+						
+						//return "RegistroEstudiante";
+						return estudiante1;
+					}
+					
+					@RequestMapping (value = "/estudiante/listaEstudiante", method = RequestMethod.GET)
+					public List<Estudiante> listadoEstudiante(){
+						return this.serviceestudiante.obtenerEstudiante();
+					}
+					
+					@RequestMapping(value ="/estudiante/buscarEstudiante",method=RequestMethod.GET)
+					public Optional<Estudiante> buscarEstudiante(@RequestParam(name = "id") String numCuentaEstu) {
+						return this.serviceestudiante.buscarEstudiante(numCuentaEstu);
+					}
+					
+					
+					//====================================================================
+					// MATRICULA
+					//====================================================================
+					@RequestMapping (value = "/matricula/crearMatricula", method = RequestMethod.GET)
+					public Matricula crearMatricula(@RequestParam(name = "id") int idMatricula,
+												  //@RequestParam(name = "FechaMatricula") @DateTimeFormat(iso = ISO.DATE) LocalDateTime fechaMatri,
+												  @RequestParam (name = "Periodo") String periodo,
+												  @RequestParam (name = "Anio") String anio,
+												  @RequestParam (name = "numCuentaEstudiante") String numCuentaEstu) {
+							
+						//Buscar el Estudiante
+						Optional <Estudiante> estudiante2 = this.serviceestudiante.buscarEstudiante(numCuentaEstu);
+						
+						//Capturar la fecha actual
+						ZoneId zoneId = ZoneId.of("America/Tegucigalpa");
+						ZonedDateTime fecha;
+						fecha = ZonedDateTime.now();
+						
+						Matricula matricula1 = new Matricula(idMatricula, fecha, periodo, anio, estudiante2.get());
+						this.servicematricula.crearMatricula(matricula1);
+						return matricula1;
+						
+					}
+					
+					@RequestMapping (value = "/matricula/listaMatricula", method = RequestMethod.GET)
+					public List<Matricula> listadoMatricula(){
+						return this.servicematricula.obtenerMatricula();
+					}
+					
+					@RequestMapping(value ="/matricula/buscarMatricula",method=RequestMethod.GET)
+					public Matricula buscarMatricula(@RequestParam(name = "id") int idMatricula) {
+						return this.servicematricula.buscarMatricula(idMatricula);
+					}
+					
+					//====================================================================
+					// Departamento
+					//====================================================================
+					
+					@RequestMapping (value = "/departamento/crearDepartamento", method = RequestMethod.GET)
+					public Departamento crearDepartamento(@RequestParam(name = "id") int idDepto,
+														@RequestParam (name = "nombreDepto") String nombreDepto,
+														@RequestParam (name = "idCarrera") int idCarrera) {
+								
+						//Buscar la Carrera
+						Carrera carreraD = this.servicecarrera.buscarCarrera(idCarrera);
+						
+						Departamento departamento4 = new Departamento (idDepto, nombreDepto, carreraD);
+						this.servicedepartamento.crearDepartamento(departamento4);
+						
+						return departamento4;
+					}
+					
+					@RequestMapping (value = "/departamento/listaDepartamento", method = RequestMethod.GET)
+					public List<Departamento> listadoDepartamento(){
+						return this.servicedepartamento.obtenerDepartamento();
+					}
+					
+					@RequestMapping(value ="/departamento/buscarDepartamento",method=RequestMethod.GET)
+					public Departamento buscarDepartamento(@RequestParam(name = "id") int idDepto) {
+						return this.servicedepartamento.buscarDepartamento(idDepto);
+					}
+					
+					
+					//====================================================================
+					// CLASE
+					//====================================================================
+					
+					@RequestMapping (value = "/clase/crearClase", method = RequestMethod.GET)
+					public Clase crearClase(@RequestParam(name = "id") String idClase,
+											@RequestParam (name = "nombreClase") String nombreClase,
+											@RequestParam (name = "descripcion") String descripcion,
+											@RequestParam (name = "idMatricula") int idMatricula,
+											@RequestParam (name ="departamento") int idDepto) {
+							
+						//Buscar la matricula
+						Matricula matricula1 = this.servicematricula.buscarMatricula(idMatricula);
+						
+						//Buscar depto
+						Departamento departamentoC = this.servicedepartamento.buscarDepartamento(idDepto);
+						
+						Clase clase1 = new Clase(idClase, nombreClase, descripcion, matricula1, departamentoC);
+						this.serviceclase.crearClase(clase1);
+						
+						//return "RegistroEstudiante";
+						return clase1;
+					}
+					
+					@RequestMapping (value = "/clase/listaClase", method = RequestMethod.GET)
+					public List<Clase> listadoClase(){
+						return this.serviceclase.obtenerClase();
+					}
+					
+					@RequestMapping(value ="/clase/buscarClase",method=RequestMethod.GET)
+					public Optional<Clase> buscarClase(@RequestParam(name = "id") String idClase) {
+						return this.serviceclase.buscarClase(idClase);
+					}
+		
+}
+	
+	/*
+	
+	
 			
 			
 			//=====================================================================
@@ -422,37 +447,6 @@ public class Controlador {
 		}
 		
 		//====================================================================
-		// Departamento
-		//====================================================================
-		
-		@RequestMapping (value = "/departamento/creaDepartamento", method = RequestMethod.POST)
-		public Departamento crearDepartamento(@RequestParam(name = "Id") String idDepto,
-								
-								@RequestParam (name = "NombreDepto") String nombreDepto,
-								@RequestParam (name = "Carrera") String carrera) {
-					
-			//Buscar la Carrera
-			Optional <Carrera> carrera4 = this.servicecarrera.buscarCarrera(carrera);
-			
-			Departamento departamento4 = new Departamento (idDepto, nombreDepto, carrera4.get());
-			this.servicedepartamento.crearDepartamento(departamento4);
-			
-			//return "RegistroDepartamento";
-			return departamento4;
-		}
-		
-		@RequestMapping (value = "/departamento/listaDepartamento", method = RequestMethod.POST)
-		public List<Departamento> listadoDepartamento(){
-			return this.servicedepartamento.obtenerDepartamento();
-		}
-		
-		@RequestMapping(value ="/departamento/buscarDepartamento",method=RequestMethod.GET)
-		public Optional<Departamento> buscarDepartamento(@RequestParam(name = "id") String idDepto) {
-			return this.servicedepartamento.buscarDepartamento(idDepto);
-		}
-		
-		
-		//====================================================================
 		// Se Imparte
 		//====================================================================
 		
@@ -482,6 +476,5 @@ public class Controlador {
 		public List<Se_Imparten> listarSe_Imparte(){
 			return this.serviceSe_imparten.obtenerTodasSe_Imparte();
 		}
-		
-}
+		*/
 		

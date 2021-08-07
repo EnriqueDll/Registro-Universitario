@@ -2,7 +2,6 @@ package proyecto.unah.bd.model;
 
 import java.time.LocalDate;
 import java.util.List;
-//import java.util.List;
 import java.util.Optional;
 
 import javax.persistence.Entity;
@@ -28,15 +27,15 @@ public class Estudiante {
 	public LocalDate fechaNac;
 	public char sexo;
 	private String telefono;
-	private String ciudadOrigen; //Cambiar a public de hacer falta
+	private String ciudadOrigen; //
 	public String correoElectronico;
 	private String contrasenia;
 	
+	/*
 	//Relacion con Matricula
 	@OneToMany(mappedBy = "estudiante", fetch = FetchType.EAGER)
 	public List<Matricula> matricula;
-	
-	//O podria ser Private List<Matricula> matricula;
+	*/
 	
 	//Relacion Con Carrera
 	@ManyToOne
@@ -51,7 +50,7 @@ public class Estudiante {
 	
 	//Constructor
 	public Estudiante(String numCuentaEstu, String dni, String nombreEstudiante, LocalDate fechaNac, char sexo,
-			String telefono, String ciudadOrigen, String correoElectronico, String contrasenia, Carrera carrera) { //List<Matricula> matricula o Matricula matricula
+			String telefono, String ciudadOrigen, String correoElectronico, String contrasenia, Carrera carrera) {
 		super();
 		this.numCuentaEstu = numCuentaEstu;
 		this.dni = dni;

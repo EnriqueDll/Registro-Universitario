@@ -1,12 +1,14 @@
 package proyecto.unah.bd.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import proyecto.unah.bd.model.Matricula;
 import proyecto.unah.bd.repository.RepositoryMatricula;
+
+@Service
 
 public class ServiceMatricula {
 	
@@ -21,7 +23,7 @@ public class ServiceMatricula {
 		return this.repositoryMatricula.findAll();
 	}
 	
-	public Optional<Matricula> buscarMatricula(String id) {
+	public Matricula buscarMatricula(int id) {
 		return this.repositoryMatricula.findById(id);
 	}
 

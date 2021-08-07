@@ -9,22 +9,22 @@ import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table (name="facultad")
+@Table (name = "facultad")
 
 public class Facultad {
 	
 	//Atributos
 	@Id
-	public String idFacultad;
+	public int idFacultad;
 	public String nombreFacultad;
 	public int numCarreras;
 	
 	//Relacion con carrera
-	@OneToMany(mappedBy="facultad",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="facultad",fetch=FetchType.LAZY)
 	private List<Carrera> carrera;
 	
 	//Maestria
-	@OneToMany(mappedBy="facultad",fetch=FetchType.EAGER)
+	@OneToMany(mappedBy="facultad",fetch=FetchType.LAZY)
 	private List<Maestria> maestria;
 	
 	//Constructor Vacio
@@ -33,7 +33,7 @@ public class Facultad {
 	}
 	
 	//Constructor
-	public Facultad(String idFacultad, String nombreFacultad, int numCarreras) {
+	public Facultad(int idFacultad, String nombreFacultad, int numCarreras) {
 		super();
 		this.idFacultad = idFacultad;
 		this.nombreFacultad = nombreFacultad;
@@ -41,10 +41,10 @@ public class Facultad {
 	}
 	
 	//Gets & Sets
-	public String getIdFacultad() {
+	public int getIdFacultad() {
 		return idFacultad;
 	}
-	public void setIdFacultad(String idFacultad) {
+	public void setIdFacultad(int idFacultad) {
 		this.idFacultad = idFacultad;
 	}
 	public String getNombreFacultad() {

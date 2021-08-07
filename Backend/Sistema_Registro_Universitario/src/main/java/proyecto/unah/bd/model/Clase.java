@@ -29,14 +29,6 @@ public class Clase {
 	@JsonBackReference
 	public Matricula matricula;
 	
-	//Relacion con Secciones
-	
-	@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
-	public List<Seccion> seccion;
-	
-	//Relacion con Laboratorio
-	@OneToMany(mappedBy = "clase", fetch = FetchType.EAGER)
-	public List<Laboratorio> laboratorio;
 	
 	//Relacion con Departamento
 	@ManyToOne
@@ -44,14 +36,23 @@ public class Clase {
 	@JsonBackReference
 	public Departamento departamento;
 	
+	/*
+	//Relacion con Secciones
+	@OneToMany(mappedBy = "clase", fetch = FetchType.LAZY)
+	public List<Seccion> seccion;
+	
+	//Relacion con Laboratorio
+	@OneToMany(mappedBy = "clase", fetch = FetchType.LAZY)
+	public List<Laboratorio> laboratorio;
+	*/
+	
 	//Constructor Vacio
 	public Clase() {
 		
 	}
 	
-	
 	//Constructor
-	public Clase(String idClase, String nombreClase, String descripcionClase, Matricula matricula, Departamento departamento) { //Falta Departamento departamento
+	public Clase(String idClase, String nombreClase, String descripcionClase, Matricula matricula, Departamento departamento) {
 		super();
 		this.idClase = idClase;
 		this.nombreClase = nombreClase;
@@ -59,7 +60,6 @@ public class Clase {
 		this.matricula = matricula;
 		this.departamento = departamento;
 	}
-
 
 	//Gets & Sets
 	public String getIdClase() {

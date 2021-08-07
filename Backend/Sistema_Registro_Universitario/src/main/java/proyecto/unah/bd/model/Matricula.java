@@ -1,6 +1,9 @@
 package proyecto.unah.bd.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import javax.persistence.Entity;
@@ -21,8 +24,8 @@ public class Matricula {
 	
 	//Atributos
 	@Id
-	public String idMatricula;
-	public LocalDate fechaHoraMatricula;
+	public int idMatricula;
+	public ZonedDateTime fechaMatricula;
 	public String periodo;
 	public String anio;
 	
@@ -34,9 +37,11 @@ public class Matricula {
 	
 	//@OneToOne(fetch = FetchType.EAGER) //quizas haga falta el mappedBy = "estudiante", podria ser Lazy en lugar de eager
 	
+	/*
 	//Relacion con Clase
 	@OneToMany(mappedBy = "matricula", fetch = FetchType.EAGER)
 	public List<Clase> clase;
+	*/
 	
 	//Constructor vacio
 	public Matricula() {
@@ -44,31 +49,31 @@ public class Matricula {
 	}
 	
 	//Constructor
-	public Matricula(String idMatricula, LocalDate fechaHoraMatricula, String periodo, String anio,
+	public Matricula(int idMatricula, ZonedDateTime fechaMatricula, String periodo, String anio,
 			Estudiante estudiante) {
 		super();
 		this.idMatricula = idMatricula;
-		this.fechaHoraMatricula = fechaHoraMatricula;
+		this.fechaMatricula = fechaMatricula;
 		this.periodo = periodo;
 		this.anio = anio;
 		this.estudiante = estudiante;
 	}
 
 	//Gets & Sets
-	public String getIdMatricula() {
+	public int getIdMatricula() {
 		return idMatricula;
 	}
 
-	public void setIdMatricula(String idMatricula) {
+	public void setIdMatricula(int idMatricula) {
 		this.idMatricula = idMatricula;
 	}
 
-	public LocalDate getFechaHoraMatricula() {
-		return fechaHoraMatricula;
+	public ZonedDateTime getFechaMatricula() {
+		return fechaMatricula;
 	}
 
-	public void setFechaHoraMatricula(LocalDate fechaHoraMatricula) {
-		this.fechaHoraMatricula = fechaHoraMatricula;
+	public void setFechaMatricula(ZonedDateTime fechaMatricula) {
+		this.fechaMatricula = fechaMatricula;
 	}
 
 	public String getPeriodo() {

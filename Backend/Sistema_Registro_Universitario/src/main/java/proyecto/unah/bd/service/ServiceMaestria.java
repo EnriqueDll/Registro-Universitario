@@ -1,7 +1,6 @@
 package proyecto.unah.bd.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,18 +14,18 @@ import proyecto.unah.bd.repository.RepositoryMaestria;
 public class ServiceMaestria {
 	
 	@Autowired 
-    RepositoryMaestria repositorymaestria;
+    RepositoryMaestria repositoryMaestria;
 	
 	public void crearMaestria(Maestria maestria) {
-		this.repositorymaestria.save(maestria);
+		this.repositoryMaestria.save(maestria);
 	}
 	
 	public List<Maestria> obtenerMaestrias() {
-		return this.repositorymaestria.findAll();
+		return this.repositoryMaestria.findAll();
 	}
 	
-	public Optional<Maestria> buscarMaestria(String id) {
-		return this.repositorymaestria.findById(id);
+	public Maestria buscarMaestria(int id) {
+		return this.repositoryMaestria.findById(id);
 	}
 
 }

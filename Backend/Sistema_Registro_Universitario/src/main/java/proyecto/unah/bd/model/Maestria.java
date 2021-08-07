@@ -15,11 +15,11 @@ public class Maestria {
 	
 	//Atributos
 	@Id
-	public String idMaestria;
+	public int idMaestria;
 	public String nombreMaestria;
 	public String orientacion;
-	public String duracion;
 	public String grado;
+	public String duracion;
 	public int    cantidadClases;
 	public String descripcionMaestria;
 	
@@ -27,7 +27,8 @@ public class Maestria {
 	@ManyToOne
 	@JoinColumn(name="idFacultad")
 	@JsonBackReference
-	private Facultad  facultad;
+	
+	public Facultad  facultad;
 	
 	//Constructor vacio
 	public Maestria() {
@@ -35,7 +36,7 @@ public class Maestria {
 	}
 	
 	//Constructor
-	public Maestria(String idMaestria, String nombreMaestria, String orientacion, String duracion,String grado,int cantidadClases,
+	public Maestria(int idMaestria, String nombreMaestria, String orientacion, String grado, String duracion,int cantidadClases,
 			String descripcionMaestria, Facultad facultad) {
 		super();
 		this.idMaestria = idMaestria;
@@ -49,10 +50,10 @@ public class Maestria {
 	}
 	
 	//Gets & Sets
-	public String getIdMaestria() {
+	public int getIdMaestria() {
 		return idMaestria;
 	}
-	public void setIdMaestria(String idMaestria) {
+	public void setIdMaestria(int idMaestria) {
 		this.idMaestria = idMaestria;
 	}
 	public String getNombreMaestria() {

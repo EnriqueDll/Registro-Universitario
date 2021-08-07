@@ -2,8 +2,6 @@ package proyecto.unah.bd.model;
 
 import java.util.List;
 
-//import java.util.List;
-
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.Id;
@@ -15,13 +13,13 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table (name="carrera")
+@Table (name = "carrera")
 
 public class Carrera {
 	
 	//Atributos
 	@Id
-	public String idCarrera;
+	public int idCarrera;
 	public String nombreCarrera;
 	public String descripcionCarrera;
 	public int    numAsignaturas;
@@ -30,17 +28,17 @@ public class Carrera {
 	
 	//Relacion con Facultad
 	@ManyToOne
-	@JoinColumn(name="idFacultad")
+	@JoinColumn(name = "idFacultad")
 	@JsonBackReference
-	private Facultad facultad;
-	
-	//Relacion con estudiante
-	@OneToMany(mappedBy = "carrera", fetch = FetchType.EAGER)
-	private List<Estudiante> estudiante;
+	public Facultad facultad;
 	
 	//Relacion con Departamento
-	@OneToMany(mappedBy="carrera",fetch=FetchType.EAGER)
-	private List<Departamento> departamento;
+	@OneToMany(mappedBy = "carrera",fetch=FetchType.LAZY)
+	public List<Departamento> departamento;
+		
+	//Relacion con estudiante
+	@OneToMany(mappedBy = "carrera", fetch = FetchType.LAZY)
+	public List<Estudiante> estudiante;
 	
 	//Constructor vacio
 	public Carrera() {
@@ -48,7 +46,7 @@ public class Carrera {
 	}
 	
 	//Constructor
-	public Carrera(String idCarrera, String nombreCarrera, String descripcionCarrera, int numAsignaturas,
+	public Carrera(int idCarrera, String nombreCarrera, String descripcionCarrera, int numAsignaturas,
 			String grado,String duracionCarrera, Facultad facultad) {
 		super();
 		this.idCarrera = idCarrera;
@@ -61,10 +59,10 @@ public class Carrera {
 	}
 	
 	//Gets & Sets
-	public String getIdCarrera() {
+	public int getIdCarrera() {
 		return idCarrera;
 	}
-	public void setIdCarrera(String idCarrera) {
+	public void setIdCarrera(int idCarrera) {
 		this.idCarrera = idCarrera;
 	}
 	public String getNombreCarrera() {

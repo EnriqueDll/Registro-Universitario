@@ -1,7 +1,6 @@
 package proyecto.unah.bd.service;
 
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -24,9 +23,8 @@ public class ServiceCarrera {
 		return this.repositoryCarrera.findAll();
 	}
 	
-	public Optional<Carrera> buscarCarrera(String idCarrera) {
-		return this.repositoryCarrera.findById(idCarrera);
+	public Carrera buscarCarrera(int id) {
+		return this.repositoryCarrera.findById(id);
 	}
 	
-
 }

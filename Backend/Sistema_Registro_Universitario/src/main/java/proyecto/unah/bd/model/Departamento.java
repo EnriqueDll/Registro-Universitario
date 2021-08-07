@@ -13,36 +13,39 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table (name="departamento")
+@Table (name = "departamento")
 
 public class Departamento {
 	
 	//Atributos
 	@Id
-	public String idDepto;
+	public int idDepto;
     public String nombreDepto;
  		
 	//Relacion con carrera
     @ManyToOne
-	@JoinColumn(name="idCarrera")
+	@JoinColumn(name = "idCarrera")
 	@JsonBackReference
-	public Carrera  carrera;
+	public Carrera carrera;
+    
     
     //Relacion con Clase
     @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
     public List <Clase> clase;
     
+    
+    /*
     //Relacion con Docente
     @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
     public List <Docente> docente;
-        
+     */
 	//Constructor vacio
 	public Departamento() {
 		
 	}
 	
 	//Constructor
-	public Departamento(String idDepto, String  nombreDepto, Carrera carrera) {
+	public Departamento(int idDepto, String  nombreDepto, Carrera carrera) {
 		super();
 		this.idDepto = idDepto;
 		this.nombreDepto = nombreDepto;
@@ -50,10 +53,10 @@ public class Departamento {
 	}
 	
 	//Gets & Sets
-	public String getIdDepto() {
+	public int getIdDepto() {
 		return idDepto;
 	}
-	public void setidDepto(String idDepto) {
+	public void setidDepto(int idDepto) {
 		this.idDepto = idDepto;
 	}
 	public String getnombreDepto() {
@@ -63,3 +66,4 @@ public class Departamento {
 		this.nombreDepto = nombreDepto;
 	}
 }
+
