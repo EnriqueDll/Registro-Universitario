@@ -12,6 +12,9 @@ SELECT* FROM laboratorio;
 
 SELECT* FROM SECCION;
 #mostrar la carrera a la que pertenecen los estudiantes
+
+SELECT D.nombreDepto, C.nombreCarrera FROM DEPARTAMENTO D INNER JOIN CARRERA C ON D.idCarrera=C.idCarrera;
+
 SELECT E.nombreEstudiante,E.numCuentaEstu, C.nombreCarrera FROM ESTUDIANTE E INNER JOIN CARRERA C ON E.carrera=C.idCarrera ;
 # estudiantes de carrera ing sistemas
 SELECT E.nombreEstudiante,E.numCuentaEstu, C.nombreCarrera FROM ESTUDIANTE E INNER JOIN CARRERA C ON E.carrera=C.idCarrera WHERE C.nombreCarrera = 'Ingenieria en Sistemas';
