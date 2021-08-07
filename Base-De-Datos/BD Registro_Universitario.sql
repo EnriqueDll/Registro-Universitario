@@ -106,6 +106,8 @@ CREATE TABLE laboratorio (
     nombreLab 					NVARCHAR(30) NOT NULL, 
     descripcion 				NVARCHAR(100),
     clase 						NVARCHAR(6),
+    
+    
     CONSTRAINT PK_ID_LAB		PRIMARY KEY (idLab),
 	CONSTRAINT FK_ID_CLASE 		FOREIGN KEY (clase) REFERENCES clase (idClase)
 );
@@ -148,7 +150,7 @@ CREATE TABLE seccion (
 	numSeccion 					INT NOT NULL, #2000
     horaSeccion 				NVARCHAR(6) NOT NULL,
     diaSeccion 					NVARCHAR(15) NOT NULL,
-    numEstudiantes 				INT NOT NULL,
+    numEstudiantes 				INT NOT NULL, #limite de cant de estudiantes en una seccion
     CONSTRAINT PK_ID_SECCION 	PRIMARY KEY (idSeccion),
     CONSTRAINT FK_IDCLASE 		FOREIGN KEY (clase) REFERENCES clase (idClase),
 	CONSTRAINT FK_ID_LAB 		FOREIGN KEY (laboratorio) REFERENCES laboratorio (idLab)

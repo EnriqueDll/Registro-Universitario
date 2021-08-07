@@ -1,21 +1,21 @@
 USE REGISTRO_UNIVERSITARIO;
 ## -----------------------  inserts de facultades ----------------------------
-INSERT INTO FACULTAD VALUES('001','Medicina',3);
-INSERT INTO FACULTAD VALUES('002','Ingenieria',3);
-INSERT INTO FACULTAD VALUES('003','Economia',2);
-INSERT INTO FACULTAD VALUES('004','Ciencias',2);
-INSERT INTO FACULTAD VALUES('005','Derecho',1);
+INSERT INTO FACULTAD VALUES(default,'Medicina',3);
+INSERT INTO FACULTAD VALUES(default,'Ingenieria',3);
+INSERT INTO FACULTAD VALUES(default,'Economia',2);
+INSERT INTO FACULTAD VALUES(default,'Ciencias',2);
+INSERT INTO FACULTAD VALUES(default,'Derecho',1);
 
 ## -------------------------- insert carreras -------------------------------------
 # cada carrera pertenece a una facultad
-#FACULTAD MEDICINA
-INSERT INTO CARRERA VALUES('100','Medicina General','La Carrera de Medicina tiene como finalidad formar profesionales médicos con visión integral, capaces de detectar problemas de salud individual y comunitaria','68',default,'8 años','001');
-INSERT INTO CARRERA VALUES('200','Terapia Funcional','Forma profesionales capacitados para la atención de la persona con discapacidad mediante una preparación científica, técnica, humanista','52',default,'2 años y medio','001');
-INSERT INTO CARRERA VALUES('300','Microbiologia','Organizar, dirigir y desarrollar la formación ética, integral y holística de profesionales de la Microbiología, la investigación y la vinculación','62',default,'4 años','001');
+#FACULTAD MEDICINA 
+INSERT INTO CARRERA VALUES(default,'Medicina General','La Carrera de Medicina tiene como finalidad formar profesionales médicos con visión integral, capaces de detectar problemas de salud individual y comunitaria','68',default,'8 años','001');
+INSERT INTO CARRERA VALUES(default,'Terapia Funcional','Forma profesionales capacitados para la atención de la persona con discapacidad mediante una preparación científica, técnica, humanista','52',default,'2 años y medio','001');
+INSERT INTO CARRERA VALUES(default,'Microbiologia','Organizar, dirigir y desarrollar la formación ética, integral y holística de profesionales de la Microbiología, la investigación y la vinculación','62',default,'4 años','001');
 # FACULTAD DE INGENIERIA
-INSERT INTO CARRERA VALUES('400','Ingenieria en Sistemas','La ingeniería de sistemas es un campo interdisciplinario de la ingeniería que permite estudiar y comprender la realidad','56',default,'5 años','002');
-INSERT INTO CARRERA VALUES('500','Ingenieria Mecanica','Esta disciplina estudia y perfecciona específicamente los principios de la termodinámica, trasferencia de calor, mecánica,vibraciones, mecánica clásica, entre otros campos.','62',default,'5 años','002');
-INSERT INTO CARRERA VALUES('600','Ingenieria Civil','La ingeniería civil es la disciplina de la ingeniería que emplea conocimientos de cálculo, mecánica, hidráulica y física para encargarse del diseño, construcción ','60',default,'5 años','002');
+INSERT INTO CARRERA VALUES(default,'Ingenieria en Sistemas','La ingeniería de sistemas es un campo interdisciplinario de la ingeniería que permite estudiar y comprender la realidad','56',default,'5 años','002');
+INSERT INTO CARRERA VALUES(default,'Ingenieria Mecanica','Esta disciplina estudia y perfecciona específicamente los principios de la termodinámica, trasferencia de calor, mecánica,vibraciones, mecánica clásica, entre otros campos.','62',default,'5 años','002');
+INSERT INTO CARRERA VALUES(default,'Ingenieria Civil','La ingeniería civil es la disciplina de la ingeniería que emplea conocimientos de cálculo, mecánica, hidráulica y física para encargarse del diseño, construcción ','60',default,'5 años','002');
 # FACULTAD ECONOMIA
 INSERT INTO CARRERA VALUES('700','Contaduria Publica','Es una disciplina de carácter científico fundamentada en una teoría específica, que a través de un proceso obtiene y comprueba información financiera','52',default,'5 años','003');
 INSERT INTO CARRERA VALUES('800','Administracion de Empresas','Es una disciplina de carácter científico fundamentada en una teoría específica, que a través de un proceso obtiene y comprueba información financiera','52',default,'5 años','003');
@@ -153,8 +153,11 @@ INSERT INTO MATRICULA VALUES('032',now(),'3','2019','0005010021080') ;
 
 #sistemas
 INSERT INTO CLASE VALUES('IS-512','Sistemas Operativos I','Introduccion a los Sistemas Operativos','01','2120');
+
+
 INSERT INTO CLASE VALUES('IS-720','Contabilidad','Inicios de Contabilidad','01','2120');
 INSERT INTO CLASE VALUES('IS-411','Electronica','Comprension de circuitos','01','2120');
+
 INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','Analisis de instalaciones electricas','01','2120');
 INSERT INTO CLASE VALUES('MM-110','Matematica I', 'Introduccion al algebra','01','2120') ;
 INSERT INTO CLASE VALUES('SC-101','Sociologia', 'Conocimiento General','01','2120') ;
@@ -240,6 +243,12 @@ INSERT INTO LABORATORIO VALUES('6000','Topografia 1','introduccion a topografia'
 INSERT INTO LABORATORIO VALUES('6001','Hidrologia 1','Conocimiento general de hidrologia','IC-573');
 INSERT INTO LABORATORIO VALUES('6002','Hidraulica Aplicada','Conceptos generales de hidraulica','IC-572');
 
+
+INSERT INTO ESTUDIANTE VALUES('4306078911080','0763199606233','Benedick Griffith Juanes Messi','1996-06-03','M','97423845','La Ceiba','011','griffith23@','behelit1234');
+
+INSERT INTO SECCION VALUES('5000', 'IC-350','6000','2000','20','LMMiJuVi','30'); 
+INSERT INTO SECCION VALUES('6000', 'IC-573',null,'2000','20','LMMiJuVi','30'); 
+INSERT INTO SECCION VALUES('7000', null,6002,'2000','20','LMMiJuVi','30'); 
 
 
 
