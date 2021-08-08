@@ -117,11 +117,37 @@ INSERT INTO ESTUDIANTE VALUES('1001098910560','0650198901001','Elon Rogan Hercul
 INSERT INTO ESTUDIANTE VALUES('3423079915070','0705199703243','Raquel Hernandez Canales Messi','1997-04-02','F','98562399','Gracias a Dios','raqhe@','manuelneuer2222','207');
 INSERT INTO ESTUDIANTE VALUES('2856920025070','0705200296582','Dennis Oscar Benito Suarez','2002-10-10','M','92979423','Colon','dennisos@','christian123',207);
 INSERT INTO ESTUDIANTE VALUES('7005030021090','0901200305007','Aries Terron Bueso Ruber','2003-04-02','M','95392363','Gracias a Dios','ariester@','lionelregil2','207');
+INSERT INTO ESTUDIANTE VALUES('7009099915070','0705199909007','Troy Barnes Gambino ','1999-11-23','M','99841030','La Paz', 'troybar@','community3','207');
 #estudiantes contaduria 206
+INSERT INTO ESTUDIANTE VALUES('5432100021080','0801200012345','Jon Snow Barrientos Khan','2000-10-12','M','33404643','El Paraiso','jonwsw@','rocketleague','206');
+INSERT INTO ESTUDIANTE VALUES('4500040025090','0905200400054','Tyrion Lannister Mertzy Sun','2004-08-13','M','97644643','El Paraiso','tyrion@','rocketleague235','206');
+INSERT INTO ESTUDIANTE VALUES('6205299911080','0801199925026','Ron Swanson Galo Alvarez','1999-03-21','M','99906996','El Paraiso','ronsw@','rocketleague24601','206');
+INSERT INTO ESTUDIANTE VALUES('5709010025070','0705200109075','Walter Emilio Hartwell White','2001-06-11','M','96539273','El Paraiso', 'walter234@','breaking34','206');
+INSERT INTO ESTUDIANTE VALUES('9265079911080','0801199705629','Troy Abed Nadir','1999-06-11','M','9239 273','El Paraiso', 'troyab34@','commhty12','206');
 # estudiantes matematicas 208
+INSERT INTO ESTUDIANTE VALUES('2057098911080','0801198907502','Britta Gillian Perry','1989-12-09','M','99664872','La Paz', 'britt2@','quamt21','208');
+INSERT INTO ESTUDIANTE VALUES('3598750028980','0898200578953','Gareth Bale Ronaldo Suarez','2005-03-05','M','98508080','La Paz', 'cr7me@','barcelon23','208');
+INSERT INTO ESTUDIANTE VALUES('3409120021080','0801200219043','Skyler White Garcia Torres','2002-03-05','F','88904584','Ocotepeque', 'skyler23@','walterjr2@','208');
+INSERT INTO ESTUDIANTE VALUES('4709098915060','0605198909074','Jeffrey Hartwell Winger Ruber','1989-04-02','F','96303030','El Paraiso', 'jeffwing@','community1','208');
+INSERT INTO ESTUDIANTE VALUES('5000530021080','0801200350005','Annie Edison Love Gentile','1989-04-02','F','96303030','La Paz', 'annied@','community2','208');
 # estudiantes fisica 209
+INSERT INTO ESTUDIANTE VALUES('5789100025090','0905200019875','Pierce Hawtorne Chris','2000-04-21','M','99380529','Santa Barbara', 'pierhe@','racist023','209');
+INSERT INTO ESTUDIANTE VALUES('0468910026090','0906200198640','Shirley Bennet Canales','2001-10-09','F','96730451','Santa Barbara', 'shuiely@','jesus12','209');
+INSERT INTO ESTUDIANTE VALUES('1235088918090','0908198805321 ','Dean Pelton Baldur','1988-05-01','M','32985629','Santa Barbara', 'deanP@','je1234f','209');
+INSERT INTO ESTUDIANTE VALUES('5432100025090','0905200012345','Hank Asac Shcrader ','2000-06-03','M','39930273','Santa Barbara', 'hankASAC@','lakeof90','209');
+INSERT INTO ESTUDIANTE VALUES('6669010029090','0909200109666','Marie Curie Line','2001-07-15','F','96930273','Santa Barbara', 'marie22@','atreus12','209');
 # estudiantes microbiologia 202
+INSERT INTO ESTUDIANTE VALUES('3908969919080','0809199698093','Jesse Jess Pinkman','1996-12-12','M','96932204','Olancho', 'jess20@','nanociencia','202');
+INSERT INTO ESTUDIANTE VALUES('0255259915070','0705199525520','Hector Benito Salamanca','1995-10-10','M','90002204','Olancho', 'hectorB@','lafamilia24','202');
+INSERT INTO ESTUDIANTE VALUES('0580249915070','0705199420850','Gustavo Roberto Fring','1994-08-09','M','90012304','Olancho', 'fring24@','lafami1ga4','202');
+INSERT INTO ESTUDIANTE VALUES('4699039915070','0705199309964','Lidia Quadert Dayle','1993-06-01','F','96300958','Olancho', 'LID1@','metanol124','202');
+INSERT INTO ESTUDIANTE VALUES('4699039915070','0705199309964','Lidia Quadert Dayle','1993-06-01','F','96300958','Olancho', 'LID1@','metanol124','202');
 # estudiantes terapia 201
+INSERT INTO ESTUDIANTE VALUES('9965010025090','0905200105699','Jimmy McGill Goodman','2001-07-05','M','33509801','Valle', 'jimmy12@','magicman','201');
+INSERT INTO ESTUDIANTE VALUES('9166000025090','0905200006619','Kim Wexler Sandra','2000-02-12','F','98996542','Valle', 'kimwex@','igetup35','201');
+INSERT INTO ESTUDIANTE VALUES('6789049915090','0905199409876','Sandra Angela Hobbs','1994-06-09','M','95926372','Valle', 'sand12956@','calculo2','201');
+INSERT INTO ESTUDIANTE VALUES('6789049915090','0905199409876','Sandra Angela Hobbs','1994-06-09','M','95926372','Valle', 'sand12956@','calculo2','201');
+
 
 ## -------------------------------- insert matricula -----------------------------------------
 # Cambien año y periodos a las matriculas
