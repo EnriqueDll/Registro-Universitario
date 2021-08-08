@@ -31,7 +31,7 @@ public class IdImparteLab implements Serializable{
 		this.numCuentaDocente = numCuentaDocente;
 		this.idSeccionLab = idSeccionLab;
 	}
-
+	@Override
 	public boolean equals(Object obj) {
 		if (obj instanceof IdImparteLab) {
 			IdImparteLab tmpid = (IdImparteLab)obj;

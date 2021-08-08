@@ -89,6 +89,8 @@ public class SeccionLab {
 	//Tal vez con los gets de abajo nos proporciona el resto de info
 	//En lab
 	
+	//Resp: Ojalá que si jeje
+	
 	public Laboratorio getLaboratorio() {
 		return laboratorio;
 	}

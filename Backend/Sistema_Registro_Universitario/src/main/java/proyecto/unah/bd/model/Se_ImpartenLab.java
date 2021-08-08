@@ -15,7 +15,7 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties({"hibernateLazyInitializaer","handler"})
 @Entity
 @Table(name = "se_impartenLab")
-@IdClass(IdImparteLab.class)
+@IdClass(IdSe_ImpartenLab.class)
 
 public class Se_ImpartenLab implements Serializable{
 	
