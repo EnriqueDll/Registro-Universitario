@@ -290,32 +290,36 @@ INSERT INTO CLASE VALUES('IC-324','Resistencia de materiales I','Analisis de mat
 
 #mecanica 
 #1
-INSERT INTO CLASE VALUES('IM-325','Termodinamica 1','Area cientifica','106','501');
-INSERT INTO CLASE VALUES('IM-326','Metalurgia','Area Cientifica','106','501');
-INSERT INTO CLASE VALUES('IM-331','Termodinamica 1','Introduccion','106','501');
+INSERT INTO CLASE VALUES('IM-325','Termodinamica 1','Area cientifica','106','502');
+INSERT INTO CLASE VALUES('IM-326','Metalurgia','Area Cientifica','106','502');
+INSERT INTO CLASE VALUES('IM-331','Termodinamica 1','Introduccion','106','502');
 #2
-INSERT INTO CLASE VALUES('IM-327','Fluidos I','Continuacion','107','501');
-INSERT INTO CLASE VALUES('IM-328','Analisis Numerico','Introduccion general','107','501');
+INSERT INTO CLASE VALUES('IM-327','Fluidos I','Continuacion','107','502');
+INSERT INTO CLASE VALUES('IM-328','Analisis Numerico','Introduccion general','107','502');
 #3
-INSERT INTO CLASE VALUES('IM-329','Mecanica de Materiales ','Continuacion de Resistencias 1','108','501');
-INSERT INTO CLASE VALUES('IM-330','Maquina 1','Introduccion','108','501');
-INSERT INTO CLASE VALUES('IM-332','Manufactura 1','Conocimiento en area economica','108','501');
+INSERT INTO CLASE VALUES('IM-329','Mecanica de Materiales ','Continuacion de Resistencias 1','108','502');
+INSERT INTO CLASE VALUES('IM-330','Maquina 1','Introduccion','108','502');
+INSERT INTO CLASE VALUES('IM-332','Manufactura 1','Conocimiento en area economica','108','502');
 
-#matematicas
-
-
-
-#contaduria
-#admin
-#derecho
+#matematicas : Llave Foranea 503
+#Fisica : 504
+#contaduria :505 
+#admin:506
 
 #insert medicina
 #1
-INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','109','2127');
+INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','109','507');
+INSERT INTO CLASE VALUES('QQ-111','Quimica Medica','Introduccion a Quimica','109','507'); 
+INSERT INTO CLASE VALUES('QQ-111','Quimica Medica','Introduccion a Quimica','109','507');
 
-#micro
-#terapia
-#fisica
+#terapia  :508
+#micro :509
+#derecho :510
+
+
+
+
+
 
 
 
@@ -412,7 +416,20 @@ INSERT INTO SECCIONLAB VALUES('900','6001','1','14:00','LMX','10');
 
 
 # SECCIONES DE LAS CLASES
+
+	#Secciones de Sistema
 INSERT INTO SECCION VALUES('700','IS-518','1','7:00','LMXJV','10');
+
+
+
+
+#Seccion de Medicina
+	INSERT INTO SECCION VALUES(default,'QQ-111','2','8:00','LMXJV','11');
+
+
+
+
+
 
 
 
