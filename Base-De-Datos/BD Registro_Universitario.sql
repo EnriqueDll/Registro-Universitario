@@ -86,7 +86,7 @@ CREATE TABLE matricula (
 #Tabla que guarda la informacion de una clase
 #Tiene relacion con Matricula y Departamento
 CREATE TABLE clase (
-	idClase 					VARCHAR(6),
+	idClase 					VARCHAR(8),
     nombreClase 				VARCHAR(30) NOT NULL,
     descripcionClase 			VARCHAR(100),
     idMatricula 				INT,
@@ -96,14 +96,13 @@ CREATE TABLE clase (
 	CONSTRAINT FK_ID_DEPTO 		FOREIGN KEY (idDepto) REFERENCES departamento (idDepto)
 );
 
-
 #Tabla que guarda la informacion de un laboratorio
 #Tiene relacion con Clase
 CREATE TABLE laboratorio (
 	idLab 						VARCHAR(6),
     nombreLab 					VARCHAR(30) NOT NULL, 
     descripcion 				VARCHAR(100),
-    idClase 					VARCHAR(6),
+    idClase 					VARCHAR(8),
     CONSTRAINT PK_ID_LAB		PRIMARY KEY (idLab),
 	CONSTRAINT FK_ID_CLASE 		FOREIGN KEY (idClase) REFERENCES clase (idClase)
 );
@@ -141,7 +140,7 @@ CREATE TABLE docente (
 #Tiene relacion con clase o laboratorio
 CREATE TABLE seccion (
 	idSeccion 					INT AUTO_INCREMENT, #0001
-    idClase 					VARCHAR(6),
+    idClase 					VARCHAR(8),
 	numSeccion 					INT NOT NULL, #2000
     horaSeccion 				VARCHAR(6) NOT NULL,
     diaSeccion 					VARCHAR(15) NOT NULL,
@@ -149,6 +148,7 @@ CREATE TABLE seccion (
     CONSTRAINT PK_ID_SECCION 	PRIMARY KEY (idSeccion),
     CONSTRAINT FK_IDCLASE 		FOREIGN KEY (idClase) REFERENCES clase (idClase)
 );
+
 
 CREATE TABLE seccionLab (
 	idSeccionLab 				INT AUTO_INCREMENT, #0001
@@ -196,4 +196,3 @@ CREATE TABLE imparteLab (
    CONSTRAINT fk_IDSECCION_LAB 	FOREIGN KEY (idSeccionLab) REFERENCES seccionLab(idSeccionLab)
 ) ;
 
-Drop Database REGISTRO_UNIVERSITARIO;
