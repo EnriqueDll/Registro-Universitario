@@ -66,6 +66,7 @@ CREATE TABLE estudiante (
 	idCarrera					INT,
     CONSTRAINT PK_NUM_CUENTA 	PRIMARY KEY (numCuentaEstu),
     CONSTRAINT FK_IDCARRERA 	FOREIGN KEY (idCarrera) REFERENCES carrera (idCarrera)
+    
 );
 
 
