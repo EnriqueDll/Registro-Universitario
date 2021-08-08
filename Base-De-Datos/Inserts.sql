@@ -413,7 +413,7 @@ INSERT INTO SECCION VALUES(default,'AD-111','24','9:00','LMXV','50');
 INSERT INTO SECCION VALUES(default,'AD-420','25','8:00','LMXJV','10');
 
 
-
+#hola
 
 
 
