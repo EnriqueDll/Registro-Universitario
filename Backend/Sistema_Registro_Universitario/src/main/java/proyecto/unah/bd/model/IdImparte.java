@@ -17,14 +17,14 @@ public class IdImparte implements Serializable{
 	 */
 	
 	private static final long serialVersionUID = 1L;
-	private String numCuentaDocente;
-	private String idSeccion;
+	public String numCuentaDocente;
+	public int idSeccion;
 	
 	//Constructor vacio
 	public IdImparte () {}
 	
 	//Constructor
-	public IdImparte(String numCuentaDocente, String idSeccion) {
+	public IdImparte(String numCuentaDocente, int idSeccion) {
 		super();
 		this.numCuentaDocente = numCuentaDocente;
 		this.idSeccion = idSeccion;
@@ -42,6 +42,7 @@ public class IdImparte implements Serializable{
 			
 		}else return false;
 	}
+
 	
 	/*
 	public int hashCode() {
@@ -53,13 +54,16 @@ public class IdImparte implements Serializable{
 	public String getNumCuentaDocente() {
 		return numCuentaDocente;
 	}
+
 	public void setNumCuentaDocente(String numCuentaDocente) {
 		this.numCuentaDocente = numCuentaDocente;
 	}
-	public String getIdSeccion() {
+
+	public int getIdSeccion() {
 		return idSeccion;
 	}
-	public void setIdSeccion(String idSeccion) {
+
+	public void setIdSeccion(int idSeccion) {
 		this.idSeccion = idSeccion;
 	}
 		

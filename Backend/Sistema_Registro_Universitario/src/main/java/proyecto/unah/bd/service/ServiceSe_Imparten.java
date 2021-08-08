@@ -1,8 +1,6 @@
 package proyecto.unah.bd.service;
 
 import java.util.List;
-import java.util.Optional;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,8 +17,9 @@ public class ServiceSe_Imparten {
 	public void crearSe_Imparte(Se_Imparten se_imparte) {
 		this.repositorySe_Imparte.save(se_imparte);		
 	}
-	public Optional <Se_Imparten> buscarSe_Imparte(IdSe_Imparten se_imparteId) {
-	return this.repositorySe_Imparte.findById(se_imparteId);
+
+	public Se_Imparten buscarSe_Imparte(IdSe_Imparten se_imparteId) {
+	return this.repositorySe_Imparte.getOne(se_imparteId);
 	}
 	
 	public List<Se_Imparten> obtenerTodasSe_Imparte(){

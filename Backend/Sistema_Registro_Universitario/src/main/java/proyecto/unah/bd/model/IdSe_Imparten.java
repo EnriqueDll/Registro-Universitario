@@ -17,14 +17,14 @@ public class IdSe_Imparten implements Serializable{
 	 */
 	
 	private static final long serialVersionUID = 1L;
-	private String idEdificio;
-	private String idSeccion;
+	public int idEdificio;
+	public int idSeccion;
 	
 	//Constructor vacio
 	public IdSe_Imparten () {}
 	
 	//Constructor
-	public IdSe_Imparten(String idEdificio, String idSeccion) {
+	public IdSe_Imparten(int idEdificio, int idSeccion) {
 		super();
 		this.idEdificio = idEdificio;
 		this.idSeccion = idSeccion;
@@ -42,6 +42,7 @@ public class IdSe_Imparten implements Serializable{
 			
 		}else return false;
 	}
+
 		
 	//public int hashCode() {
 			//return (int) this.numDocente.hashCode()+this.idSeccion;
@@ -49,16 +50,19 @@ public class IdSe_Imparten implements Serializable{
 	
 	
 	//Gets & Sets
-	public String getIdEdificio() {
+	public int getIdEdificio() {
 		return idEdificio;
 	}
-	public void setIdEdificio(String idEdificio) {
+
+	public void setIdEdificio(int idEdificio) {
 		this.idEdificio = idEdificio;
 	}
-	public String getIdSeccion() {
+
+	public int getIdSeccion() {
 		return idSeccion;
 	}
-	public void setIdSeccion(String idSeccion) {
+
+	public void setIdSeccion(int idSeccion) {
 		this.idSeccion = idSeccion;
-	}	
+	}
 }

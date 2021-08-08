@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -29,9 +28,9 @@ public class Imparte implements Serializable{
 	
 	//Atributos
 	@Id
-	private String numCuentaDocente;
+	public String numCuentaDocente;
 	@Id
-	private String idSeccion;
+	public int idSeccion;
 	
 	//Relalcion
 	@ManyToOne
@@ -50,7 +49,7 @@ public class Imparte implements Serializable{
 	}
 	
 	//Constructor
-	public Imparte(String numCuentaDocente, String idSeccion, Docente docente, Seccion seccion) {
+	public Imparte(String numCuentaDocente, int idSeccion, Docente docente, Seccion seccion) {
 		super();
 		this.numCuentaDocente = numCuentaDocente;
 		this.idSeccion = idSeccion;
@@ -59,12 +58,6 @@ public class Imparte implements Serializable{
 	}
 	
 	//Gets $ Sets
-	
-	
-	
-	public String getIdSeccion() {
-		return idSeccion;
-	}
 
 	public String getNumCuentaDocente() {
 		return numCuentaDocente;
@@ -74,7 +67,12 @@ public class Imparte implements Serializable{
 		this.numCuentaDocente = numCuentaDocente;
 	}
 
-	public void setIdSeccion(String idSeccion) {
+	public int getIdSeccion() {
+		return idSeccion;
+	}
+
+	public void setIdSeccion(int idSeccion) {
 		this.idSeccion = idSeccion;
 	}
+
 }

@@ -11,7 +11,7 @@ public class Edificio {
 	
 	//Atributos
 	@Id
-	public String idEdificio;
+	public int idEdificio;
 	public int     aula;
 	public int     aulaLab;
 	public String estado;
@@ -24,7 +24,7 @@ public class Edificio {
 	}
 	
 	//Constructor
-	public Edificio(String idEdificio, int aula, int aulaLab, String estado) {
+	public Edificio(int idEdificio, int aula, int aulaLab, String estado) {
 		super();
 		this.idEdificio = idEdificio;
 		this.aula = aula;
@@ -34,10 +34,10 @@ public class Edificio {
 	}
 	
 	//Gets & Sets
-	public String getIdEdificio() {
+	public int getIdEdificio() {
 		return idEdificio;
 	}
-	public void setIdEdificio(String idEdificio) {
+	public void setIdEdificio(int idEdificio) {
 		this.idEdificio = idEdificio;
 	}
 	public int getAula() {

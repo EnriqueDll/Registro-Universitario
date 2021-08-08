@@ -15,7 +15,7 @@ public class Seccion {
 	
 	//Atributos
 	@Id
-	public String idSeccion;
+	public int    idSeccion;
 	public int    numSeccion;
 	public String horaSeccion;
 	public String diaSeccion;
@@ -39,7 +39,7 @@ public class Seccion {
 	}
 	
 	//Constructor
-	public Seccion(String idSeccion, int numSeccion, String horaSeccion,
+	public Seccion(int idSeccion, int numSeccion, String horaSeccion,
 			String diaSeccion, int numEstudiantes, Clase clase, Laboratorio laboratorio) {
 		super();
 		this.idSeccion = idSeccion;
@@ -50,37 +50,64 @@ public class Seccion {
 		this.clase = clase;
 		this.laboratorio = laboratorio;
 	}
-	
-	//Gets & Sets
-	public String getIdSeccion() {
+
+	public int getIdSeccion() {
 		return idSeccion;
 	}
-	public void setIdSeccion(String idSeccion) {
+
+	public void setIdSeccion(int idSeccion) {
 		this.idSeccion = idSeccion;
 	}
+
 	public int getNumSeccion() {
 		return numSeccion;
 	}
+
 	public void setNumSeccion(int numSeccion) {
 		this.numSeccion = numSeccion;
 	}
+
 	public String getHoraSeccion() {
 		return horaSeccion;
 	}
+
 	public void setHoraSeccion(String horaSeccion) {
 		this.horaSeccion = horaSeccion;
 	}
+
 	public String getDiaSeccion() {
 		return diaSeccion;
 	}
+
 	public void setDiaSeccion(String diaSeccion) {
 		this.diaSeccion = diaSeccion;
 	}
+
 	public int getNumEstudiantes() {
 		return numEstudiantes;
 	}
+
 	public void setNumEstudiantes(int numEstudiantes) {
 		this.numEstudiantes = numEstudiantes;
 	}
+
+	public Clase getClase() {
+		return clase;
+	}
+
+	public void setClase(Clase clase) {
+		this.clase = clase;
+	}
+
+	public Laboratorio getLaboratorio() {
+		return laboratorio;
+	}
+
+	public void setLaboratorio(Laboratorio laboratorio) {
+		this.laboratorio = laboratorio;
+	}
+	
+	//Gets & Sets
+
 	
 }

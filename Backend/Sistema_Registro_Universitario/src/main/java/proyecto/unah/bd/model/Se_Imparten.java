@@ -6,7 +6,6 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.IdClass;
 import javax.persistence.JoinColumn;
-import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
@@ -28,11 +27,11 @@ public class Se_Imparten implements Serializable{
 	
 	//Atributos
 	@Id
-	private String idEdificio;
+	public int idEdificio;
 	@Id
-	private String idSeccion;
+	public int idSeccion;
 	@Id
-	private String numCuentaDocente;
+	public int numCuentaDocente;
 	
 	//Relacion con Edificio
 	@ManyToOne
@@ -53,7 +52,7 @@ public class Se_Imparten implements Serializable{
 	}
 	
 	//Constructor
-	public Se_Imparten(String idEdificio, String idSeccion, Edificio edificio, Seccion seccion) {
+	public Se_Imparten(int idEdificio, int idSeccion, Edificio edificio, Seccion seccion) {
 		super();
 		this.idEdificio = idEdificio;
 		this.idSeccion = idSeccion;
@@ -62,19 +61,19 @@ public class Se_Imparten implements Serializable{
 	}
 
 	//Gets & Sets
-	public String getIdEdificio() {
+	public int getIdEdificio() {
 		return idEdificio;
 	}
 
-	public void setIdEdificio(String idEdificio) {
+	public void setIdEdificio(int idEdificio) {
 		this.idEdificio = idEdificio;
 	}
 
-	public String getIdSeccion() {
+	public int getIdSeccion() {
 		return idSeccion;
 	}
 
-	public void setIdSeccion(String idSeccion) {
+	public void setIdSeccion(int idSeccion) {
 		this.idSeccion = idSeccion;
 	}
 }
