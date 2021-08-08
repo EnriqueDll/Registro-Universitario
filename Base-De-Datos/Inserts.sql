@@ -258,8 +258,8 @@ INSERT INTO MATRICULA VALUES(default,default,'1','2018','7005079911080') ;
 #501 civil ///Completo
 #502 mecanica ////COMPLETO
 #503 matematicas //Completo
-#504 fisica //Completo
-#505 contaduria //Completo
+#504 fisica
+#505 contaduria 
 #507 medicina
 #506 admin empresas
 #508 terapia
