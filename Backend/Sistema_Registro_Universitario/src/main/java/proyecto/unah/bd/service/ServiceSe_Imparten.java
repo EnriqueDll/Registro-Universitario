@@ -18,6 +18,7 @@ public class ServiceSe_Imparten {
 		this.repositorySe_Imparte.save(se_imparte);		
 	}
 
+	@SuppressWarnings("deprecation")
 	public Se_Imparten buscarSe_Imparte(IdSe_Imparten se_imparteId) {
 	return this.repositorySe_Imparte.getOne(se_imparteId);
 	}

@@ -18,6 +18,7 @@ public class ServiceImparte {
 	public void crearImparte(Imparte imparte) {
 		this.repositoryImparte.save(imparte);		
 	}
+	@SuppressWarnings("deprecation")
 	public Imparte buscarImparte(IdImparte imparteId) {
 	return this.repositoryImparte.getOne(imparteId);
 	}
