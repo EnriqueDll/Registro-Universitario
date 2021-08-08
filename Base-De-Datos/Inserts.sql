@@ -330,7 +330,76 @@ INSERT INTO CLASE VALUES('QQ-111','Quimica Medica','Introduccion a Quimica','109
 
 # FALTAN
 # MEDICINA, TERAPIA,M MICRO,------ GALO
+
 # CONTA, ADMIN, MATE, ----------- CANDY
+## inserts CLASES 
+##MATEMATICA
+#1
+INSERT INTO CLASE VALUES('MM-430','Geometria Analitica','Introduccion Geometria','109','503');
+INSERT INTO CLASE VALUES('MM-408','Calculo III','Continuacion de Calculo II','109','503'); 
+INSERT INTO CLASE VALUES('MM-418','Progamacion II','Continuacion de Programacion I','109','503');
+ #2
+INSERT INTO CLASE VALUES('MM-410','Calculo I','Introduccion a los Calculos','110','503');
+INSERT INTO CLASE VALUES('MM-438','Matematica Discreta','introduccion a la Matematica Dicreta','110','503'); 
+INSERT INTO CLASE VALUES('MM-428','Variable compleja',' Introduccion a lo Complejo','110','503');
+ #3
+INSERT INTO CLASE VALUES('MM-403','Analisis Matematico I','Introduccion  Analisis','111','503');
+INSERT INTO CLASE VALUES('MM-447','Programacion II','Continuacion de Programacion I','111','503'); 
+ 
+##CONTADURIA
+#1
+INSERT INTO CLASE VALUES('CF-014','Contabilidad I','Introduccion a la Contabilidad','112','505');
+INSERT INTO CLASE VALUES('CF-408','calculo III','Continuacion del Calculo II','112','505'); 
+INSERT INTO CLASE VALUES('CF-415','Progamacion II','Continuacion de Programacion I','112','505');
+#2
+INSERT INTO CLASE VALUES('CF-011','Macrieconomia I','Introduccion a la Macroeconomia','113','505');
+INSERT INTO CLASE VALUES('CF-400','Ingles I','Introduccion al Ingles ','113','505'); 
+INSERT INTO CLASE VALUES('CF-412','Derecho Mercantil','Introduccion al Derecho','113','505');
+#3
+INSERT INTO CLASE VALUES('CF-111','Ingles II','Continuacion del Ingles I','114','505');
+INSERT INTO CLASE VALUES('CF-420','Administracion I','Introduccion a la Administracion','114','505'); 
+
+##ADMINISTRACION
+#1
+INSERT INTO CLASE VALUES('AD-014','Metodos Cuantitativos I','Introduccion a los Metodos','115','506');
+INSERT INTO CLASE VALUES('AD-408','Principios de Economia ','Introduccion a la Economia','115','506'); 
+INSERT INTO CLASE VALUES('AD-415','Computacion I','Conocimientos Basicos en  Computacion','115','506');
+#2
+INSERT INTO CLASE VALUES('AD-011','Filosofia','Introduccion a la Filososfia','116','506');
+INSERT INTO CLASE VALUES('AD-400','Ingles I','Introduccion al Ingles ','116','506'); 
+INSERT INTO CLASE VALUES('AD-412','Empreasas I','Introduccion a Empresas','116','506');
+#3
+INSERT INTO CLASE VALUES('AD-111','Computacion II','Continuacion de Computacion I','117','506');
+INSERT INTO CLASE VALUES('AD-420','Metodos Cuantitativos II','Seguimiento de Metodos I','117','506'); 
+
+## inserts SECCION
+INSERT INTO SECCION VALUES(default,'MM-430','2','7:00','LMXJV','15');
+iNSERT INTO SECCION VALUES(default,'MM-408','3','8:00','LMXV','10');
+INSERT INTO SECCION VALUES(default,'MM-418','4','9:00','LMXJ','20');
+INSERT INTO SECCION VALUES(default,'MM-410','5','7:00','LMXJV','25');
+INSERT INTO SECCION VALUES(default,'MM-438','6','8:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'MM-428','7','10:00','LMJV','30');
+INSERT INTO SECCION VALUES(default,'MM-403','8','7:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'MM-447','9','8:00','LMXJV','35');
+
+INSERT INTO SECCION VALUES(default,'CF-014','10','8:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'CF-408','11','7:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'CF-415','12','10:00','LMJV','20');
+INSERT INTO SECCION VALUES(default,'CF-011','13','7:00','LMXJV','25');
+INSERT INTO SECCION VALUES(default,'CF-400','14','9:00','LMXJV','30');
+INSERT INTO SECCION VALUES(default,'CF-412','15','10:00','LMXJV','35');
+INSERT INTO SECCION VALUES(default,'CF-111','16','7:00','LMXJ','40');
+INSERT INTO SECCION VALUES(default,'CF-420','17','9:00','LMXJV','45');
+
+INSERT INTO SECCION VALUES(default,'AD-014','18','7:00','MXJV','20');
+INSERT INTO SECCION VALUES(default,'AD-408','19','6:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'AD-415','20','9:00','LMXJV','30');
+INSERT INTO SECCION VALUES(default,'AD-011','21','8:00','LXJV','10');
+INSERT INTO SECCION VALUES(default,'AD-400','22','7:00','LMXJV','40');
+INSERT INTO SECCION VALUES(default,'AD-412','23','10:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'AD-111','24','9:00','LMXV','50');
+INSERT INTO SECCION VALUES(default,'AD-420','25','8:00','LMXJV','10');
+
 # FISICA,DERECHO ---------CALIX
 
 
