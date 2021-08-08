@@ -24,7 +24,7 @@ public class Laboratorio {
 	
 	//Relacion con Seccion
 	@OneToMany(mappedBy="laboratorio",fetch=FetchType.EAGER)
-	public List<Seccion> seccion;
+	public List<SeccionLab> seccionLab;
 	
 	//Relacion con Clase
 	@ManyToOne

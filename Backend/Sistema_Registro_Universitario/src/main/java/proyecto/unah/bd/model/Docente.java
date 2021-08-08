@@ -19,21 +19,21 @@ public class Docente {
 	
 	//Atributos
 	@Id
-	private String numCuentaDocente;
-	private String  dni;
-	private String nombre;
-	private LocalDate fechaNac; //pasar a date
-	private String sexo;
+	public String numCuentaDocente;
+	public String  dni;
+	public String nombre;
+	public LocalDate fechaNac;
+	public String sexo; //puede tirar error porque en la base, este atributo es de tipo char
 	private String telefono;
 	private String ciudadOrigen;
-	private String Correo_Electronico;
+	public String Correo_Electronico;
 	private String contrasenia;
 	
 	//Relacion con Departamento
 	@ManyToOne
 	@JoinColumn(name = "idDepto")
 	@JsonBackReference
-	private Departamento departamento;
+	public Departamento departamento;
 	
 	//Constructor vacio
 	public Docente() {}

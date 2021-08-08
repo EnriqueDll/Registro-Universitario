@@ -38,9 +38,9 @@ CREATE TABLE carrera (
     CONSTRAINT PK_ID_CARRERA 	PRIMARY KEY (idCarrera),
     CONSTRAINT FK_FACULTAD_C	FOREIGN KEY (idFacultad) REFERENCES facultad (idFacultad)
 );
-
-
 #Tabla que guarda la informacion de un departamento
+
+
 #Tiene una relacion con carrera
 CREATE TABLE departamento (
 	idDepto 					INT AUTO_INCREMENT,
@@ -165,10 +165,17 @@ CREATE TABLE seccionLab (
 CREATE TABLE se_imparten (
 	idEdificio 					INT,
     idSeccion 					INT,
-    idSeccionLab				INT,
 	CONSTRAINT PK_SE_IMPARTEN 	PRIMARY KEY (idEdificio, idSeccion),
     CONSTRAINT fk_ID_EDIFICIO  	FOREIGN KEY (idEdificio) REFERENCES edificio(idEdificio),
-    CONSTRAINT fk_IDSECCION 	FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion),
+    CONSTRAINT fk_IDSECCION 	FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
+);	
+
+#Tabla que se relaciona con los laboratorios
+CREATE TABLE se_impartenLab (
+	idEdificio 					INT,
+    idSeccionLab				INT,
+	CONSTRAINT PK_SE_IMPARTEN 	PRIMARY KEY (idEdificio, idSeccionLab),
+    CONSTRAINT fk_ID_EDIFICIOLAB FOREIGN KEY (idEdificio) REFERENCES edificio(idEdificio),
 	CONSTRAINT fk_IDSECCIONLAB 	FOREIGN KEY (idSeccionLab) REFERENCES seccionLab(idSeccionLab)
 );	
 
@@ -176,9 +183,17 @@ CREATE TABLE se_imparten (
 CREATE TABLE imparte ( 	
    numCuentaDocente 			VARCHAR (15) NOT NULL,
    idSeccion     				INT,
-   idSeccionLab					INT,
    CONSTRAINT PK_IMPARTEN 		PRIMARY KEY (numCuentaDocente, idSeccion),
    CONSTRAINT FK_NUM_DOCENTE  	FOREIGN KEY (numCuentaDocente) REFERENCES docente(numCuentaDocente),
-   CONSTRAINT FK_SECCION 		FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion),
-   CONSTRAINT fk_IDSECCION_LAB 	FOREIGN KEY (idSeccionLab) REFERENCES seccionLab(idSeccionLab)
+   CONSTRAINT FK_SECCION 		FOREIGN KEY (idSeccion) REFERENCES seccion(idSeccion)
  ) ;
+
+CREATE TABLE imparteLab (
+	numCuentaDocente 			VARCHAR (15) NOT NULL,
+   idSeccionLab					INT,
+   CONSTRAINT PK_IMPARTEN 		PRIMARY KEY (numCuentaDocente, idSeccionLab),
+   CONSTRAINT FK_NUM_DOCENTELAB FOREIGN KEY (numCuentaDocente) REFERENCES docente(numCuentaDocente),
+   CONSTRAINT fk_IDSECCION_LAB 	FOREIGN KEY (idSeccionLab) REFERENCES seccionLab(idSeccionLab)
+) ;
+
+Drop Database REGISTRO_UNIVERSITARIO;

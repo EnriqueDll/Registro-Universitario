@@ -14,11 +14,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties({"hibernateLazyInitializaer","handler"})
 @Entity
-@Table(name = "imparte")
-@IdClass(IdImparte.class)
+@Table(name = "imparteLab")
+@IdClass(IdImparteLab.class)
 
 
-public class Imparte implements Serializable{
+public class ImparteLab implements Serializable{
 	
 	/**
 	 * 
@@ -30,7 +30,7 @@ public class Imparte implements Serializable{
 	@Id
 	public String numCuentaDocente;
 	@Id
-	public int idSeccion;
+	public int idSeccionLab;
 	
 	//Relalcion
 	@ManyToOne
@@ -39,22 +39,22 @@ public class Imparte implements Serializable{
 	public Docente docente;
 	
 	@ManyToOne//puede tirar error con ManyToMany
-	@JoinColumn(name = "idSeccion", referencedColumnName = "idSeccion", insertable = false, updatable = false)
+	@JoinColumn(name = "idSeccionLab", referencedColumnName = "idSeccionLab", insertable = false, updatable = false)
 	@JsonBackReference
-	public Seccion seccion;
+	public SeccionLab seccionLab;
 	
 	//COnstructor vacio
-	public Imparte() {
+	public ImparteLab() {
 		
 	}
 	
 	//Constructor
-	public Imparte(String numCuentaDocente, int idSeccion, Docente docente, Seccion seccion) {
+	public ImparteLab(String numCuentaDocente, int idSeccionLab, Docente docente, SeccionLab seccionLab) {
 		super();
 		this.numCuentaDocente = numCuentaDocente;
-		this.idSeccion = idSeccion;
+		this.idSeccionLab = idSeccionLab;
 		this.docente = docente;
-		this.seccion = seccion;
+		this.seccionLab = seccionLab;
 	}
 	
 	//Gets $ Sets
@@ -67,12 +67,12 @@ public class Imparte implements Serializable{
 		this.numCuentaDocente = numCuentaDocente;
 	}
 
-	public int getIdSeccion() {
-		return idSeccion;
+	public int getIdSeccionLab() {
+		return idSeccionLab;
 	}
 
-	public void setIdSeccion(int idSeccion) {
-		this.idSeccion = idSeccion;
+	public void setIdSeccionLab(int idSeccionLab) {
+		this.idSeccionLab = idSeccionLab;
 	}
 
 }

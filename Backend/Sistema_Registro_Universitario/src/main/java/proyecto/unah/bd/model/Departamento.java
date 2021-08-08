@@ -33,12 +33,10 @@ public class Departamento {
     @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
     public List <Clase> clase;
     
-    
-    /*
     //Relacion con Docente
-    @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "departamento", fetch = FetchType.LAZY)
     public List <Docente> docente;
-     */
+     
 	//Constructor vacio
 	public Departamento() {
 		

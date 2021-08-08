@@ -1,5 +1,6 @@
 package proyecto.unah.bd.model;
 
+
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
@@ -9,35 +10,35 @@ import javax.persistence.Table;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 
 @Entity
-@Table (name = "seccion")
+@Table (name = "seccionLab")
 
-public class Seccion {
+public class SeccionLab {
 	
 	//Atributos
 	@Id
-	public int    idSeccion;
+	public int    idSeccionLab;
 	public int    numSeccion;
 	public String horaSeccion;
 	public String diaSeccion;
 	public int numEstudiantes;
 	
-	//Relacion con la Clase
+	//Relacion Con Laboratorio
 	@ManyToOne
-	@JoinColumn(name = "idClase")
+	@JoinColumn(name = "idLab" )
 	@JsonBackReference
-	public Clase clase;
+	public Laboratorio laboratorio;
 	
 	//Constructor Vacio
-	public Seccion() {
+	public SeccionLab() {
 		
 	}
 	
 	//Constructor
-	public Seccion(int idSeccion, Clase clase, int numSeccion, String horaSeccion,
+	public SeccionLab(int idSeccionLab, Laboratorio laboratorio, int numSeccion, String horaSeccion,
 			String diaSeccion, int numEstudiantes) {
 		super();
-		this.idSeccion = idSeccion;
-		this.clase = clase;
+		this.idSeccionLab = idSeccionLab;
+		this.laboratorio = laboratorio;
 		this.numSeccion = numSeccion;
 		this.horaSeccion = horaSeccion;
 		this.diaSeccion = diaSeccion;
@@ -45,12 +46,12 @@ public class Seccion {
 	}
 	
 	//Gets & Sets
-	public int getIdSeccion() {
-		return idSeccion;
+	public int getIdSeccionLab() {
+		return idSeccionLab;
 	}
 
-	public void setIdSeccion(int idSeccion) {
-		this.idSeccion = idSeccion;
+	public void setIdSeccionLab(int idSeccionLab) {
+		this.idSeccionLab = idSeccionLab;
 	}
 
 	public int getNumSeccion() {
@@ -87,11 +88,13 @@ public class Seccion {
 	
 	//Tal vez con los gets de abajo nos proporciona el resto de info
 	//En lab
-	public Clase getClase() {
-		return clase;
+	
+	public Laboratorio getLaboratorio() {
+		return laboratorio;
 	}
 
-	public void setClase(Clase clase) {
-		this.clase = clase;
+	public void setLaboratorio(Laboratorio laboratorio) {
+		this.laboratorio = laboratorio;
 	}
 }
+
