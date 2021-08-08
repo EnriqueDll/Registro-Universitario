@@ -268,11 +268,11 @@ INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','028','
 #503 matematicas //Completo
 #504 fisica //Completo
 #505 contaduria //Completo
-#507 medicina
-#506 admin empresas
-#508 terapia
-#509 microbiologia
-#510 derecho
+#507 medicina //completo
+#506 admin empresas //completo
+#508 terapia ///completo
+#509 microbiologia ///completo
+#510 derecho//completo
 
 # Docentes que pertenecen a ing sistemas 500
 INSERT INTO DOCENTE VALUES('5850087917081','1807197800585','Rosa Suyapa Gonzalez Mondragon','1978-09-10','F','96536387','Tegucigalpa','rosa@','1978','500');
@@ -302,10 +302,22 @@ INSERT INTO DOCENTE VALUES('8934207911080','0801197024398','Gustavo Andres Baque
 INSERT INTO DOCENTE VALUES('8934239911080','0801199324398','Guillermo Antonio Salgado','1993-08-07','M','99124521','Ceiba','guille@','antonio08','506');
 INSERT INTO DOCENTE VALUES('4313239911080','0801199323134','Lucia Elizabeth Cruz','1993-06-20','F','22239876','Trujillo','luci@','junio21','506');
 INSERT INTO DOCENTE VALUES('9323209911080','0801199023239','Maria Jose Espinoza Varela','1990-12-20','F','96542133','Tegucigalpa','majo@','mercurio21','506');
-#Docentes de Derecho 
+# Docentes de Derecho 
 INSERT INTO DOCENTE VALUES('5432010021080','0801200102345','Antonio Felipe Santome Suarez','2001-09-04','M','97642912','Olancho','anto@','juenaes9563','510');
 INSERT INTO DOCENTE VALUES('9601099914090','0904199901069','Laporta Ramos Jose Fuentes','1990-10-06','M','98999952','Ceiba','anto@','juenaes9563','510');
-
+INSERT INTO DOCENTE VALUES('4560017914001','1004197100654','Eduardo Francisco Lopez','1971-11-21','M','89765423','Tegucigalpa','francisco@','francisco','510');
+# Docentes Medicina
+INSERT INTO DOCENTE VALUES('6543288911080','0801198823456','Ana Gabriela Ramos Espinal','1988-04-14','F','98786543','San Pedro Sula','ana@','ana1988','507');
+INSERT INTO DOCENTE VALUES('6573177911080','0801197713756','Marco Antonio Ramos Castro','1977-05-29','M','88764321','Tela','marcos@','castro29','507');
+INSERT INTO DOCENTE VALUES('5342118917081','1807198112435','Fernando Jose Gonzalez Amador','1981-03-30','M','9876320','Trujillo','jose@','jose22','507');
+#Docentes Terapia
+INSERT INTO DOCENTE VALUES('6870037911080','0801197300786','Azucena Michell Rodriguez','1973-06-23','F','88765423','Tegucigalpa','michell@','rodri23','508');
+INSERT INTO DOCENTE VALUES('6970137911080','0801197310796','Karina Isabell Canaca','1973-07-19','F','98760423','Ceiba','isabell@','canaca29','508');
+INSERT INTO DOCENTE VALUES('6970117911081','1801197110796','Miguel Adolfo Solis','1971-06-21','M','38760413','Trujillo','adolfo@','solis','508');
+# Docentes Microbiologia
+INSERT INTO DOCENTE VALUES('2380067911080','0801197600832','Javier Emilio Cruz','1976-04-19','M','98760410','Tegucigalpa','cruz@','mercurio21','509');
+INSERT INTO DOCENTE VALUES('0080067917081','1807197600800','Henry David Valladares Osorio','1976-01-22','M','90760412','Tegucigalpa','osorio@','pluton21','509');
+INSERT INTO DOCENTE VALUES('0343207911040','0401197023430','Saida Cristina Aguilar','1970-10-11','F','84012445','Ceiba','saida@','jupiter','509');
 
 
 #insert laboratorios
@@ -316,10 +328,18 @@ INSERT INTO LABORATORIO VALUES('6000','Topografia 1','introduccion a topografia'
 INSERT INTO LABORATORIO VALUES('6001','Hidrologia 1','Conocimiento general de hidrologia','IC-573');
 INSERT INTO LABORATORIO VALUES('6002','Hidraulica Aplicada','Conceptos generales de hidraulica','IC-572');
 
-
-
-
-
+#edificios
+INSERT INTO EDIFICIO VALUES('1','200','100','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'210','110','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'215','115','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'220','120','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'300','111','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'304','101','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'305','109','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'306','220','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'105','306','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'110','308','Disponible');
+INSERT INTO EDIFICIO VALUES(default,'303','208','Ocupada');
 
 
 
