@@ -34,6 +34,7 @@ import proyecto.unah.bd.model.Maestria;
 import proyecto.unah.bd.model.Matricula;
 import proyecto.unah.bd.model.Se_Imparten;
 import proyecto.unah.bd.model.Seccion;
+import proyecto.unah.bd.model.SeccionLab;
 import proyecto.unah.bd.service.ServiceCarrera;
 import proyecto.unah.bd.service.ServiceClase;
 import proyecto.unah.bd.service.ServiceDepartamento;
@@ -50,6 +51,7 @@ import proyecto.unah.bd.service.ServiceMatricula;
 import proyecto.unah.bd.service.ServiceSe_Imparten;
 import proyecto.unah.bd.service.ServiceSeccion;
 //import proyecto.unah.bd.service.ServiceSeccionLab;
+import proyecto.unah.bd.service.ServiceSeccionLab;
 
 /**
  * 
@@ -108,10 +110,10 @@ public class Controlador {
 	
 	@Autowired
 	ServiceSeccion serviceseccion;
-	/*
+	
 	@Autowired
 	ServiceSeccionLab serviceseccionlab;
-	*/
+	
 	
 	//-------------------------------Pagina Inicial-------------------------------
 
@@ -425,34 +427,32 @@ public class Controlador {
                public Optional<Edificio> buscarEdificio(@RequestParam(name = "id") String idEdificio) {
 	           return this.serviceedificio.buscarEdificio( idEdificio);
 	           
-               }}
-		
-		/*
+               }
+
+
 		//====================================================================
 		// Docente
 		//====================================================================
 	
 		@RequestMapping(value = "/docente/crearDocente", method = RequestMethod.GET)
-		public Docente crearDocente(@RequestParam(name = "Ciudad de Origen") String ciudadOrigen,
+		public Docente crearDocente(@RequestParam(name = "Identificacion") String dni,
+				 					@RequestParam(name = "Nombre ") String nombre,
+				 					@RequestParam(name = "Fecha de Nacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNacD,
+				 					@RequestParam(name = "Sexo") String sexo,//cambiar a char
+				 					@RequestParam(name = "Telefono") String telefono,
+				 					@RequestParam(name = "Ciudad de Origen") String ciudadOrigen,
+				 					@RequestParam(name = "Correo Electronico") String Correo_Electronico,
 				                    @RequestParam(name = "Contraseña") String contrasenia,
-				                    @RequestParam(name = "Correo Electronico") String Correo_Electronico,
-				                    @RequestParam(name = "Identificacion") String dni,
-				                    @RequestParam(name = "Fecha de Nacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNacD,
-				                    @RequestParam(name = "Nombre ") String nombre,
-				                    @RequestParam(name = "numero de Cuenta del docente") String numeroCuentaDocente,
-				                    @RequestParam(name = "Sexo") String sexo,//cambiar a char
-				                    @RequestParam(name = "Telefono") String telefono,
-				                    @RequestParam(name = "Departamento") String departamento) {
-		
+				                    @RequestParam(name = "Departamento") int departamento) {
 		//Buscar Departamento
-		Optional <Departamento> departamento3 = this.servicedepartamento.buscarDepartamento(departamento);
+		Departamento departamento3 = this.servicedepartamento.buscarDepartamento(departamento);
 		
 		//Numero de cuenta Docente
 		String numCuentaD = "";
 		for (int i = dni.length()-1; i >= 0; i--)
 			  numCuentaD = numCuentaD + dni.charAt(i);
 		
-		Docente docente = new Docente (ciudadOrigen,contrasenia,Correo_Electronico,dni,fechaNacD, nombre,numeroCuentaDocente, sexo,telefono,departamento3.get());
+		Docente docente = new Docente (numCuentaD, dni ,nombre, fechaNacD, sexo,telefono, ciudadOrigen, Correo_Electronico,contrasenia,departamento3);
 		this.servicedocente.crearDocente(docente);
 		return docente;
 		
@@ -461,10 +461,83 @@ public class Controlador {
 		@RequestMapping(value = "/docente/listaDocente", method = RequestMethod.GET)
 		public List<Docente> listadoDocente() {
 			return this.servicedocente.obtenerTodosDocentes();
+			}
+		
+		@RequestMapping(value ="/docente/buscarDocente",method=RequestMethod.GET)
+		public Optional<Docente> buscarDocente(@RequestParam(name = "id") String numCuentaDocente) {
+			return this.servicedocente.buscarDocente(numCuentaDocente);
 		}
 		
 		
-               
+		//=====================================================================
+        //SECCION LABORATORIO
+		//======================================================================
+		@RequestMapping (value = "/seccionLab/crearSeccionLab",method=RequestMethod.GET)
+		public SeccionLab crearSeccionLab(@RequestParam(name = "id") int idSeccion,
+		            @RequestParam(name = "laboratorio") String laboratorio,
+		            @RequestParam(name = "numero") int numSeccion,
+		            @RequestParam(name = "hora") String horaSeccion,
+		            @RequestParam(name = "dia") String diaSeccion,
+		            @RequestParam(name = "estudiantes") int numEstudiantes) {
+		
+		Optional <Laboratorio> lab4 = this.servicelaboratorio.buscarlaboratorio(laboratorio);
+		
+		SeccionLab seccionLab0 = new SeccionLab(idSeccion,lab4.get(),numSeccion,horaSeccion,diaSeccion,numEstudiantes);
+		this.serviceseccionlab.crearSeccionLab(seccionLab0);
+		return seccionLab0;
+		}
+		
+		@RequestMapping(value = "/seccionLab/listarSeccionLab",method=RequestMethod.GET)
+		public List<SeccionLab> listarSeccionesLab(){
+		return this.serviceseccionlab.obtenerSeccioneslab();
+		}
+		
+		@RequestMapping(value ="/seccionLab/buscarSeccionLab",method=RequestMethod.GET)
+		public SeccionLab buscarSeccionLab(@RequestParam(name = "id") int idSeccionLab) {
+		return this.serviceseccionlab.buscarSeccion(idSeccionLab);
+		}
+		
+		/*
+		//====================================================================
+		// Se Imparte
+		//====================================================================
+				
+				@RequestMapping(value = "/imparte/buscarImparte", method = RequestMethod.GET)
+				public Optional<Imparte> buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
+						                     @RequestParam(name = "idSeccion") int idSeccion) {
+				
+				Optional<Docente> docenteI = this.servicedocente.buscarDocente(numeroDocente);
+				
+				IdImparte idImparte = new IdImparte (numeroDocente, idSeccion);	
+				return this.serviceimparte.buscarImparte(idImparte);
+				
+				}
+				@RequestMapping(value = "/imparte/listarImparte", method = RequestMethod.GET)
+				public List<Imparte> listarImparte(){
+					return this.serviceimparte.obtenerTodasImparte();
+				}
+				
+				
+				@RequestMapping(value = "/se_imparten/buscar_se_imparten", method = RequestMethod.GET)
+				public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") int idEdificio,
+						                     @RequestParam(name = "idSeccion") int idSeccion) {
+						
+				IdSe_Imparten idse_Imparte = new IdSe_Imparten (idEdificio, idSeccion);	
+				return this.serviceSe_imparten.buscarSe_Imparte(idse_Imparte);
+				
+				}
+				@RequestMapping(value = "/se_imparten/listar_se_imparten", method = RequestMethod.GET)
+				public List<Se_Imparten> listarSe_Imparte(){
+					return this.serviceSe_imparten.obtenerTodasSe_Imparte();
+				}
+		
+		*/
+		
+	
+}
+		
+			
+        /*
 		//====================================================================
 		// Se Imparte
 		//====================================================================
