@@ -448,6 +448,8 @@ INSERT INTO SECCION VALUES(DEFAULT,'FS-635','60','7:00','LMJV','15');
 INSERT INTO SECCION VALUES(DEFAULT,'FS-646','61','9:00','LMX','12');
 INSERT INTO SECCION VALUES(DEFAULT,'FS-650','62','16:00','LMXJV','12');
 
+
+
 #----------------------- insert laboratorios -------------------------------------
 # no necesariamente todas las clases deben tener laboratorio
 #con tres lab por carrera suficiente
@@ -456,15 +458,6 @@ INSERT INTO SECCION VALUES(DEFAULT,'FS-650','62','16:00','LMXJV','12');
 INSERT INTO LABORATORIO VALUES('6000','Intro a Ing,Civil','Introduccion','IC-301');
 INSERT INTO LABORATORIO VALUES('6001','Probabilidad y Estadistica','Ejercer practica','IC-309');
 INSERT INTO LABORATORIO VALUES('6002','Topografia','Fundamentos de Topografia','IC-322');
-# lab de ing mecanica
-
-
-# lab medicina
-
-
-# microbiologia 
-
-
 
 #lab fisica
 INSERT INTO LABORATORIO VALUES('6003','Fisca Moderna','Introduccion fisica moderna','FS-371');
@@ -473,6 +466,26 @@ INSERT INTO LABORATORIO VALUES('6005','Energias Renovables','Introduccion practi
 INSERT INTO LABORATORIO VALUES('6006','Electromagnetica','Teoria Electromagnetica','FS-635');
 INSERT INTO LABORATORIO VALUES('6007','Radiaciones','Fundamentos de la radiacion','FS-646');
 INSERT INTO LABORATORIO VALUES('6008','Topicos de Fisica Teorica','Fisica Teorica','FS-650');
+# lab microbiologia 
+INSERT INTO LABORATORIO VALUES('6009','Bacteriologia','Introduccion a bacteriologia','MB-066');
+INSERT INTO LABORATORIO VALUES('6010','Micologia','Introduccion','MB-0797');
+INSERT INTO LABORATORIO VALUES('6011','Helmintologia','Introduccion','MB-107');
+INSERT INTO LABORATORIO VALUES('6012','Quimica Organica','Fundamentos de Quimica','QQ-113');
+INSERT INTO LABORATORIO VALUES('6013','Quimica Biologica','Fundamentos de Quimica','MB-024');
+INSERT INTO LABORATORIO VALUES('6014','Protozoologia','Fundamentos de protozoologia','MB-076');
+# lab de ing mecanica
+INSERT INTO LABORATORIO VALUES('6015','Termodinamica 1','Fundamentos de termodinamica','IM-325');
+INSERT INTO LABORATORIO VALUES('6016','Metalurgia','Introduccion a metalurgia','IM-326');
+INSERT INTO LABORATORIO VALUES('6017','Mecanica de Materiales','Introduccion','IM-329');
+INSERT INTO LABORATORIO VALUES('6018','Maquina 1','Fundamentos de maquina','IM-330');
+INSERT INTO LABORATORIO VALUES('6019','Manufactura','Procesos de manufactura','IM-332');
+# lab medicina
+INSERT INTO LABORATORIO VALUES('6020','Quimica Medica','Introduccion a quimica medica','QQ-111');
+INSERT INTO LABORATORIO VALUES('6021','Bioquimica','Fundamentos de Bioquimica','BQ-113');
+INSERT INTO LABORATORIO VALUES('6022','Microbiologia','Introduccion a microbiologia','BL-610');
+INSERT INTO LABORATORIO VALUES('6023','Patologia','Fundamentos de Patalogia','PA-100');
+INSERT INTO LABORATORIO VALUES('6024','Fisiologia','Fundamentos de Fisiologia','FO-101');
+#lab de terapia
 
 #----------------- SECCIONES DE LAB ---------------------
 # secciones civil lab
@@ -486,6 +499,26 @@ INSERT INTO SECCIONLAB VALUES('9005','6005','6','11:00','LV','6');
 INSERT INTO SECCIONLAB VALUES('9006','6006','7','7:00','MJ','9');
 INSERT INTO SECCIONLAB VALUES('9007','6007','8','9:00','LMX','6');
 INSERT INTO SECCIONLAB VALUES('9008','6008','9','12:00','LV','8');
+# secciones de lab micro
+INSERT INTO SECCIONLAB VALUES('9009','6009','10','9:00','LXV','11');
+INSERT INTO SECCIONLAB VALUES('9010','6010','11','14:00','MV','7');
+INSERT INTO SECCIONLAB VALUES('9011','6011','12','13:00','LV','8');
+INSERT INTO SECCIONLAB VALUES('9012','6012','13','8:00','LM','5');
+INSERT INTO SECCIONLAB VALUES('9013','6013','14','12:00','LV','5');
+INSERT INTO SECCIONLAB VALUES('9014','6014','15','15:00','MXJ','8');
+#secciones de lab mecanica
+INSERT INTO SECCIONLAB VALUES('9015','6015','16','11:00','MXJ','5');
+INSERT INTO SECCIONLAB VALUES('9016','6016','17','7:00','LXJ','6');
+INSERT INTO SECCIONLAB VALUES('9017','6017','17','14:00','MV','9');
+INSERT INTO SECCIONLAB VALUES('9018','6018','18','9:00','LM','6');
+INSERT INTO SECCIONLAB VALUES('9019','6019','19','13:00','LMXJV','8');
+#secciones de lab medicina
+INSERT INTO SECCIONLAB VALUES('9020','6020','20','15:00','LMXJV','5');
+INSERT INTO SECCIONLAB VALUES('9021','6021','21','9:00','LJV','7');
+INSERT INTO SECCIONLAB VALUES('9022','6022','22','13:00','LV','5');
+INSERT INTO SECCIONLAB VALUES('9023','6023','23','7:00','LMXJV','7');
+INSERT INTO SECCIONLAB VALUES('9024','6024','24','10:00','LM','6');
+#secciones de lab terapia
 
 
 #edificios
@@ -500,10 +533,20 @@ INSERT INTO EDIFICIO VALUES(default,'306','220','Ocupada');
 INSERT INTO EDIFICIO VALUES(default,'105','306','Disponible');
 INSERT INTO EDIFICIO VALUES(default,'110','308','Disponible');
 INSERT INTO EDIFICIO VALUES(default,'303','208','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'301','203','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'302','211','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'300','200','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'401','201','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'402','202','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'211','403','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'209','411','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'214','407','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'408','123','Ocupada');
+INSERT INTO EDIFICIO VALUES(default,'110','105','Ocupada');
 
-
-
-
+# donde se imparten los lab 
+# id edificio, id seccionlab
+INSERT INTO SE_IMPARTENLAB VALUES('1','900');
 
 
 
