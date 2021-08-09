@@ -12,7 +12,25 @@ Grupo 1
 - Erick Javier Rodriguez-20176230005
 - William Alberto Gomez-20161900396
 
-## Tecnologías utilizadas: 
+## Instrucciones Generales:
+
+### Documentacion:
+>En la carpeta [Documentacion](Documentacion) se encuentra:
+- [Presentacion](Documentacion/BDI_UIII_AvanceProy3_G1.pdf)
+- [Diagrama Entidad-Relacion](Documentacion/Diagrama%20Entidad-Relacion.png) 
+- [Diagrama Relacional](Documentacion/Diagrama%20Relacional.png)
+
+### Base de Datos:
+>La carpeta [Base_De_Datos](Base_De_Datos) contiene:
+- [Registro_Universitario](Base-De-Datos/BD%20Registro_Universitario.sql) Script con la creacion de la base de datos.
+- [Insert](Base-De-Datos/Inserts.sql) Script con  inserciones realizadas.
+- [Consultas](Base-De-Datos/Consultas.sql) Scripts de consultas.
+
+### Instrucciones de Ejecucion:
+>Se utiliza *Spring Boot* y configurado correctamente las herramientas *maven*.
+>Este proyecto fue realizado en lenguaje *Java*
+
+### Tecnologías utilizadas: 
   - Spring Boot
   - Maven
   - MySQL Workbench
@@ -20,10 +38,5 @@ Grupo 1
   - JavaScript
   - HTML
   
-### Enlaces:
-  - [Diagrama Entidad-Relacion](https://drive.google.com/file/d/1ZBeF91SVa2JrWXLWFTnFyqCdSrhXIPWw/view?usp=sharing) 
-  - [Diagrama Relacional](https://drive.google.com/file/d/1dF5YmdAIW0OGywnur5mQAGB-lmOYGm4a/view?usp=sharing)
 
 
-No tendra funcionalidad: 
-Pagina principal, maestria, facultad, carrera, departamento
