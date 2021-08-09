@@ -497,13 +497,13 @@ public class Controlador {
 		return this.serviceseccionlab.buscarSeccion(idSeccionLab);
 		}
 		
-		/*
+		
 		//====================================================================
-		// Se Imparte
+		// Imparte
 		//====================================================================
 				
 				@RequestMapping(value = "/imparte/buscarImparte", method = RequestMethod.GET)
-				public Optional<Imparte> buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
+				public Imparte buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
 						                     @RequestParam(name = "idSeccion") int idSeccion) {
 				
 				Optional<Docente> docenteI = this.servicedocente.buscarDocente(numeroDocente);
@@ -519,7 +519,7 @@ public class Controlador {
 				
 				
 				@RequestMapping(value = "/se_imparten/buscar_se_imparten", method = RequestMethod.GET)
-				public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") int idEdificio,
+				public Se_Imparten buscarSe_Imparten(@RequestParam(name = "idEdificio") int idEdificio,
 						                     @RequestParam(name = "idSeccion") int idSeccion) {
 						
 				IdSe_Imparten idse_Imparte = new IdSe_Imparten (idEdificio, idSeccion);	
@@ -531,42 +531,7 @@ public class Controlador {
 					return this.serviceSe_imparten.obtenerTodasSe_Imparte();
 				}
 		
-		*/
 		
-	
 }
 		
-			
-        /*
-		//====================================================================
-		// Se Imparte
-		//====================================================================
-		
-		@RequestMapping(value = "/imparte/buscarImparte", method = RequestMethod.GET)
-		public Optional<Imparte> buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
-				                     @RequestParam(name = "idSeccion") int idSeccion) {
-		
-		IdImparte idImparte = new IdImparte (numeroDocente, idSeccion);	
-		return this.serviceimparte.buscarImparte(idImparte);
-		
-		}
-		@RequestMapping(value = "/imparte/listarImparte", method = RequestMethod.GET)
-		public List<Imparte> listarImparte(){
-			return this.serviceimparte.obtenerTodasImparte();
-		}
-		
-		
-		@RequestMapping(value = "/se_imparten/buscar_se_imparten", method = RequestMethod.GET)
-		public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") int idEdificio,
-				                     @RequestParam(name = "idSeccion") int idSeccion) {
-				
-		IdSe_Imparten idse_Imparte = new IdSe_Imparten (idEdificio, idSeccion);	
-		return this.serviceSe_imparten.buscarSe_Imparte(idse_Imparte);
-		
-		}
-		@RequestMapping(value = "/se_imparten/listar_se_imparten", method = RequestMethod.GET)
-		public List<Se_Imparten> listarSe_Imparte(){
-			return this.serviceSe_imparten.obtenerTodasSe_Imparte();
-		}
-		*/
 		
