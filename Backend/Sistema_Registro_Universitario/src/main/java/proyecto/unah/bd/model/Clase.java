@@ -1,9 +1,13 @@
 package proyecto.unah.bd.model;
 
+import java.util.List;
+
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
@@ -32,7 +36,7 @@ public class Clase {
 	@JsonBackReference
 	public Departamento departamento;
 	
-	/*
+	
 	//Relacion con Secciones
 	@OneToMany(mappedBy = "clase", fetch = FetchType.LAZY)
 	public List<Seccion> seccion;
@@ -40,7 +44,6 @@ public class Clase {
 	//Relacion con Laboratorio
 	@OneToMany(mappedBy = "clase", fetch = FetchType.LAZY)
 	public List<Laboratorio> laboratorio;
-	*/
 	
 	//Constructor Vacio
 	public Clase() {

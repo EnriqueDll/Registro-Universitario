@@ -33,15 +33,12 @@ public class Matricula {
 	@ManyToOne
 	@JoinColumn(name = "numCuentaEstu")
 	@JsonBackReference
-	public Estudiante estudiante;
+	public Estudiante estudiante;	
 	
-	//@OneToOne(fetch = FetchType.EAGER) //quizas haga falta el mappedBy = "estudiante", podria ser Lazy en lugar de eager
-	
-	/*
 	//Relacion con Clase
 	@OneToMany(mappedBy = "matricula", fetch = FetchType.EAGER)
 	public List<Clase> clase;
-	*/
+	
 	
 	//Constructor vacio
 	public Matricula() {

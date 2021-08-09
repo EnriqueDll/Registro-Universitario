@@ -32,7 +32,7 @@ public class Departamento {
     //Relacion con Clase
     @OneToMany(mappedBy = "departamento", fetch = FetchType.EAGER)
     public List <Clase> clase;
-    
+    //si es private en lugar de public, no nos muestra esa relacion en el json
     //Relacion con Docente
     @OneToMany(mappedBy = "departamento", fetch = FetchType.LAZY)
     public List <Docente> docente;

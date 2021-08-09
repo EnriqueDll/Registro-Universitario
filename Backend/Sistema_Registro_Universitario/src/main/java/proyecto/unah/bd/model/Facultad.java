@@ -21,11 +21,11 @@ public class Facultad {
 	
 	//Relacion con carrera
 	@OneToMany(mappedBy="facultad",fetch=FetchType.LAZY)
-	private List<Carrera> carrera;
+	public List<Carrera> carrera;
 	
 	//Maestria
 	@OneToMany(mappedBy="facultad",fetch=FetchType.LAZY)
-	private List<Maestria> maestria;
+	public List<Maestria> maestria;
 	
 	//Constructor Vacio
 	public Facultad() {

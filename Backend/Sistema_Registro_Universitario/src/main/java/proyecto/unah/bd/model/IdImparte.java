@@ -43,8 +43,13 @@ public class IdImparte implements Serializable{
 		}else return false;
 	}
 
+	//Puede tirar error porque numCuentaDocente es string
+	public int hashCode() {
+		return (int) this.numCuentaDocente.hashCode()+this.idSeccion;
+	}
 	
 	/*
+	 * Este era el hashcode que estaba antes, this.numDocente no existe, por eso tiraba error
 	public int hashCode() {
 		return (int) this.numDocente.hashCode()+this.idSeccion;
 	}

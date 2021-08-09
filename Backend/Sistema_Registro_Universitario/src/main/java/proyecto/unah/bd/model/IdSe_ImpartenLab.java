@@ -43,7 +43,11 @@ public class IdSe_ImpartenLab implements Serializable{
 		}else return false;
 	}
 
-		
+	
+	public int hashCode() {
+		return (int) this.idEdificio+this.idSeccionLab;
+	}
+	
 	//public int hashCode() {
 			//return (int) this.numDocente.hashCode()+this.idSeccionLab;
 		//}

@@ -22,15 +22,15 @@ public class Laboratorio {
 	public String nombreLab;
 	public String descripcion;
 	
-	//Relacion con Seccion
-	@OneToMany(mappedBy="laboratorio",fetch=FetchType.EAGER)
-	public List<SeccionLab> seccionLab;
-	
 	//Relacion con Clase
 	@ManyToOne
 	@JoinColumn(name="idClase")
 	@JsonBackReference
 	public Clase clase;
+	
+	//Relacion con Seccion
+	@OneToMany(mappedBy="laboratorio",fetch=FetchType.EAGER)
+	public List<SeccionLab> seccionLab;
 	
 	//Constructor Vacio
 	public Laboratorio() {

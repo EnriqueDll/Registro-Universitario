@@ -44,6 +44,11 @@ public class IdImparteLab implements Serializable{
 		}else return false;
 	}
 	
+	
+	public int hashCode() {
+		return (int) this.numCuentaDocente.hashCode()+this.idSeccionLab;
+	}
+	
 	/*
 	public int hashCode() {
 		return (int) this.numDocente.hashCode()+this.idSeccionLab;

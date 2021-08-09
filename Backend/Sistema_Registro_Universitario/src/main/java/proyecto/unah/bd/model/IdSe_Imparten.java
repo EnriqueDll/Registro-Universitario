@@ -43,11 +43,10 @@ public class IdSe_Imparten implements Serializable{
 		}else return false;
 	}
 
-		
-	//public int hashCode() {
-			//return (int) this.numDocente.hashCode()+this.idSeccion;
-		//}
-	
+	//Puede tirar error
+	public int hashCode() {
+		return (int) this.idEdificio + this.idSeccion;
+	}
 	
 	//Gets & Sets
 	public int getIdEdificio() {

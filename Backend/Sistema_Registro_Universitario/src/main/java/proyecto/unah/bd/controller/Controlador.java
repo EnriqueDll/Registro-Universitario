@@ -42,14 +42,14 @@ import proyecto.unah.bd.service.ServiceEdificio;
 import proyecto.unah.bd.service.ServiceEstudiante;
 import proyecto.unah.bd.service.ServiceFacultad;
 import proyecto.unah.bd.service.ServiceImparte;
-import proyecto.unah.bd.service.ServiceImparteLab;
+//import proyecto.unah.bd.service.ServiceImparteLab;
 import proyecto.unah.bd.service.ServiceLaboratorio;
 import proyecto.unah.bd.service.ServiceMaestria;
 import proyecto.unah.bd.service.ServiceMatricula;
-import proyecto.unah.bd.service.ServiceSe_ImparteLab;
+//import proyecto.unah.bd.service.ServiceSe_ImparteLab;
 import proyecto.unah.bd.service.ServiceSe_Imparten;
 import proyecto.unah.bd.service.ServiceSeccion;
-import proyecto.unah.bd.service.ServiceSeccionLab;
+//import proyecto.unah.bd.service.ServiceSeccionLab;
 
 /**
  * 
@@ -99,19 +99,19 @@ public class Controlador {
 	
 	@Autowired
 	ServiceMatricula servicematricula;
-	
+	/*
 	@Autowired
 	ServiceSe_ImparteLab servicese_impartelab;
-	
+	*/
 	@Autowired
 	ServiceSe_Imparten serviceSe_imparten;
 	
 	@Autowired
 	ServiceSeccion serviceseccion;
-	
+	/*
 	@Autowired
 	ServiceSeccionLab serviceseccionlab;
-	
+	*/
 	
 	//-------------------------------Pagina Inicial-------------------------------
 
