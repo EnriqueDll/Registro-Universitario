@@ -14,7 +14,6 @@ public class ServiceSeccion {
 	
 	@Autowired 
     RepositorySeccion repositoryseccion;
-	
 	public void crearSeccion(Seccion seccion) {
 		this.repositoryseccion.save(seccion);
 	}
