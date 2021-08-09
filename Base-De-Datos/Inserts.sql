@@ -361,7 +361,24 @@ INSERT INTO CLASE VALUES('TFT-101','Terapia Ocupacional I ','Terapia Ocupacional
 ## -------------------------- inserts SECCION --------------------------------------------
 #Secciones de Sistema
 INSERT INTO SECCION VALUES('700','IS-518','1','12:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'IS-411','02','12:00','LMXJV','12');
+INSERT INTO SECCION VALUES(default,'IS-510','03','1:00','LMXJV','13');
+INSERT INTO SECCION VALUES(default,'IS-110','09','9:00','LMXJV','05');
+INSERT INTO SECCION VALUES(default,'IS-111','04','2:00','LMXJV','05');
+INSERT INTO SECCION VALUES(default,'IS-501','05','6:00','LMXJV','3');
+INSERT INTO SECCION VALUES(default,'IS-511','06','7:00','LMXJV','3');
+INSERT INTO SECCION VALUES(default,'IS-410','07','8:00','LMXJV','3');
+
 # secciones mecanica
+INSERT INTO SECCION VALUES(default,'IM-325','06','12:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-326','09','1:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-331','10','2:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-327','11','3:00','LMXJV','12'); 
+INSERT INTO SECCION VALUES(default,'IM-328','12','4:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-329','09','5:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-330','10','6:00','LMXJV','10'); 
+INSERT INTO SECCION VALUES(default,'IM-332','11','9:00','LMXJV','10'); 
+
 
 # secciones civil
 INSERT INTO SECCION VALUES(default,'IC-301','2','18:00','LMX','15');
@@ -486,7 +503,9 @@ INSERT INTO LABORATORIO VALUES('6022','Microbiologia','Introduccion a microbiolo
 INSERT INTO LABORATORIO VALUES('6023','Patologia','Fundamentos de Patalogia','PA-100');
 INSERT INTO LABORATORIO VALUES('6024','Fisiologia','Fundamentos de Fisiologia','FO-101');
 #lab de terapia
-
+INSERT INTO LABORATORIO VALUES('6025','Anatomía Funcional ','Lab de Anatomia','TFA-100');
+INSERT INTO LABORATORIO VALUES('6026','Fisiologia NeuroMuscula','Lab de Fisiologia','TFN-101');
+INSERT INTO LABORATORIO VALUES('6027','Fisioterapia','Lab de Fisioterapia','TFF-101');
 #----------------- SECCIONES DE LAB ---------------------
 # secciones civil lab
 INSERT INTO SECCIONLAB VALUES('900','6001','1','14:00','LMX','10');
@@ -519,7 +538,9 @@ INSERT INTO SECCIONLAB VALUES('9022','6022','22','13:00','LV','5');
 INSERT INTO SECCIONLAB VALUES('9023','6023','23','7:00','LMXJV','7');
 INSERT INTO SECCIONLAB VALUES('9024','6024','24','10:00','LM','6');
 #secciones de lab terapia
-
+INSERT INTO SECCIONLAB VALUES('9030','6025','10','12:00','LMX','12');
+INSERT INTO SECCIONLAB VALUES('9040','6026','12','1:00','LMX','10');
+INSERT INTO SECCIONLAB VALUES('9041','6027','13','5:00','LMX','19');
 
 #edificios
 INSERT INTO EDIFICIO VALUES('1','200','100','Disponible');
@@ -549,4 +570,15 @@ INSERT INTO EDIFICIO VALUES(default,'110','105','Ocupada');
 INSERT INTO SE_IMPARTENLAB VALUES('1','900');
 
 
+#docente que imparte el lab
+#NUM_CUENTA DOCENTE ID SECCIONLAB
+INSERT INTO IMPARTELAB VALUES('5850087917081','900');
 
+#un docente imparte en que seccion
+# NUM_DOCENTE ID SECCION
+INSERT INTO IMPARTE VALUES('5850087917081','700');
+
+
+# donde se imparten las clases
+#id edificio id seccion
+INSERT INTO SE_IMPARTEN VALUES('1','700');
