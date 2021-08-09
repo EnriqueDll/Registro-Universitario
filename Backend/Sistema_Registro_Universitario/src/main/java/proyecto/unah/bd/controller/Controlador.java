@@ -22,17 +22,34 @@ import com.fasterxml.jackson.datatype.jsr310.deser.key.ZonedDateTimeKeyDeseriali
 import proyecto.unah.bd.model.Carrera;
 import proyecto.unah.bd.model.Clase;
 import proyecto.unah.bd.model.Departamento;
+import proyecto.unah.bd.model.Docente;
+import proyecto.unah.bd.model.Edificio;
 import proyecto.unah.bd.model.Estudiante;
 import proyecto.unah.bd.model.Facultad;
+import proyecto.unah.bd.model.IdImparte;
+import proyecto.unah.bd.model.IdSe_Imparten;
+import proyecto.unah.bd.model.Imparte;
+import proyecto.unah.bd.model.Laboratorio;
 import proyecto.unah.bd.model.Maestria;
 import proyecto.unah.bd.model.Matricula;
+import proyecto.unah.bd.model.Se_Imparten;
+import proyecto.unah.bd.model.Seccion;
 import proyecto.unah.bd.service.ServiceCarrera;
 import proyecto.unah.bd.service.ServiceClase;
 import proyecto.unah.bd.service.ServiceDepartamento;
+import proyecto.unah.bd.service.ServiceDocente;
+import proyecto.unah.bd.service.ServiceEdificio;
 import proyecto.unah.bd.service.ServiceEstudiante;
 import proyecto.unah.bd.service.ServiceFacultad;
+import proyecto.unah.bd.service.ServiceImparte;
+import proyecto.unah.bd.service.ServiceImparteLab;
+import proyecto.unah.bd.service.ServiceLaboratorio;
 import proyecto.unah.bd.service.ServiceMaestria;
 import proyecto.unah.bd.service.ServiceMatricula;
+import proyecto.unah.bd.service.ServiceSe_ImparteLab;
+import proyecto.unah.bd.service.ServiceSe_Imparten;
+import proyecto.unah.bd.service.ServiceSeccion;
+import proyecto.unah.bd.service.ServiceSeccionLab;
 
 /**
  * 
@@ -45,50 +62,55 @@ import proyecto.unah.bd.service.ServiceMatricula;
 
 public class Controlador {
 	
-	@Autowired
-	ServiceFacultad servicefacultad;
+
 	
 	@Autowired
 	ServiceCarrera servicecarrera;
 	
 	@Autowired
-	ServiceMaestria servicemaestria;
-	
-	@Autowired
-	ServiceEstudiante serviceestudiante;
-	
-	@Autowired
-	ServiceMatricula servicematricula;
+	ServiceClase serviceclase;
 	
 	@Autowired
 	ServiceDepartamento servicedepartamento;
 	
 	@Autowired
-	ServiceClase serviceclase;
-	
-	/*
-	
-	@Autowired
-	ServiceSeccion serviceseccion;
-	
-	@Autowired
-	ServiceLaboratorio servicelaboratorio;
+	ServiceDocente servicedocente;
 	
 	@Autowired
 	ServiceEdificio serviceedificio;
 	
 	@Autowired
-	ServiceMaestria servicemaestria;
+	ServiceEstudiante serviceestudiante;
 	
 	@Autowired
-	ServiceDocente servicedocente;
+	ServiceFacultad servicefacultad;
 	
 	@Autowired
 	ServiceImparte serviceimparte;
 	
+	//@Autowired
+	//ServiceImparteLab serviceimpartelab;
+	
+	@Autowired
+	ServiceLaboratorio servicelaboratorio;
+	
+	@Autowired
+	ServiceMaestria servicemaestria;
+	
+	@Autowired
+	ServiceMatricula servicematricula;
+	
+	@Autowired
+	ServiceSe_ImparteLab servicese_impartelab;
+	
 	@Autowired
 	ServiceSe_Imparten serviceSe_imparten;
-	*/
+	
+	@Autowired
+	ServiceSeccion serviceseccion;
+	
+	@Autowired
+	ServiceSeccionLab serviceseccionlab;
 	
 	
 	//-------------------------------Pagina Inicial-------------------------------
@@ -322,11 +344,6 @@ public class Controlador {
 					public Optional<Clase> buscarClase(@RequestParam(name = "id") String idClase) {
 						return this.serviceclase.buscarClase(idClase);
 					}
-		
-}
-	
-	/*
-	
 	
 			
 			
@@ -334,18 +351,16 @@ public class Controlador {
 			                        //SECCION
 			//======================================================================
 			@RequestMapping (value = "/seccion/crearSeccion",method=RequestMethod.GET)
-			public Seccion crearSeccion(@RequestParam(name = "id") String idSeccion,
+			public Seccion crearSeccion(@RequestParam(name = "id") int idSeccion,
 					                    @RequestParam(name = "clase") String clase,
-					                    @RequestParam(name = "laboratorio") String laboratorio,
 					                    @RequestParam(name = "numero") int numSeccion,
 					                    @RequestParam(name = "hora") String horaSeccion,
 					                    @RequestParam(name = "dia") String diaSeccion,
 					                    @RequestParam(name = "estudiantes") int numEstudiantes) {
 				
 				Optional <Clase> clase4 = this.serviceclase.buscarClase(clase);
-				Optional <Laboratorio> laboratorio1 = this.servicelaboratorio.buscarlaboratorio(laboratorio);
 						
-				Seccion seccion = new Seccion(idSeccion,numSeccion,horaSeccion,diaSeccion,numEstudiantes, clase4.get(), laboratorio1.get());
+				Seccion seccion = new Seccion(idSeccion,clase4.get(),numSeccion,horaSeccion,diaSeccion,numEstudiantes);
 				this.serviceseccion.crearSeccion(seccion);
 				return seccion;
 			}
@@ -359,6 +374,7 @@ public class Controlador {
 				return this.serviceseccion.buscarSeccion( idSeccion);
 			}
 			
+	
 			
 			//=======================================================================
 			                          //LABORATORIO
@@ -390,11 +406,11 @@ public class Controlador {
              //======================================================================
 			
              @RequestMapping(value ="/edificio/crearEdificio",method=RequestMethod.POST)
-             public Edificio crearEdificio(@RequestParam(name = "id") String idEdificio,
+             public Edificio crearEdificio(@RequestParam(name = "id") int idEdificio,
 	                          @RequestParam(name = "aula") int aula,
 	                          @RequestParam(name = "aulaLab") int aulaLab,
 	                          @RequestParam(name = "estado") String estado){
-	          Edificio edificio = new Edificio( idEdificio,aula,aulaLab,estado);
+	          Edificio edificio = new Edificio (idEdificio,aula,aulaLab,estado);
 	          this.serviceedificio.crearEdificio(edificio);
 	          return edificio;
 	
@@ -409,8 +425,9 @@ public class Controlador {
                public Optional<Edificio> buscarEdificio(@RequestParam(name = "id") String idEdificio) {
 	           return this.serviceedificio.buscarEdificio( idEdificio);
 	           
-               }
+               }}
 		
+		/*
 		//====================================================================
 		// Docente
 		//====================================================================
@@ -419,23 +436,23 @@ public class Controlador {
 		public Docente crearDocente(@RequestParam(name = "Ciudad de Origen") String ciudadOrigen,
 				                    @RequestParam(name = "Contraseña") String contrasenia,
 				                    @RequestParam(name = "Correo Electronico") String Correo_Electronico,
-				                    @RequestParam(name = "Identificacion") String dniD,
+				                    @RequestParam(name = "Identificacion") String dni,
 				                    @RequestParam(name = "Fecha de Nacimiento") @DateTimeFormat(iso = ISO.DATE) LocalDate fechaNacD,
 				                    @RequestParam(name = "Nombre ") String nombre,
 				                    @RequestParam(name = "numero de Cuenta del docente") String numeroCuentaDocente,
 				                    @RequestParam(name = "Sexo") String sexo,//cambiar a char
 				                    @RequestParam(name = "Telefono") String telefono,
-				                    @RequestParam(name = "Departamento") String departamentoD) {
+				                    @RequestParam(name = "Departamento") String departamento) {
 		
 		//Buscar Departamento
-		Optional <Departamento> departamento3 = this.servicedepartamento.buscarDepartamento(departamentoD);
+		Optional <Departamento> departamento3 = this.servicedepartamento.buscarDepartamento(departamento);
 		
 		//Numero de cuenta Docente
 		String numCuentaD = "";
-		for (int i = dniD.length()-1; i >= 0; i--)
-			  numCuentaD = numCuentaD + dniD.charAt(i);
+		for (int i = dni.length()-1; i >= 0; i--)
+			  numCuentaD = numCuentaD + dni.charAt(i);
 		
-		Docente docente = new Docente (numCuentaD, dniD, nombre, fechaNacD,sexo,telefono,ciudadOrigen,Correo_Electronico,contrasenia,departamento3.get());
+		Docente docente = new Docente (ciudadOrigen,contrasenia,Correo_Electronico,dni,fechaNacD, nombre,numeroCuentaDocente, sexo,telefono,departamento3.get());
 		this.servicedocente.crearDocente(docente);
 		return docente;
 		
@@ -446,13 +463,15 @@ public class Controlador {
 			return this.servicedocente.obtenerTodosDocentes();
 		}
 		
+		
+               
 		//====================================================================
 		// Se Imparte
 		//====================================================================
 		
 		@RequestMapping(value = "/imparte/buscarImparte", method = RequestMethod.GET)
 		public Optional<Imparte> buscarImparte(@RequestParam(name = "numCuentaDocente") String numeroDocente,
-				                     @RequestParam(name = "idSeccion") String idSeccion) {
+				                     @RequestParam(name = "idSeccion") int idSeccion) {
 		
 		IdImparte idImparte = new IdImparte (numeroDocente, idSeccion);	
 		return this.serviceimparte.buscarImparte(idImparte);
@@ -465,8 +484,8 @@ public class Controlador {
 		
 		
 		@RequestMapping(value = "/se_imparten/buscar_se_imparten", method = RequestMethod.GET)
-		public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") String idEdificio,
-				                     @RequestParam(name = "idSeccion") String idSeccion) {
+		public Optional<Se_Imparten> buscarSe_Imparten(@RequestParam(name = "idEdificio") int idEdificio,
+				                     @RequestParam(name = "idSeccion") int idSeccion) {
 				
 		IdSe_Imparten idse_Imparte = new IdSe_Imparten (idEdificio, idSeccion);	
 		return this.serviceSe_imparten.buscarSe_Imparte(idse_Imparte);
