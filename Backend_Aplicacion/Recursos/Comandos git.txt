@@ -1,8 +1,4 @@
 ***Comandos para usar git***
-erickjavierrodriguezacosta@gmail.com
-Erick1314
-Erick-1999
-
 ---> Comandos para agregar el repositorio a nuestra pc
 
 1. git init
