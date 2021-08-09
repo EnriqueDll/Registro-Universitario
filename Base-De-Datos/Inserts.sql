@@ -1,6 +1,4 @@
 
-
-
 USE REGISTRO_UNIVERSITARIO;
 ## -----------------------  inserts de facultades ----------------------------
 INSERT INTO FACULTAD VALUES(default,'Medicina',3); #id 1
@@ -220,40 +218,37 @@ INSERT INTO MATRICULA VALUES(default,default,'3','2017','1235088918090') ;#132
 ##----------------------- INSERT CLASES -------------------------------------------
 
 #sistemas
-#estudiante 1
 INSERT INTO CLASE VALUES('IS-518','Sistemas Operativos I','Introduccion a los Sistemas Operativos','100','500');
 INSERT INTO CLASE VALUES('IS-411','Electronica','Comprension de circuitos','100','500');
-#estudiante 2
+
 INSERT INTO CLASE VALUES('IS-510','Instalaciones Electricas','Analisis de instalaciones electricas','101','500');
 INSERT INTO CLASE VALUES('IS-110','Matematica I', 'Introduccion al algebra','101','500') ;
 INSERT INTO CLASE VALUES('IS-111','Geometria y Trigonometria', 'Introduccion a gemotria plana','101','500') ;
-# estu 3
+
 INSERT INTO CLASE VALUES('IS-501','Base de Datos I', 'Introduccion a bases de datos','102','500') ;
 INSERT INTO CLASE VALUES('IS-511','Redes de Datos', 'Conceptos Generales sobre Redes','102','500') ;
 INSERT INTO CLASE VALUES('IS-410','Programacion_Orientada_Objetos', 'Fundamentos de POO','102','500');
 
 
 #civil
-#1
 INSERT INTO CLASE VALUES('IC-301','Introduccion a la Ing.Civil','Introduccion general','103','501');
 INSERT INTO CLASE VALUES('IC-309','Probabilidad Y Estadistica','Conceptos de probabilidades','103','501');
 INSERT INTO CLASE VALUES('IC-320','Estadistica','Orientacion a estadistica','103','501');
-#2
+
 INSERT INTO CLASE VALUES('IC-321','Programacion I','Conceptos generales de programacion','104','501');
 INSERT INTO CLASE VALUES('IC-322','Topografia I','Introduccion general','104','501');
-#3
+
 INSERT INTO CLASE VALUES('IC-323','Analisis Numerico','Area cientifico-matematica','105','501');
 INSERT INTO CLASE VALUES('IC-324','Resistencia de materiales I','Analisis de materiales','105','501');
 
 #mecanica 
-#1
 INSERT INTO CLASE VALUES('IM-325','Termodinamica 1','Area cientifica','106','502');
 INSERT INTO CLASE VALUES('IM-326','Metalurgia','Area Cientifica','106','502');
 INSERT INTO CLASE VALUES('IM-331','Termodinamica 1','Introduccion','106','502');
-#2
+
 INSERT INTO CLASE VALUES('IM-327','Fluidos I','Continuacion','107','502');
 INSERT INTO CLASE VALUES('IM-328','Analisis Numerico','Introduccion general','107','502');
-#3
+
 INSERT INTO CLASE VALUES('IM-329','Mecanica de Materiales ','Continuacion de Resistencias 1','108','502');
 INSERT INTO CLASE VALUES('IM-330','Maquina 1','Introduccion','108','502');
 INSERT INTO CLASE VALUES('IM-332','Manufactura 1','Conocimiento en area economica','108','502');
@@ -285,56 +280,52 @@ INSERT INTO CLASE VALUES('DE-359','Derecho Mercantil 2','Seguimiento','120','510
 INSERT INTO CLASE VALUES('DE-287','Derecho Administrativo','Introduccion','120','510');
 
 #insert medicina 121,122,123
-#1
 INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','121','507');
 INSERT INTO CLASE VALUES('QQ-111','Quimica Medica','Introduccion a Quimica','121','507'); 
 INSERT INTO CLASE VALUES('FO-101','Fisiologia','Introduccion a Fisiologia','121','507');
-#2
+
 INSERT INTO CLASE VALUES('BQ-113','Bioquímica','Introduccion a Bioquimica','122','507');
 INSERT INTO CLASE VALUES('PS-110','Psicología Médica','Introduccion a Psicologia','122','507');
 INSERT INTO CLASE VALUES('SP-21','Salud Pública I','Introduccion a Salud Publica','122','507');
-#3
+
 INSERT INTO CLASE VALUES('BL-610','Microbiología','Introduccion Microbiologia','123','507');
 INSERT INTO CLASE VALUES('BL-134','Genética','Conceptos Generales de Genetica','123','507');
 INSERT INTO CLASE VALUES('PA-100','Patologia','Introduccion a Patologia','123','507');
 
 
 ##MATEMATICA
-#1
 INSERT INTO CLASE VALUES('MM-430','Geometria Analitica','Introduccion Geometria','109','503');
 INSERT INTO CLASE VALUES('MM-408','Calculo III','Continuacion de Calculo II','109','503'); 
 INSERT INTO CLASE VALUES('MM-418','Progamacion II','Continuacion de Programacion I','109','503');
- #2
+ 
 INSERT INTO CLASE VALUES('MM-410','Calculo I','Introduccion a los Calculos','110','503');
 INSERT INTO CLASE VALUES('MM-438','Matematica Discreta','introduccion a la Matematica Dicreta','110','503'); 
 INSERT INTO CLASE VALUES('MM-428','Variable compleja',' Introduccion a lo Complejo','110','503');
- #3
+ 
 INSERT INTO CLASE VALUES('MM-403','Analisis Matematico I','Introduccion  Analisis','111','503');
 INSERT INTO CLASE VALUES('MM-447','Programacion II','Continuacion de Programacion I','111','503'); 
  #contaduria :505 
 ##CONTADURIA
-#1
 INSERT INTO CLASE VALUES('CF-014','Contabilidad I','Introduccion a la Contabilidad','112','505');
 INSERT INTO CLASE VALUES('CF-408','calculo III','Continuacion del Calculo II','112','505'); 
 INSERT INTO CLASE VALUES('CF-415','Progamacion II','Continuacion de Programacion I','112','505');
-#2
+
 INSERT INTO CLASE VALUES('CF-011','Macrieconomia I','Introduccion a la Macroeconomia','113','505');
 INSERT INTO CLASE VALUES('CF-400','Ingles I','Introduccion al Ingles ','113','505'); 
 INSERT INTO CLASE VALUES('CF-412','Derecho Mercantil','Introduccion al Derecho','113','505');
-#3
+
 INSERT INTO CLASE VALUES('CF-111','Ingles II','Continuacion del Ingles I','114','505');
 INSERT INTO CLASE VALUES('CF-420','Administracion I','Introduccion a la Administracion','114','505'); 
 #admin:506
 ##ADMINISTRACION
-#1
 INSERT INTO CLASE VALUES('AD-014','Metodos Cuantitativos I','Introduccion a los Metodos','115','506');
 INSERT INTO CLASE VALUES('AD-408','Principios de Economia ','Introduccion a la Economia','115','506'); 
 INSERT INTO CLASE VALUES('AD-415','Computacion I','Conocimientos Basicos en  Computacion','115','506');
-#2
+
 INSERT INTO CLASE VALUES('AD-011','Filosofia','Introduccion a la Filososfia','116','506');
 INSERT INTO CLASE VALUES('AD-400','Ingles I','Introduccion al Ingles ','116','506'); 
 INSERT INTO CLASE VALUES('AD-412','Empreasas I','Introduccion a Empresas','116','506');
-#3
+
 INSERT INTO CLASE VALUES('AD-111','Computacion II','Continuacion de Computacion I','117','506');
 INSERT INTO CLASE VALUES('AD-420','Metodos Cuantitativos II','Seguimiento de Metodos I','117','506'); 
 
@@ -354,75 +345,62 @@ INSERT INTO CLASE VALUES('MB-107',' Helmintología ','Introduccion A Helmintolog
 
 
 #terapia  :508
-#1
 INSERT INTO CLASE VALUES('TFA-100','Anatomía Funcional ','Introduccion a Anatomia','127','508');
 INSERT INTO CLASE VALUES('TFN-101','Fisiologia NeuroMuscular ','Introduccion a Fisiologia','127','508');
 INSERT INTO CLASE VALUES('TFF-101','Fisioterapia ','Introduccion a Fisioterapia','127','508');
-#2
+
 INSERT INTO CLASE VALUES('TFG-101','Gimnasia Teraupetica ','Introduccion a Terapia de Gimnasia','128','508');
 INSERT INTO CLASE VALUES('FF-206','Ética ','Introduccion a Etica','128','508');
 INSERT INTO CLASE VALUES('MR-022','Evaluacion Terapeutica II ','Evaluacion Terapeutica','128','508');
-#3
+
 INSERT INTO CLASE VALUES('TFN-102','Neurología para TF  ','Introduccion a Neurologia','129','508');
 INSERT INTO CLASE VALUES('FM-101','Masaje  ','Introduccion al masaje','129','508');
 INSERT INTO CLASE VALUES('TFT-101','Terapia Ocupacional I ','Terapia Ocupacional','129','508');
 
 
-## inserts SECCION
-# SECCIONES DE LAS CLASES
-
+## -------------------------- inserts SECCION --------------------------------------------
 #Secciones de Sistema
 INSERT INTO SECCION VALUES('700','IS-518','1','12:00','LMXJV','10');
 # secciones mecanica
-# secciones civil
 
-select* from seccion;
+# secciones civil
+INSERT INTO SECCION VALUES(default,'IC-301','2','18:00','LMX','15');
+INSERT INTO SECCION VALUES(default,'IC-309','76','10:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'IC-320','3','17:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'IC-321','7','13:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'IC-322','67','11:00','LMXJV','10');
+INSERT INTO SECCION VALUES(default,'IC-323','8','15:00','LMXV','15');
+INSERT INTO SECCION VALUES(default,'IC-324','11','10:00','LMXJV','15');
 #Secciones de Medicina 
-#1
 INSERT INTO SECCION VALUES(default,'FS-210','26','8:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'QQ-111','27','9:00','LMXJV','23');
 INSERT INTO SECCION VALUES(default,'FO-101','28','10:00','LMXJV','45');
-	#2
 INSERT INTO SECCION VALUES(default,'BQ-113','29','1:00','LMJV','10');
 INSERT INTO SECCION VALUES(default,'PS-110','30','2:00','LMXJV','13');
 INSERT INTO SECCION VALUES(default,'SP-21','31','3:00','LMXJV','11');
-	#3
 INSERT INTO SECCION VALUES(default,'BL-610','32','2:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'BL-134','33','3:00','LMXJV','16');
 INSERT INTO SECCION VALUES(default,'PA-100','34','4:00','LMXJV','19');
-
 #Secciones de Terapia
-	#1
 INSERT INTO SECCION VALUES(default,'TFA-100','35','3:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'TFN-101','36','4:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'TFF-101','37','6:00','LMXJV','12');
-	#2
 INSERT INTO SECCION VALUES(default,'TFG-101','38','8:00','LMXJV','16');
 INSERT INTO SECCION VALUES(default,'FF-206','39','9:00','LMXJV','19');
 INSERT INTO SECCION VALUES(default,'MR-022','40','10:00','LMXJV','15');
-	#3
 INSERT INTO SECCION VALUES(default,'TFN-102','41','9:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'FM-101','42','10:00','LMXJV','14');
 INSERT INTO SECCION VALUES(default,'TFT-101','43','11:00','LMXJV','13');
-
 #Secciones de Microbiologia 
-	#1
 INSERT INTO SECCION VALUES(default,'MB-024','44','3:00','LMXJV','10');
 INSERT INTO SECCION VALUES(default,'QQ-113','45','4:00','LMXJV','11');
 INSERT INTO SECCION VALUES(default,'QQ-114','46','5:00','LMXJV','12');
-
-	#2
 INSERT INTO SECCION VALUES(default,'MB-066','47','3:00','LMXJV','13');
 INSERT INTO SECCION VALUES(default,'MB-076','48','4:00','LMXJV','14');
 INSERT INTO SECCION VALUES(default,'AI-111','49','5:00','LMXJV','15');
-
-	#3
 INSERT INTO SECCION VALUES(default,'MB-087','50','3:00','LMXJV','17');
 INSERT INTO SECCION VALUES(default,'MB-0797','51','4:00','LMXJV','18');
 INSERT INTO SECCION VALUES(default,'MB-107','52','5:00','LMXJV','19');
-
-
-
 #secciones de matematicas
 INSERT INTO SECCION VALUES(default,'MM-430','2','7:00','LMXJV','15');
 iNSERT INTO SECCION VALUES(default,'MM-408','3','8:00','LMXV','10');
@@ -450,39 +428,64 @@ INSERT INTO SECCION VALUES(default,'AD-400','22','7:00','LMXJV','40');
 INSERT INTO SECCION VALUES(default,'AD-412','23','10:00','LMXJV','10');
 INSERT INTO SECCION VALUES(default,'AD-111','24','9:00','LMXV','50');
 INSERT INTO SECCION VALUES(default,'AD-420','25','8:00','LMXJV','10');
+#seccion derecho
+INSERT INTO SECCION VALUES(default,'DE-022','46','12:00','LMXJ','10');
+INSERT INTO SECCION VALUES(default,'DE-042','47','13:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'DE-053','48','7:00','LMXJ','10');
+INSERT INTO SECCION VALUES(default,'DE-084','49','18:00','LMX','10');
+INSERT INTO SECCION VALUES(default,'DE-104','50','12:00','LMJV','15');
+INSERT INTO SECCION VALUES(default,'DE-114','51','14:00','LMXJ','10');
+INSERT INTO SECCION VALUES(default,'DE-155','52','12:00','LMXJ','10');
+INSERT INTO SECCION VALUES(default,'DE-359','53','9:00','LMXJ','15');
+INSERT INTO SECCION VALUES(default,'DE-287','54','8:00','LMXJV','10');
+# secciones fisica
+INSERT INTO SECCION VALUES(DEFAULT,'FS-371','55','16:00','LMXJV','15');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-626','56','11:00','LMXJV','10');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-425','57','10:00','LMXJ','15');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-622','58','8:00','LMXJV','10');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-621','59','17:00','LMXJV','10');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-635','60','7:00','LMJV','15');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-646','61','9:00','LMX','12');
+INSERT INTO SECCION VALUES(DEFAULT,'FS-650','62','16:00','LMXJV','12');
 
-
-#insert laboratorios
+#----------------------- insert laboratorios -------------------------------------
 # no necesariamente todas las clases deben tener laboratorio
 #con tres lab por carrera suficiente
 # agregar descripcion a los laboratorios
 #lab de ing civil
-INSERT INTO LABORATORIO VALUES('6000','Intro a Ing,Civil','','IC-301');
-INSERT INTO LABORATORIO VALUES('6001','Probabilidad y Estadistica','','IC-309');
-INSERT INTO LABORATORIO VALUES('6002','Topografia','','IC-322');
+INSERT INTO LABORATORIO VALUES('6000','Intro a Ing,Civil','Introduccion','IC-301');
+INSERT INTO LABORATORIO VALUES('6001','Probabilidad y Estadistica','Ejercer practica','IC-309');
+INSERT INTO LABORATORIO VALUES('6002','Topografia','Fundamentos de Topografia','IC-322');
 # lab de ing mecanica
+
+
 # lab medicina
+
+
 # microbiologia 
 
-#SECCIONES DE LAB
+
+
+#lab fisica
+INSERT INTO LABORATORIO VALUES('6003','Fisca Moderna','Introduccion fisica moderna','FS-371');
+INSERT INTO LABORATORIO VALUES('6004','Geofisica','Fundamentos de Geofisica','FS-626');
+INSERT INTO LABORATORIO VALUES('6005','Energias Renovables','Introduccion practica','FS-622');
+INSERT INTO LABORATORIO VALUES('6006','Electromagnetica','Teoria Electromagnetica','FS-635');
+INSERT INTO LABORATORIO VALUES('6007','Radiaciones','Fundamentos de la radiacion','FS-646');
+INSERT INTO LABORATORIO VALUES('6008','Topicos de Fisica Teorica','Fisica Teorica','FS-650');
+
+#----------------- SECCIONES DE LAB ---------------------
+# secciones civil lab
 INSERT INTO SECCIONLAB VALUES('900','6001','1','14:00','LMX','10');
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+INSERT INTO SECCIONLAB VALUES('9001','6000','2','13:00','LM','5');
+INSERT INTO SECCIONLAB VALUES('9002','6002','3','16:00','LJ','5');
+#secciones de lab fisica
+INSERT INTO SECCIONLAB VALUES('9003','6003','4','7:00','LMX','6');
+INSERT INTO SECCIONLAB VALUES('9004','6004','5','12:00','MX','5');
+INSERT INTO SECCIONLAB VALUES('9005','6005','6','11:00','LV','6');
+INSERT INTO SECCIONLAB VALUES('9006','6006','7','7:00','MJ','9');
+INSERT INTO SECCIONLAB VALUES('9007','6007','8','9:00','LMX','6');
+INSERT INTO SECCIONLAB VALUES('9008','6008','9','12:00','LV','8');
 
 
 #edificios
@@ -498,11 +501,6 @@ INSERT INTO EDIFICIO VALUES(default,'105','306','Disponible');
 INSERT INTO EDIFICIO VALUES(default,'110','308','Disponible');
 INSERT INTO EDIFICIO VALUES(default,'303','208','Ocupada');
 
-
-
-
-
-### cambios CALIX
 
 
 
