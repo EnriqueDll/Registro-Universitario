@@ -1,3 +1,6 @@
+
+
+
 USE REGISTRO_UNIVERSITARIO;
 ## -----------------------  inserts de facultades ----------------------------
 INSERT INTO FACULTAD VALUES(default,'Medicina',3); #id 1
@@ -384,7 +387,7 @@ INSERT INTO SECCION VALUES(default,'BQ-113','29','1:00','LMJV','10');
 INSERT INTO SECCION VALUES(default,'PS-110','30','2:00','LMXJV','13');
 INSERT INTO SECCION VALUES(default,'SP-21','31','3:00','LMXJV','11');
 	#3
-INSERT INTO SECCION VALUES(default,'MB-610','32','2:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'BL-610','32','2:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'BL-134','33','3:00','LMXJV','16');
 INSERT INTO SECCION VALUES(default,'PA-100','34','4:00','LMXJV','19');
 
@@ -411,7 +414,7 @@ INSERT INTO SECCION VALUES(default,'QQ-114','46','5:00','LMXJV','12');
 	#2
 INSERT INTO SECCION VALUES(default,'MB-066','47','3:00','LMXJV','13');
 INSERT INTO SECCION VALUES(default,'MB-076','48','4:00','LMXJV','14');
-INSERT INTO SECCION VALUES(default,'A1-111','49','5:00','LMXJV','15');
+INSERT INTO SECCION VALUES(default,'AI-111','49','5:00','LMXJV','15');
 
 	#3
 INSERT INTO SECCION VALUES(default,'MB-087','50','3:00','LMXJV','17');
@@ -499,7 +502,7 @@ INSERT INTO EDIFICIO VALUES(default,'303','208','Ocupada');
 
 
 
-
+### cambios CALIX
 
 
 
