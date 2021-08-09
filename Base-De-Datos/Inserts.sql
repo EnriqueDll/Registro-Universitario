@@ -287,12 +287,12 @@ INSERT INTO CLASE VALUES('FS-210','Biofisica','Introduccion a biofisica','121','
 INSERT INTO CLASE VALUES('QQ-111','Quimica Medica','Introduccion a Quimica','121','507'); 
 INSERT INTO CLASE VALUES('FO-101','Fisiologia','Introduccion a Fisiologia','121','507');
 #2
-INSERT INTO CLASE VALUES('BQ-113 ','Bioquímica','Introduccion a Bioquimica','122','507');
-INSERT INTO CLASE VALUES('PS-110 ','Psicología Médica','Introduccion a Psicologia','122','507');
-INSERT INTO CLASE VALUES('SP-21 ','Salud Pública I','Introduccion a Salud Publica','122','507');
+INSERT INTO CLASE VALUES('BQ-113','Bioquímica','Introduccion a Bioquimica','122','507');
+INSERT INTO CLASE VALUES('PS-110','Psicología Médica','Introduccion a Psicologia','122','507');
+INSERT INTO CLASE VALUES('SP-21','Salud Pública I','Introduccion a Salud Publica','122','507');
 #3
-INSERT INTO CLASE VALUES('BL-610 ','Microbiología','Introduccion Microbiologia','123','507');
-INSERT INTO CLASE VALUES('BL-134 ','Genética','Conceptos Generales de Genetica','123','507');
+INSERT INTO CLASE VALUES('BL-610','Microbiología','Introduccion Microbiologia','123','507');
+INSERT INTO CLASE VALUES('BL-134','Genética','Conceptos Generales de Genetica','123','507');
 INSERT INTO CLASE VALUES('PA-100','Patologia','Introduccion a Patologia','123','507');
 
 
@@ -341,20 +341,20 @@ INSERT INTO CLASE VALUES('MB-024','Química Biológica','Introduccion a Quimica 
 INSERT INTO CLASE VALUES('QQ-113','Química Organica I','Introduccion a Quimica Organica I','124','509');
 INSERT INTO CLASE VALUES('QQ-114','Química Analitica I','Introduccion a Quimica Analitica','124','509');
 
-INSERT INTO CLASE VALUES('MB-066',' Bacteriologia Medica   ','Introduccion A Bacteriologia','125','509');
-INSERT INTO CLASE VALUES('MB-076',' Protozoología   ','Introduccion A Protozoologia','125','509');
-INSERT INTO CLASE VALUES('AI-111  ',' Histologia Normal ','Introduccion A Histologia','125','509');
+INSERT INTO CLASE VALUES('MB-066',' Bacteriologia Medica','Introduccion A Bacteriologia','125','509');
+INSERT INTO CLASE VALUES('MB-076',' Protozoología','Introduccion A Protozoologia','125','509');
+INSERT INTO CLASE VALUES('AI-111',' Histologia Normal ','Introduccion A Histologia','125','509');
 
-INSERT INTO CLASE VALUES('MB-087 ',' Seminario I','Introduccion A Seminario I ','126','509');
-INSERT INTO CLASE VALUES('MB-0797',' Micologia Medica   ','Introduccion A Micologia','126','509');
-INSERT INTO CLASE VALUES('MB-107  ',' Helmintología ','Introduccion A Helmintologia','126','509');
+INSERT INTO CLASE VALUES('MB-087',' Seminario I','Introduccion A Seminario I ','126','509');
+INSERT INTO CLASE VALUES('MB-0797',' Micologia Medica','Introduccion A Micologia','126','509');
+INSERT INTO CLASE VALUES('MB-107',' Helmintología ','Introduccion A Helmintologia','126','509');
 
 
 #terapia  :508
 #1
-INSERT INTO CLASE VALUES('TFA-100  ','Anatomía Funcional ','Introduccion a Anatomia','127','508');
-INSERT INTO CLASE VALUES('TFN-101  ','Fisiologia NeuroMuscular ','Introduccion a Fisiologia','127','508');
-INSERT INTO CLASE VALUES('TFF-101  ','Fisioterapia ','Introduccion a Fisioterapia','127','508');
+INSERT INTO CLASE VALUES('TFA-100','Anatomía Funcional ','Introduccion a Anatomia','127','508');
+INSERT INTO CLASE VALUES('TFN-101','Fisiologia NeuroMuscular ','Introduccion a Fisiologia','127','508');
+INSERT INTO CLASE VALUES('TFF-101','Fisioterapia ','Introduccion a Fisioterapia','127','508');
 #2
 INSERT INTO CLASE VALUES('TFG-101','Gimnasia Teraupetica ','Introduccion a Terapia de Gimnasia','128','508');
 INSERT INTO CLASE VALUES('FF-206','Ética ','Introduccion a Etica','128','508');
@@ -380,7 +380,7 @@ INSERT INTO SECCION VALUES(default,'FS-210','26','8:00','LMXJV','15');
 INSERT INTO SECCION VALUES(default,'QQ-111','27','9:00','LMXJV','23');
 INSERT INTO SECCION VALUES(default,'FO-101','28','10:00','LMXJV','45');
 	#2
-INSERT INTO SECCION VALUES(default,'BQ-113','29','1:00','LMXJV','26');
+INSERT INTO SECCION VALUES(default,'BQ-113','29','1:00','LMJV','10');
 INSERT INTO SECCION VALUES(default,'PS-110','30','2:00','LMXJV','13');
 INSERT INTO SECCION VALUES(default,'SP-21','31','3:00','LMXJV','11');
 	#3
