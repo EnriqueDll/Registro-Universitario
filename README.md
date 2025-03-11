@@ -37,6 +37,3 @@ Grupo 1
   - Bootstrap
   - JavaScript
   - HTML
-  
-
-
